@@ -2,25 +2,20 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Admin extends Model
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
 
-    protected $table = 'user';
+     protected $table = 'admin';
 
      protected $fillable = [
-        'id_kategori_profesi',
          'nama',
          'username',
          'email',
          'password',
-         'minat',
-         'bio',
          'foto_profile',
      ];
  
@@ -29,10 +24,10 @@ class User extends Authenticatable
      {
          parent::boot();
  
-         static::creating(function ($user) {
+         static::creating(function ($admin) {
              // Pastikan password di-hash sebelum disimpan
-             if (isset($user->password)) {
-                 $user->password = bcrypt($user->password);
+             if (isset($admin->password)) {
+                 $admin->password = bcrypt($admin->password);
              }
          });
      }
