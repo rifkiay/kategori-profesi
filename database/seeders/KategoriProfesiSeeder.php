@@ -22,6 +22,8 @@ class KategoriProfesiSeeder extends Seeder
             ['kategori_profesi' => 'Konstruksi'],
             ['kategori_profesi' => 'Seni dan Desain'],
             ['kategori_profesi' => 'Pemasaran'],
+            ['kategori_profesi' => 'Influencer'],
+            ['kategori_profesi' => 'Olahraga'],
         ];
 
         foreach ($kategoriProfesi as $kategori) {
