@@ -7,6 +7,7 @@ use App\Http\Controllers\LokerController;
 use App\Http\Controllers\PerusahaanController;
 use App\Http\Controllers\ProfesiController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 
 // ===============================================================Route Admin=====================================================================
 Route::prefix('admin')->group(function () {
@@ -59,10 +60,15 @@ Route::get('/', function () {
 });
 
 // Route Profile User
-Route::prefix('user')->group(function () {
+Route::prefix('profileuser')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('user.index'); 
     Route::post('/', [UserController::class, 'store'])->name('user.store'); 
     Route::get('/{user}', [UserController::class, 'show'])->name('user.show');
     Route::put('/{user}', [UserController::class, 'update'])->name('user.update'); 
     Route::delete('/{user}', [UserController::class, 'destroy'])->name('user.destroy'); 
+});
+
+// Route Home
+Route::prefix('')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home.index');
 });
