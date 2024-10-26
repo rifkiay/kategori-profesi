@@ -100,13 +100,13 @@ Route::prefix('Perusahaan')->group(function () {
 
 Route::prefix('profesi')->group(function () {
     Route::get('/show', function () {
-        return view('Profession.showProfession');
+        return view('Profesi.showProfesi');
     });
     Route::get('/create', function () {
-        return view('Profession.createProfession');
+        return view('Profesi.createProfesi');
     });
     Route::get('/update', function () {
-        return view('Profession.updateProfession');
+        return view('Profesi.updateProfesi');
     });
 });
 
