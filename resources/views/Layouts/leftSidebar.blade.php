@@ -45,13 +45,13 @@
                     <div class="collapse" id="sidebarPages">
                         <ul class="side-nav-second-level">
                             <li>
-                                <a href="{{ url('/company/show') }}">Data Perusahaan</a>
+                                <a href="{{ url('/Perusahaan/show') }}">Data Perusahaan</a>
                             </li>
                             <li>
-                                <a href="{{ url('/company/create') }}">Tambah Perusahaan</a>
+                                <a href="{{ url('/Perusahaan/create') }}">Tambah Perusahaan</a>
                             </li>
                             <li>
-                                <a href="{{ url('/company/update') }}">Update Perusahaan</a>
+                                <a href="{{ url('/Perusahaan/update') }}">Update Perusahaan</a>
                             </li>
 
                         </ul>
