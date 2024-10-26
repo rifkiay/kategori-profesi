@@ -86,15 +86,15 @@ Route::get('/user', function () {
     return view('User.showUser');
 });
 
-Route::prefix('company')->group(function () {
+Route::prefix('Perusahaan')->group(function () {
     Route::get('/show', function () {
-        return view('company.showCompany');
+        return view('Perusahaan.showPerusahaan');
     });
     Route::get('/create', function () {
-        return view('company.createCompany');
+        return view('Perusahaan.createPerusahaan');
     });
     Route::get('/update', function () {
-        return view('company.updateCompany');
+        return view('Perusahaan.updatePerusahaan');
     });
 });
 
