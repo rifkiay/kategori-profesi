@@ -46,7 +46,7 @@
                                 <div class="float-end">
                                     <i class="ri-flower-fill widget-icon"></i>
                                 </div>
-                                <h6 class="text-uppercase mt-0" title="Customers">Total Pekerjaan</h6>
+                                <h6 class="text-uppercase mt-0" title="Customers">Total Lowongan Pekerjaan</h6>
                                 <h2 class="my-2">0</h2>
                                 <p class="mb-0">
                                     <span class="badge bg-white bg-opacity-10 me-1">Terdaftar</span>

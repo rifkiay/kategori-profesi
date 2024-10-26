@@ -110,14 +110,14 @@ Route::prefix('profesi')->group(function () {
     });
 });
 
-Route::prefix('job')->group(function () {
+Route::prefix('loker')->group(function () {
     Route::get('/show', function () {
-        return view('Job.showJob');
+        return view('Loker.showLoker');
     });
     Route::get('/create', function () {
-        return view('Job.createJob');
+        return view('Loker.createLoker');
     });
     Route::get('/update', function () {
-        return view('Job.updateJob');
+        return view('Loker.updateLoker');
     });
 });

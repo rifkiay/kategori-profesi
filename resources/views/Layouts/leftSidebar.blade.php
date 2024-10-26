@@ -85,19 +85,19 @@
                 <li class="side-nav-item">
                     <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false" aria-controls="sidebarPagesAuth" class="side-nav-link">
                         <i class="ri-briefcase-line"></i>
-                        <span> Pekerjaan </span>
+                        <span> Lowongan Pekerjaan </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarPagesAuth">
                         <ul class="side-nav-second-level">
                             <li>
-                                <a href="{{ url('/job/show') }}">Data Pekerjaan</a>
+                                <a href="{{ url('/loker/show') }}">Data Loker</a>
                             </li>
                             <li>
-                                <a href="{{ url('/job/create') }}">Tambah Pekerjaan</a>
+                                <a href="{{ url('/loker/create') }}">Tambah Loker</a>
                             </li>
                             <li>
-                                <a href="{{ url('/job/update') }}">Update Pekerjaan</a>
+                                <a href="{{ url('/loker/update') }}">Update Loker</a>
                             </li>
 
                         </ul>
