@@ -72,3 +72,15 @@ Route::prefix('profileuser')->group(function () {
 Route::prefix('')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
 });
+
+// Route Detail Profesi
+Route::prefix('')->group(function () {
+    Route::get('/{id}', [ProfesiController::class, 'index'])->name('profesi.index');
+    Route::get('/{detail}/{id}', [ProfesiController::class, 'detail'])->name('detailprofesi.detail');
+});
+
+// Route Loker
+Route::prefix('')->group(function () {
+    Route::get('/', [LokerController::class, 'index'])->name('loker.index');
+});
+
