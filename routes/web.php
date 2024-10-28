@@ -69,10 +69,20 @@ Route::prefix('profileuser')->group(function () {
 });
 
 // Route Home
-//Route::prefix('')->group(function () {
-//   Route::get('/', [HomeController::class, 'index'])->name('home.index');
-//});
+// Route::prefix('')->group(function () {
+//     Route::get('/', [HomeController::class, 'index'])->name('home.index');
+// });
 
+// Route Detail Profesi
+Route::prefix('')->group(function () {
+    Route::get('/{id}', [ProfesiController::class, 'index'])->name('profesi.index');
+    Route::get('/{detail}/{id}', [ProfesiController::class, 'detail'])->name('detailprofesi.detail');
+});
+
+// Route Loker
+Route::prefix('')->group(function () {
+    Route::get('/', [LokerController::class, 'index'])->name('loker.index');
+});
 
 // ===============================================================Route Admin Dari Frontend=====================================================================
 
@@ -143,3 +153,4 @@ Route::get('/detail-profesi', function () {
 Route::get('/login', function () {
     return view('Auth.Login');
 })->name('login');
+

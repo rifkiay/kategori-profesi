@@ -10,9 +10,19 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($id)
     {
-        //
+        try {
+            $user = User::where('id', $id)->get();
+
+            // if ($user->isEmpty()) {
+            //     return redirect()->back()->with('error', 'No professions found for this category.');
+            // }
+
+            return view('user.index', compact('user'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
+        }
     }
 
     /**

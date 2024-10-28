@@ -12,7 +12,13 @@ class LokerController extends Controller
      */
     public function index()
     {
-        //
+        try {
+            $loker = Loker::all();
+    
+            return view('loker.index', compact('loker',));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
+        }
     }
 
     /**

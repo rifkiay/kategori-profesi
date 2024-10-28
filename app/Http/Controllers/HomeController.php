@@ -14,7 +14,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
+        try {
+            $loker = Loker::all();
+            $kategoriProfesi = KategoriProfesi::all();
+            $profesi = Profesi::all();
+    
+            return view('home.index', compact('loker', 'kategoriProfesi', 'profesi'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
+        }
     }
 
     /**
