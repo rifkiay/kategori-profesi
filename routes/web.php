@@ -69,14 +69,14 @@ Route::prefix('profileuser')->group(function () {
 });
 
 // Route Home
-Route::prefix('')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home.index');
-});
+//Route::prefix('')->group(function () {
+//   Route::get('/', [HomeController::class, 'index'])->name('home.index');
+//});
 
 
 // ===============================================================Route Admin Dari Frontend=====================================================================
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('Admin.Dashboard');
 });
 Route::get('/profile', function () {
@@ -121,3 +121,25 @@ Route::prefix('loker')->group(function () {
         return view('Loker.updateLoker');
     });
 });
+
+// ===============================================================Route User Dari Frontend=====================================================================
+
+Route::get('/', function () {
+    return view('Pages.home');
+})->name('home');
+
+Route::get('/kategori/{namaKategori}', function ($namaKategori) {
+    return view('pages.detail-profesi', ['kategori' => $namaKategori]);
+});
+
+Route::get('/dashboard', function () {
+    return view('Admin.Dashboard');
+})->name('Dashboard');
+
+Route::get('/detail-profesi', function () {
+    return view('Pages.kategori-profesi');
+})->name('kategori-profesi');
+
+Route::get('/login', function () {
+    return view('Auth.Login');
+})->name('login');
