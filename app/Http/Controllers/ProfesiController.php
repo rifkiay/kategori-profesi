@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateProfesiRequest;
+use App\Http\Requests\StoreProfesiRequest;
 use App\Models\Profesi;
 use App\Models\KategoriProfesi;
+
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 
 class ProfesiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // Menampilkan profesi yang sesuai dengan kategori_profesi yang dipilih
     public function index($id_kategori)
     {
         try {
@@ -26,6 +30,7 @@ class ProfesiController extends Controller
         }
     }
 
+    // Menampilkan artikel profesi yang sesuai dengan profesi yang dipilih
     public function detail($id_profesi)
     {
         try {
@@ -41,35 +46,91 @@ class ProfesiController extends Controller
         }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    // ================================================================CRUD===================================================================
+    public function view()
     {
-        //
+        try {
+            $profesi = Profesi::all();
+
+            if ($profesi->isEmpty()) {
+                return redirect()->back()->with('error', 'No professions found for this category.');
+            }
+
+            return view('profesi.index', compact('profesi'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
+    public function store(StoreProfesiRequest $request)
+    {
+        try {
+            $data = $request->validated();
+    
+            // Upload gambar jika ada
+            if ($request->hasFile('gambar_profesi')) {
+                // Ambil nama profesi dan buat nama file
+                $profesiName =  Str::slug($data['nama_profesi']); // Ambil nama profesi
+                $timestamp = time(); // Ambil timestamp saat ini
+                $extension = $request->file('gambar_profesi')->getClientOriginalExtension();
+                $fileName = "{$profesiName}_{$timestamp}.{$extension}";
+
+                $data['gambar_profesi'] = $request->file('gambar_profesi')->storeAs('gambar/profesi', $fileName, 'public');
+            }
+    
+            Profesi::create($data);
+    
+            return redirect()->route('profesi.index')->with('success', 'Profesi berhasil ditambahkan!');
+        } catch (\Exception $e) {
+            \Log::error('Error while adding Profesi: ' . $e->getMessage());
+
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat menambahkan Profesi. Silakan coba lagi.');
+        }        
+    }
+
     public function show(Profesi $profesi)
     {
-        //
+        return view('profesi.show', compact('profesi'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Profesi $profesi)
+    public function update(UpdateProfesiRequest $request, Profesi $profesi)
     {
-        //
+        try {
+            $data = $request->validated();
+    
+            // Jika ada gambar baru, hapus yang lama dan upload baru
+            if ($request->hasFile('gambar_profesi')) {
+                if ($profesi->gambar_profesi) {
+                    Storage::delete($profesi->gambar_profesi);
+                }
+
+                $profesiName =  Str::slug($data['nama_profesi']); 
+                $timestamp = time(); // Ambil timestamp saat ini
+                $extension = $request->file('gambar_profesi')->getClientOriginalExtension();
+                $fileName = "{$profesiName}_{$timestamp}.{$extension}";
+
+                $data['gambar_profesi'] = $request->file('gambar_profesi')->storeAs('gambar/profesi', $fileName, 'public');
+            }
+    
+            $profesi->update($data);
+    
+            return redirect()->route('profesi.index')->with('success', 'Profesi berhasil diperbarui!');
+        } catch (\Exception $e) {
+            \Log::error('Error while updating Profesi: ' . $e->getMessage());
+
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat memperbarui Profesi. Silakan coba lagi.');
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Profesi $profesi)
     {
-        //
+        \Log::info('Updating Profesi with ID: ' . $profesi->id); 
+        if ($profesi->gambar_profesi) {
+            Storage::delete($profesi->gambar_profesi);
+        }
+
+        $profesi->delete();
+
+        return redirect()->route('profesi.index')->with('success', 'Profesi berhasil dihapus!');
     }
 }
