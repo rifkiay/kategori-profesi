@@ -56,7 +56,7 @@ class ProfesiController extends Controller
                 return redirect()->back()->with('error', 'No professions found for this category.');
             }
 
-            return view('profesi.index', compact('profesi'));
+            return view('profesi.show', compact('profesi'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
         }
@@ -80,17 +80,15 @@ class ProfesiController extends Controller
     
             Profesi::create($data);
     
-            return redirect()->route('profesi.index')->with('success', 'Profesi berhasil ditambahkan!');
+            return redirect()->route('profesi.show')->with('success', 'Profesi berhasil ditambahkan!');
         } catch (\Exception $e) {
-            \Log::error('Error while adding Profesi: ' . $e->getMessage());
-
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menambahkan Profesi. Silakan coba lagi.');
         }        
     }
 
     public function show(Profesi $profesi)
     {
-        return view('profesi.show', compact('profesi'));
+        return view('profesi.update', compact('profesi'));
     }
 
     public function update(UpdateProfesiRequest $request, Profesi $profesi)
@@ -114,23 +112,24 @@ class ProfesiController extends Controller
     
             $profesi->update($data);
     
-            return redirect()->route('profesi.index')->with('success', 'Profesi berhasil diperbarui!');
+            return redirect()->route('profesi.show')->with('success', 'Profesi berhasil diperbarui!');
         } catch (\Exception $e) {
-            \Log::error('Error while updating Profesi: ' . $e->getMessage());
-
             return redirect()->back()->with('error', 'Terjadi kesalahan saat memperbarui Profesi. Silakan coba lagi.');
         }
     }
 
     public function destroy(Profesi $profesi)
     {
-        \Log::info('Updating Profesi with ID: ' . $profesi->id); 
-        if ($profesi->gambar_profesi) {
-            Storage::delete($profesi->gambar_profesi);
+        try {
+            if ($profesi->gambar_profesi) {
+                Storage::delete($profesi->gambar_profesi);
+            }
+    
+            $profesi->delete();
+    
+            return redirect()->route('profesi.show')->with('success', 'Profesi berhasil dihapus!');
+        } catch (\Exception $e) {
+            return redirect()->route('profesi.show')->with('error', 'Terjadi kesalahan saat menghapus profesi.');
         }
-
-        $profesi->delete();
-
-        return redirect()->route('profesi.index')->with('success', 'Profesi berhasil dihapus!');
     }
 }
