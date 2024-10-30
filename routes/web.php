@@ -55,18 +55,18 @@ Route::prefix('admin/profesi')->group(function () {
 });
 
 // ===============================================================Route User=====================================================================
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route Profile User
-Route::prefix('profileuser')->group(function () {
-    Route::get('/', [UserController::class, 'index'])->name('user.index');
-    Route::post('/', [UserController::class, 'store'])->name('user.store');
-    Route::get('/{user}', [UserController::class, 'show'])->name('user.show');
-    Route::put('/{user}', [UserController::class, 'update'])->name('user.update');
-    Route::delete('/{user}', [UserController::class, 'destroy'])->name('user.destroy');
-});
+// Route::prefix('profileuser')->group(function () {
+//     Route::get('/', [UserController::class, 'index'])->name('user.index');
+//     Route::post('/', [UserController::class, 'store'])->name('user.store');
+//     Route::get('/{user}', [UserController::class, 'show'])->name('user.show');
+//     Route::put('/{user}', [UserController::class, 'update'])->name('user.update');
+//     Route::delete('/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+// });
 
 // Route Home
 // Route::prefix('')->group(function () {
@@ -74,15 +74,15 @@ Route::prefix('profileuser')->group(function () {
 // });
 
 // Route Detail Profesi
-Route::prefix('')->group(function () {
-    Route::get('/{id}', [ProfesiController::class, 'index'])->name('profesi.index');
-    Route::get('/{detail}/{id}', [ProfesiController::class, 'detail'])->name('detailprofesi.detail');
-});
+// Route::prefix('')->group(function () {
+//     Route::get('/{id}', [ProfesiController::class, 'index'])->name('profesi.index');
+//     Route::get('/{detail}/{id}', [ProfesiController::class, 'detail'])->name('detailprofesi.detail');
+// });
 
 // Route Loker
-Route::prefix('')->group(function () {
-    Route::get('/', [LokerController::class, 'index'])->name('loker.index');
-});
+// Route::prefix('')->group(function () {
+//     Route::get('/', [LokerController::class, 'index'])->name('loker.index');
+// });
 
 // ===============================================================Route Admin Dari Frontend=====================================================================
 
@@ -142,9 +142,9 @@ Route::get('/kategori/{namaKategori}', function ($namaKategori) {
     return view('pages.detail-profesi', ['kategori' => $namaKategori]);
 });
 
-Route::get('/dashboard', function () {
-    return view('Admin.Dashboard');
-})->name('Dashboard');
+// Route::get('/dashboard', function () {
+//     return view('Admin.Dashboard');
+// })->name('Dashboard');
 
 Route::get('/detail-profesi', function () {
     return view('Pages.kategori-profesi');
@@ -153,4 +153,3 @@ Route::get('/detail-profesi', function () {
 Route::get('/login', function () {
     return view('Auth.Login');
 })->name('login');
-
