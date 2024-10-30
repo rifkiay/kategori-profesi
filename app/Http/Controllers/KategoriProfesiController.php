@@ -3,65 +3,75 @@
 namespace App\Http\Controllers;
 
 use App\Models\KategoriProfesi;
+use App\Http\Requests\StoreKategoriProfesiRequest;
 use Illuminate\Http\Request;
 
 class KategoriProfesiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // =============================================================View User=================================================================
     public function index()
     {
         try {
             $kategori = KategoriProfesi::all();
     
-            return view('kategori.index', compact('kategori'));
+            return view('kategori_profesi.index', compact('kategori'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
         }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+
+    // =============================================================CRUD Admin=================================================================
+    public function view()
     {
-        $request->validate([
-            'kategori_profesi' => 'required|string|max:255',
-        ]);
-    
         try {
-            KategoriProfesi::create([
-                'kategori_profesi' => $request->kategori_profesi, 
-            ]);
+            $kategori = KategoriProfesi::all();
     
-            return redirect()->route('kategori_profesi.index')->with('success', 'Kategori Profesi successfully created.');
+            return view('kategori_profesi.show', compact('kategori'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
+        }
+    }
+
+    public function store(StoreKategoriProfesiRequest $request)
+    {
+        try {
+            $data = $request->validated();
+
+            KategoriProfesi::create($data);
+    
+            return redirect()->route('kategori_profesi.show')->with('success', 'Kategori Profesi successfully created.');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to create Kategori Profesi: ' . $e->getMessage());
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(KategoriProfesi $kategoriProfesi)
     {
-        //
+        return view('kategori_profesi.show', compact('profesi'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, KategoriProfesi $kategoriProfesi)
+    public function update(StoreKategoriProfesiRequest $request, KategoriProfesi $kategoriProfesi)
     {
-        //
+        try {
+            $data = $request->validated();
+
+            $kategoriProfesi->update($data);
+    
+            return redirect()->route('kategori_profesi.show')->with('success', 'Kategori Profesi successfully updated.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to update Kategori Profesi: ' . $e->getMessage());
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(KategoriProfesi $kategoriProfesi)
     {
-        //
+        try {
+            $kategoriProfesi->delete();
+    
+            return redirect()->route('kategori_profesi.show')->with('success', 'Kategori Profesi successfully deleted.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to delete Kategori Profesi: ' . $e->getMessage());
+        }
     }
 }
