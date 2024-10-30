@@ -11,29 +11,17 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    protected $table = 'user';
+    protected $table = 'users';
 
      protected $fillable = [
-        'id_kategori_profesi',
+         'id_kategori_profesi',
          'nama',
          'username',
          'email',
+         'email_verified_at',
          'password',
          'minat',
          'bio',
          'foto_profile',
      ];
- 
-     // Mengamankan password dengan hash saat model dibuat
-     protected static function boot()
-     {
-         parent::boot();
- 
-         static::creating(function ($user) {
-             // Pastikan password di-hash sebelum disimpan
-             if (isset($user->password)) {
-                 $user->password = bcrypt($user->password);
-             }
-         });
-     }
 }

@@ -35,12 +35,10 @@ class KategoriProfesiController extends Controller
 
     public function store(StoreKategoriProfesiRequest $request)
     {
-        $request->validated();
-    
         try {
-            KategoriProfesi::create([
-                'kategori_profesi' => $request->kategori_profesi, 
-            ]);
+            $data = $request->validated();
+
+            KategoriProfesi::create($data);
     
             return redirect()->route('kategori_profesi.show')->with('success', 'Kategori Profesi successfully created.');
         } catch (\Exception $e) {
@@ -55,9 +53,9 @@ class KategoriProfesiController extends Controller
 
     public function update(StoreKategoriProfesiRequest $request, KategoriProfesi $kategoriProfesi)
     {
-        $data = $request->validated();
-
         try {
+            $data = $request->validated();
+
             $kategoriProfesi->update($data);
     
             return redirect()->route('kategori_profesi.show')->with('success', 'Kategori Profesi successfully updated.');

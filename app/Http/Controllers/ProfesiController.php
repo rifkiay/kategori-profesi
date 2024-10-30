@@ -20,10 +20,6 @@ class ProfesiController extends Controller
         try {
             $profesi = Profesi::where('id_kategori_profesi', $id_kategori)->get();
 
-            if ($profesi->isEmpty()) {
-                return redirect()->back()->with('error', 'No professions found for this category.');
-            }
-
             return view('profesi.index', compact('profesi'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
@@ -35,10 +31,6 @@ class ProfesiController extends Controller
     {
         try {
             $profesi = Profesi::where('id', $id_profesi)->get();
-
-            if ($profesi->isEmpty()) {
-                return redirect()->back()->with('error', 'No professions found for this category.');
-            }
 
             return view('profesi.index', compact('profesi'));
         } catch (\Exception $e) {
@@ -52,10 +44,6 @@ class ProfesiController extends Controller
         try {
             $profesi = Profesi::all();
 
-            if ($profesi->isEmpty()) {
-                return redirect()->back()->with('error', 'No professions found for this category.');
-            }
-
             return view('profesi.show', compact('profesi'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
@@ -67,15 +55,13 @@ class ProfesiController extends Controller
         try {
             $data = $request->validated();
     
-            // Upload gambar jika ada
             if ($request->hasFile('gambar_profesi')) {
-                // Ambil nama profesi dan buat nama file
                 $profesiName =  Str::slug($data['nama_profesi']); // Ambil nama profesi
                 $timestamp = time(); // Ambil timestamp saat ini
                 $extension = $request->file('gambar_profesi')->getClientOriginalExtension();
                 $fileName = "{$profesiName}_{$timestamp}.{$extension}";
 
-                $data['gambar_profesi'] = $request->file('gambar_profesi')->storeAs('gambar/profesi', $fileName, 'public');
+                $data['gambar_profesi'] = $request->file('gambar_profesi')->storeAs("gambar/profesi/{$data['nama_profesi']}", $fileName, 'public');
             }
     
             Profesi::create($data);
@@ -99,7 +85,7 @@ class ProfesiController extends Controller
             // Jika ada gambar baru, hapus yang lama dan upload baru
             if ($request->hasFile('gambar_profesi')) {
                 if ($profesi->gambar_profesi) {
-                    Storage::delete($profesi->gambar_profesi);
+                    Storage::disk('public')->delete($profesi->gambar_profesi);
                 }
 
                 $profesiName =  Str::slug($data['nama_profesi']); 
@@ -107,7 +93,7 @@ class ProfesiController extends Controller
                 $extension = $request->file('gambar_profesi')->getClientOriginalExtension();
                 $fileName = "{$profesiName}_{$timestamp}.{$extension}";
 
-                $data['gambar_profesi'] = $request->file('gambar_profesi')->storeAs('gambar/profesi', $fileName, 'public');
+                $data['gambar_profesi'] = $request->file('gambar_profesi')->storeAs("gambar/profesi/{$data['nama_profesi']}", $fileName, 'public');
             }
     
             $profesi->update($data);
@@ -122,7 +108,7 @@ class ProfesiController extends Controller
     {
         try {
             if ($profesi->gambar_profesi) {
-                Storage::delete($profesi->gambar_profesi);
+                Storage::disk('public')->delete($profesi->gambar_profesi);
             }
     
             $profesi->delete();

@@ -54,6 +54,24 @@ Route::prefix('admin/profesi')->group(function () {
     Route::delete('/{profesi}', [ProfesiController::class, 'destroy'])->name('profesi.destroy');
 });
 
+// Route CRUD Profesi
+Route::prefix('admin/profesi')->group(function () {
+    Route::get('/', [ProfesiController::class, 'view'])->name('profesi.view');
+    Route::post('/', [ProfesiController::class, 'store'])->name('profesi.store');
+    Route::get('/{profesi}', [ProfesiController::class, 'show'])->name('profesi.show');
+    Route::put('/{profesi}', [ProfesiController::class, 'update'])->name('profesi.update');
+    Route::delete('/{profesi}', [ProfesiController::class, 'destroy'])->name('profesi.destroy');
+});
+
+// Route CRUD User (uji coba dulu)
+Route::prefix('admin/user')->group(function () {
+    Route::get('/', [UserController::class, 'view'])->name('user.view');
+    Route::post('/', [UserController::class, 'store'])->name('user.store');
+    Route::get('/{user}', [UserController::class, 'show'])->name('user.show');
+    Route::put('/{user}', [UserController::class, 'update'])->name('user.update');
+    Route::delete('/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+});
+
 // ===============================================================Route User=====================================================================
 // Route::get('/', function () {
 //     return view('welcome');
