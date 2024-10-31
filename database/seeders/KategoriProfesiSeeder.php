@@ -14,20 +14,20 @@ class KategoriProfesiSeeder extends Seeder
     public function run(): void
     {
         $kategoriProfesi = [
-            ['kategori_profesi' => 'Teknologi Informasi'],
-            ['kategori_profesi' => 'Kesehatan'],
-            ['kategori_profesi' => 'Pendidikan'],
-            ['kategori_profesi' => 'Keuangan'],
-            ['kategori_profesi' => 'Hukum'],
-            ['kategori_profesi' => 'Konstruksi'],
-            ['kategori_profesi' => 'Seni dan Desain'],
-            ['kategori_profesi' => 'Pemasaran'],
-            ['kategori_profesi' => 'Influencer'],
-            ['kategori_profesi' => 'Olahraga'],
+            ['kategori_profesi' => 'Teknologi Informasi', 'icon' => 'it_icon.png'],
+            ['kategori_profesi' => 'Kesehatan', 'icon' => 'health_icon.png'],
+            ['kategori_profesi' => 'Pendidikan', 'icon' => 'education_icon.png'],
+            ['kategori_profesi' => 'Keuangan', 'icon' => 'finance_icon.png'],
+            ['kategori_profesi' => 'Hukum', 'icon' => 'law_icon.png'],
+            ['kategori_profesi' => 'Konstruksi', 'icon' => 'construction_icon.png'],
+            ['kategori_profesi' => 'Seni dan Desain', 'icon' => 'art_design_icon.png'],
+            ['kategori_profesi' => 'Pemasaran', 'icon' => 'marketing_icon.png'],
+            ['kategori_profesi' => 'Influencer', 'icon' => 'influencer_icon.png'],
+            ['kategori_profesi' => 'Olahraga', 'icon' => 'sports_icon.png'],
         ];
-
+        
         foreach ($kategoriProfesi as $kategori) {
             KategoriProfesi::create($kategori);
-        }
+        }        
     }
 }

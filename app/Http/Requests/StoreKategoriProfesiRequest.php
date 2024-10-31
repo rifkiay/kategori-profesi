@@ -23,6 +23,7 @@ class StoreKategoriProfesiRequest extends FormRequest
     {
         return [
             'kategori_profesi' => 'required|string|max:255',
+            'icon' => 'required|string|max:255',
         ];
     }
 }

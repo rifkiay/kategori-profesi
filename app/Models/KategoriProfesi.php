@@ -12,6 +12,7 @@ class KategoriProfesi extends Model
     protected $table = 'kategori_profesi';
 
     protected $fillable = [
-        'kategori_profesi'
+        'kategori_profesi',
+        'icon'
     ];
 }

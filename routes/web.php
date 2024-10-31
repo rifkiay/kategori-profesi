@@ -99,10 +99,10 @@ Route::prefix('admin/user')->group(function () {
 //     Route::delete('/{user}', [UserController::class, 'destroy'])->name('user.destroy');
 // });
 
-// // Route Home
-// Route::prefix('')->group(function () {
-//     Route::get('/', [HomeController::class, 'index'])->name('home.index');
-// });
+// Route Home
+Route::prefix('')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home.index');
+});
 
 // Route Detail Profesi
 // // Route Detail Profesi
@@ -167,9 +167,9 @@ Route::prefix('loker')->group(function () {
 
 // ===============================================================Route User Dari Frontend=====================================================================
 
-Route::get('/', function () {
-    return view('Pages.home');
-})->name('home');
+// Route::get('/', function () {
+//     return view('Pages.home');
+// })->name('home');
 
 Route::get('/kategori/{namaKategori}', function ($namaKategori) {
     return view('pages.detail-profesi', ['kategori' => $namaKategori]);

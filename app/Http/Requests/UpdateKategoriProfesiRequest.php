@@ -23,6 +23,7 @@ class UpdateKategoriProfesiRequest extends FormRequest
     {
         return [
             'kategori_profesi' => 'sometimes|string|max:255',
+            'icon' => 'sometimes|string|max:255',
         ];
     }
 }
