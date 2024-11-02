@@ -30,7 +30,7 @@ class ProfesiController extends Controller
     public function detail($id_profesi)
     {
         try {
-            $profesi = Profesi::where('id', $id_profesi)->get();
+            $profesi = Profesi::find($id_profesi);
 
             return view('profesi.index', compact('profesi'));
         } catch (\Exception $e) {

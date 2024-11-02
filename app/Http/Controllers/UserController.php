@@ -16,11 +16,51 @@ class UserController extends Controller
     public function index($id)
     {
         try {
-            $user = User::where('id', $id)->get();
+            \Log::info("Mengambil data user dengan ID: $id");
+            $user = User::find($id);
 
-            return view('user.index', compact('user'));
+            return view('user.detail', compact('user'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
+        }
+    }
+
+    public function detail(User $user)
+    {
+        \Log::info("Mengambil data user dengan ID: $user");
+        return view('users.edit', compact('user'));
+    }
+
+    public function edit(UpdateUserRequest $request, User $user)
+    {
+        try {
+            $data = $request->validated();
+    
+            // Update password if provided
+            if ($request->filled('password')) {
+                $data['password'] = bcrypt($request->password);
+            } else {
+                unset($data['password']);
+            }
+
+    
+            if ($request->hasFile('foto_profile')) {
+                if ($user->foto_profile) {
+                    Storage::disk('public')->delete($user->foto_profile);
+                }
+                $userName = Str::slug($data['username']);
+                $timestamp = time(); 
+                $extension = $request->file('foto_profile')->getClientOriginalExtension();
+                $fileName = "{$userName}_{$timestamp}.{$extension}";
+    
+                $data['foto_profile'] = $request->file('foto_profile')->storeAs("gambar/user/{$data['username']}", $fileName, 'public');
+            }
+
+            $user->update($data);
+    
+            return redirect()->route('users.edit')->with('success', 'User berhasil diperbarui!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Gagal memperbarui user: ' . $e->getMessage());
         }
     }
 
