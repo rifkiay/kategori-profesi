@@ -1,4 +1,4 @@
-@section('title', 'Perusahaan | Data Pengguna')
+@section('title', 'Jobnesia | Data Pengguna')
 @include('Layouts.header')
 <!-- Begin page -->
 <div class="wrapper">
@@ -29,26 +29,31 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align: center;">ID Pengguna</th>
+                                            <th style="text-align: center;">ID Kategori Profesi</th>
                                             <th style="text-align: center;">Nama Pengguna</th>
                                             <th style="text-align: center;">Username</th>
                                             <th style="text-align: center;">Email</th>
+                                            <th style="text-align: center;">Verifikasi Email</th>
                                             <th style="text-align: center;">Kata Sandi</th>
                                             <th style="text-align: center;">Minat Pekerjaan</th>
-                                            <th style="text-align: center;">Foto Profile</th>
                                             <th style="text-align: center;">Bio</th>
+                                            <th style="text-align: center;">Foto Profile</th>
                                             <th style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($users as $item)
                                         <tr>
                                             <td style="text-align: center;">1</td>
-                                            <td style="text-align: center;">Admin</td>
-                                            <td style="text-align: center;">adminku</td>
-                                            <td style="text-align: center;">admin@gmail.com</td>
-                                            <td style="text-align: center;">admin123</td>
-                                            <td style="text-align: center;">Web Developer</td>
-                                            <td style="text-align: center;">admin.png</td>
-                                            <td style="text-align: center;">looking jobs in your city</td>
+                                            <td style="text-align: center;">{{$item->id_kategori_profesi}}</td>
+                                            <td style="text-align: center;">{{$item->nama}}</td>
+                                            <td style="text-align: center;">{{$item->username}}</td>
+                                            <td style="text-align: center;">{{$item->email}}</td>
+                                            <td style="text-align: center;">{{$item->email_verified_at}}</td>
+                                            <td style="text-align: center;">{{$item->password}}</td>
+                                            <td style="text-align: center;">{{$item->minat}}</td>
+                                            <td style="text-align: center;">{{$item->bio}}</td>
+                                            <td style="text-align: center;">{{$item->foto_profile}}</td>
                                             <td style="text-align: center;">
                                                 <a href="#" class="btn btn-primary"><i class="ri-eye-fill"></i></a>
                                                 <a href="#" class="btn btn-danger">Delete</a>
@@ -56,7 +61,7 @@
                                             </td>
                                         </tr>
 
-
+                                        @endforeach
                                     </tbody>
                                 </table>
 
