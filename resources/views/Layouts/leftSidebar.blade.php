@@ -68,13 +68,36 @@
                     <div class="collapse" id="sidebarPagesAuth">
                         <ul class="side-nav-second-level">
                             <li>
-                                <a href="{{ url('/profesi/show') }}">Data Profesi</a>
+                                <a href="{{ route('profesi.view') }}">Data Profesi</a>
                             </li>
                             <li>
                                 <a href="{{ url('/profesi/create') }}">Tambah Profesi</a>
                             </li>
                             <li>
                                 <a href="{{ url('/profesi/update') }}">Update Profesi</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Kategori Profesi -->
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false" aria-controls="sidebarPagesAuth" class="side-nav-link">
+                        <i class="ri-book-read-fill"></i>
+                        <span> Kategori Profesi </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarPagesAuth">
+                        <ul class="side-nav-second-level">
+                            <li>
+                                <a href="{{ route('kategori_profesi.view') }}">Data Kategori Profesi</a>
+                            </li>
+                            <li>
+                                <a href="">Tambah Kategori Profesi</a>
+                            </li>
+                            <li>
+                                <a href="">Update Kategori Profesi</a>
                             </li>
 
                         </ul>
@@ -91,7 +114,7 @@
                     <div class="collapse" id="sidebarPagesAuth">
                         <ul class="side-nav-second-level">
                             <li>
-                                <a href="{{ url('/loker/show') }}">Data Loker</a>
+                                <a href="{{ route('loker.index') }}">Data Loker</a>
                             </li>
                             <li>
                                 <a href="{{ url('/loker/create') }}">Tambah Loker</a>
@@ -114,7 +137,7 @@
                     <div class="collapse" id="sidebarPagesAuth">
                         <ul class="side-nav-second-level">
                             <li>
-                                <a href="{{ url('/user') }}">Data Pengguna</a>
+                                <a href="{{ route('user.view') }}">Data Pengguna</a>
                             </li>
 
                         </ul>
