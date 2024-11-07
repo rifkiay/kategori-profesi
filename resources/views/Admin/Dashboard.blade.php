@@ -72,6 +72,21 @@
                     </div>
 
                     <div class="col-xxl-3 col-sm-6">
+                        <div class="card widget-flat text-bg-success">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="ri-book-read-fill widget-icon"></i>
+                                </div>
+                                <h6 class="text-uppercase mt-0" title="Customers">Total Kategori Profesi</h6>
+                                <h2 class="my-2">0</h2>
+                                <p class="mb-0">
+                                    <span class="badge bg-white bg-opacity-25 me-1">Terdaftar</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xxl-3 col-sm-6">
                         <div class="card widget-flat text-bg-primary">
                             <div class="card-body">
                                 <div class="float-end">
