@@ -70,7 +70,7 @@ class UserController extends Controller
         try {
             $users = User::all();
 
-            return view('admin.users', compact('users')); 
+            return view('User.users', compact('users')); 
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to load data: ' . $e->getMessage());
         }
