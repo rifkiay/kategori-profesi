@@ -37,7 +37,7 @@ class KategoriProfesiController extends Controller
     // View create
     public function create()
     {
-        return view('kategori_profesi.create');
+        return view('kategori_profesi.createKategoriPerusahaan');
     }
 
     public function store(StoreKategoriProfesiRequest $request)
