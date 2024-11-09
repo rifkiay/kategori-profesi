@@ -47,7 +47,7 @@ class KategoriProfesiController extends Controller
 
             KategoriProfesi::create($data);
     
-            return redirect()->route('kategori_profesi.show')->with('success', 'Kategori Profesi successfully created.');
+            return view('kategori_profesi.show')->with('success', 'Kategori Profesi successfully created.');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to create Kategori Profesi: ' . $e->getMessage());
         }
@@ -65,7 +65,7 @@ class KategoriProfesiController extends Controller
 
             $kategoriProfesi->update($data);
     
-            return redirect()->route('kategori_profesi.show')->with('success', 'Kategori Profesi successfully updated.');
+            return view('kategori_profesi.show')->with('success', 'Kategori Profesi successfully updated.');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to update Kategori Profesi: ' . $e->getMessage());
         }
@@ -76,7 +76,7 @@ class KategoriProfesiController extends Controller
         try {
             $kategoriProfesi->delete();
     
-            return redirect()->route('kategori_profesi.show')->with('success', 'Kategori Profesi successfully deleted.');
+            return view('kategori_profesi.show')->with('success', 'Kategori Profesi successfully deleted.');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to delete Kategori Profesi: ' . $e->getMessage());
         }
