@@ -24,7 +24,8 @@ Route::prefix('admin/kategori_profesi')->group(function () {
     Route::get('/create', [KategoriProfesiController::class, 'create'])->name('kategori_profesi.create');
     Route::post('/create', [KategoriProfesiController::class, 'store'])->name('kategori_profesi.store');
     Route::get('/{kategori_profesi}', [KategoriProfesiController::class, 'show'])->name('kategori_profesi.show');
-    Route::put('/{kategori_profesi}', [KategoriProfesiController::class, 'update'])->name('kategori_profesi.update');
+    Route::put('/edit/{kategori_profesi}', [KategoriProfesiController::class, 'edit'])->name('kategori_profesi.edit');
+    Route::put('/edit/{kategori_profesi}', [KategoriProfesiController::class, 'update'])->name('kategori_profesi.update');
     Route::delete('/{kategori_profesi}', [KategoriProfesiController::class, 'destroy'])->name('kategori_profesi.destroy');
 });
 

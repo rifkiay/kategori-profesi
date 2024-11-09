@@ -58,6 +58,12 @@ class KategoriProfesiController extends Controller
         return view('kategori_profesi.show', compact('profesi'));
     }
 
+    // View edit
+    public function edit(KategoriProfesi $kategoriProfesi)
+    {
+        return view('kategori_profesi.update', compact('profesi'));
+    }
+
     public function update(StoreKategoriProfesiRequest $request, KategoriProfesi $kategoriProfesi)
     {
         try {
