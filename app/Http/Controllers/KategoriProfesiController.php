@@ -22,6 +22,7 @@ class KategoriProfesiController extends Controller
 
 
     // =============================================================CRUD Admin=================================================================
+    // All Data
     public function view()
     {
         try {
@@ -31,6 +32,12 @@ class KategoriProfesiController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
         }
+    }
+
+    // View create
+    public function create()
+    {
+        return view('kategori_profesi.create');
     }
 
     public function store(StoreKategoriProfesiRequest $request)
