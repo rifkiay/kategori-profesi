@@ -28,7 +28,7 @@
         <a href="{{ url('/') }}" class="text-white rounded d-inline-block text-center"><i class="mdi mdi-home"></i></a>
     </div>
     <!-- Hero Start -->
-    <section class="vh-100" style="background: url('{{ asset('Assets/images/user.jpg') }}') center center;">
+    <section class="vh-100" style="background-image: url('{{ asset('Assets/images/user.jpg') }}');">
         <div class="home-center">
             <div class="home-desc-center">
                 <div class="container">
@@ -90,7 +90,7 @@
                 alert('Login berhasil!');
                 // Simpan status login di sesi lokal
                 localStorage.setItem('user_logged_in', true);
-                window.location.href = '/dashboard'; // Redirect ke halaman Dashboard
+                window.location.href = '/'; // Redirect ke halaman home
             } else {
                 alert('Email atau password salah!');
             }
