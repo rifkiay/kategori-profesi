@@ -27,3 +27,14 @@
         }
     });
 })(jQuery);
+
+// Script untuk mengubah warna navbar saat di-scroll
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("topnav").classList.add("navbar-scrolled");
+    } else {
+        document.getElementById("topnav").classList.remove("navbar-scrolled");
+    }
+}
