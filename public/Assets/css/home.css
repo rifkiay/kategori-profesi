@@ -1,0 +1,23 @@
+/* Menghapus background dan outline dari item dropdown saat fokus atau klik */
+.dropdown-item:focus,
+.dropdown-item:active {
+    background-color: transparent !important;  /* Tidak ada warna latar belakang */
+    border: none !important;                   /* Menghapus border jika ada */
+    outline: none !important;                  /* Menghapus outline yang biasanya terlihat sebagai garis hitam */
+}
+
+/* Menghapus latar belakang saat item dihover */
+.dropdown-item:hover {
+    background-color: transparent !important;  /* Tidak ada latar belakang saat dihover */
+    color: #333 !important;                    /* Tetap dengan warna teks yang konsisten */
+}
+
+/* Menghilangkan border atau bayangan pada menu dropdown yang sedang aktif */
+.dropdown-menu.show {
+    box-shadow: none !important; /* Menghapus bayangan pada dropdown saat tampil */
+}
+
+/* Pastikan warna teks tetap konsisten pada item */
+.dropdown-item {
+    color: #333 !important;  /* Warna teks default */
+}
