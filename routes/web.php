@@ -48,9 +48,11 @@ Route::prefix('admin/perusahaan')->group(function () {
 // Route CRUD Profesi
 Route::prefix('admin/profesi')->group(function () {
     Route::get('/', [ProfesiController::class, 'view'])->name('profesi.view');
+    Route::get('/create', [ProfesiController::class, 'create'])->name('profesi.create');
     Route::post('/', [ProfesiController::class, 'store'])->name('profesi.store');
     Route::get('/{profesi}', [ProfesiController::class, 'show'])->name('profesi.show');
-    Route::put('/{profesi}', [ProfesiController::class, 'update'])->name('profesi.update');
+    Route::get('/edit/{profesi}', [ProfesiController::class, 'edit'])->name('profesi.edit');
+    Route::put('/edit/{profesi}', [ProfesiController::class, 'update'])->name('profesi.update');
     Route::delete('/{profesi}', [ProfesiController::class, 'destroy'])->name('profesi.destroy');
 });
 
@@ -97,6 +99,12 @@ Route::prefix('')->group(function () {
 
 Route::get('/dashboard', function () {
     return view('Admin.Dashboard');
+});
+Route::get('/admin/kategori-profesi/create', function () {
+    return view('kategori_profesi.create');
+});
+Route::get('/admin/kategori-profesi/update', function () {
+    return view('kategori_profesi.update');
 });
 Route::get('/profile', function () {
     return view('Admin.profile');

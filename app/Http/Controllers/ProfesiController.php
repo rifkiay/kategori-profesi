@@ -50,11 +50,16 @@ class ProfesiController extends Controller
         }
     }
 
+    public function create()
+    {
+        return view('Profesi.createProfesi');
+    }
+
     public function store(StoreProfesiRequest $request)
     {
         try {
             $data = $request->validated();
-    
+
             if ($request->hasFile('gambar_profesi')) {
                 $profesiName =  Str::slug($data['nama_profesi']); // Ambil nama profesi
                 $timestamp = time(); // Ambil timestamp saat ini
@@ -63,13 +68,13 @@ class ProfesiController extends Controller
 
                 $data['gambar_profesi'] = $request->file('gambar_profesi')->storeAs("gambar/profesi/{$data['nama_profesi']}", $fileName, 'public');
             }
-    
+
             Profesi::create($data);
-    
-            return redirect()->route('profesi.show')->with('success', 'Profesi berhasil ditambahkan!');
+
+            return redirect()->route('profesi.view')->with('success', 'Profesi berhasil ditambahkan!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menambahkan Profesi. Silakan coba lagi.');
-        }        
+        }
     }
 
     public function show(Profesi $profesi)
@@ -77,28 +82,32 @@ class ProfesiController extends Controller
         return view('profesi.update', compact('profesi'));
     }
 
+    public function edit(Profesi $profesi)
+    {
+        return view('Profesi.updateProfesi', compact('profesi'));
+    }
+
     public function update(UpdateProfesiRequest $request, Profesi $profesi)
     {
         try {
             $data = $request->validated();
-    
             // Jika ada gambar baru, hapus yang lama dan upload baru
             if ($request->hasFile('gambar_profesi')) {
                 if ($profesi->gambar_profesi) {
                     Storage::disk('public')->delete($profesi->gambar_profesi);
                 }
 
-                $profesiName =  Str::slug($data['nama_profesi']); 
+                $profesiName =  Str::slug($data['nama_profesi']);
                 $timestamp = time(); // Ambil timestamp saat ini
                 $extension = $request->file('gambar_profesi')->getClientOriginalExtension();
                 $fileName = "{$profesiName}_{$timestamp}.{$extension}";
 
                 $data['gambar_profesi'] = $request->file('gambar_profesi')->storeAs("gambar/profesi/{$data['nama_profesi']}", $fileName, 'public');
             }
-    
+
             $profesi->update($data);
-    
-            return redirect()->route('profesi.show')->with('success', 'Profesi berhasil diperbarui!');
+
+            return redirect()->route('profesi.view')->with('success', 'Profesi berhasil diperbarui!');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan saat memperbarui Profesi. Silakan coba lagi.');
         }
@@ -110,12 +119,12 @@ class ProfesiController extends Controller
             if ($profesi->gambar_profesi) {
                 Storage::disk('public')->delete($profesi->gambar_profesi);
             }
-    
+
             $profesi->delete();
-    
-            return redirect()->route('profesi.show')->with('success', 'Profesi berhasil dihapus!');
+
+            return redirect()->route('profesi.view')->with('success', 'Profesi berhasil dihapus!');
         } catch (\Exception $e) {
-            return redirect()->route('profesi.show')->with('error', 'Terjadi kesalahan saat menghapus profesi.');
+            return redirect()->route('profesi.view')->with('error', 'Terjadi kesalahan saat menghapus profesi.');
         }
     }
 }
