@@ -707,10 +707,12 @@ p {
 .section-title {
   position: relative;
 }
+
 .section-title .title {
-  letter-spacing: 0.5==px;
+  letter-spacing: 0.5px;
   font-size: 30px;
 }
+
 .section-title .title.title-line:before {
   content: "";
   position: absolute;
@@ -851,6 +853,12 @@ p {
   height: 40px;
   line-height: 40px;
   background: #2f55d4;
+}
+
+.vh-100 {
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
 }
 
 .login-page {
@@ -1482,7 +1490,60 @@ p {
   }
 }
 
+.container h3 {
+  margin-top: 15px; /* Margin atas judul */
+  margin-bottom: 10px; /* Margin bawah judul */
+}
 
+.container p, .container ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.navigation-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px; /* Jarak antar menu */
+}
+
+.navigation-menu li {
+  margin: 0;
+}
+
+.navigation-menu a {
+  color: #007bff; /* Warna biru saat tidak scroll */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navigation-menu a:hover {
+  color: #0056b3; /* Warna saat hover */
+}
+
+/* Profil di kanan */
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Warna nama profil putih saat di atas halaman */
+.profile-container span {
+  font-weight: 500;
+  color: white; /* Nama profil berwarna putih saat tidak di scroll */
+}
+
+/* Navbar Background saat scroll */
+.navbar-scrolled .profile-container span {
+  color: black; /* Nama profil berubah menjadi hitam saat di scroll */
+}
+
+/* Logo */
+.logo img {
+  height: 30px; /* Sesuaikan ukuran logo */
+  margin-right: 8px;
+}
 
 .selectize-control.single .selectize-input, .selectize-control.single .selectize-input input {
   border-radius: 10px;
@@ -2206,6 +2267,4 @@ body {
 
 .container.daftar-pekerjaan {
   margin-bottom: 80px;
-}
-
-
+}}
