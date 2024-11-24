@@ -2,12 +2,15 @@
 
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\CheckIfAuthenticated;
 use App\Http\Controllers\KategoriProfesiController;
 use App\Http\Controllers\LokerController;
 use App\Http\Controllers\PerusahaanController;
 use App\Http\Controllers\ProfesiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AuthController;
 
 // ===============================================================Route Admin=====================================================================
 Route::prefix('admin')->group(function () {
@@ -68,13 +71,16 @@ Route::prefix('admin/user')->group(function () {
 });
 
 // ===============================================================Route User=====================================================================
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::prefix('login')->group(function () {
+    Route::get('/', [LoginController::class, 'index'])->name('login.index');
+    Route::post('/', [LoginController::class, 'authenticate'])->name('login.authenticate');
+});
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // // Route Profile User
-Route::prefix('profileuser')->group(function () {
-    Route::get('/{user}', [UserController::class, 'index'])->name('user.index');
+Route::prefix('profileuser')->middleware(CheckIfAuthenticated::class)->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('user.index');
     Route::get('/edit/{user}', [UserController::class, 'detail'])->name('user.detail');
     Route::put('/edit/{user}', [UserController::class, 'edit'])->name('user.edit');
 });
@@ -153,23 +159,23 @@ Route::prefix('loker')->group(function () {
 
 // ===============================================================Route User Dari Frontend=====================================================================
 
-Route::get('/login', function () {
-    return view('Auth.login');
-});
+// Route::get('/login', function () {
+//     return view('Auth.login');
+// });
 
 Route::get('/sign-up', function () {
     return view('Auth.sign-up');
 });
 
-    Route::post('/login-submit', function () {
-        session(['is_logged_in' => true]);
-        return redirect('/');
-    });
+    // Route::post('/login-submit', function () {
+    //     session(['is_logged_in' => true]);
+    //     return redirect('/');
+    // });
 
-    Route::get('/logout', function () {
-        session()->forget('is_logged_in');
-        return redirect('/');
-    });
+    // Route::get('/logout', function () {
+    //     session()->forget('is_logged_in');
+    //     return redirect('/');
+    // });
 
 Route::get('/about', function () {
     return view('Pages.about');
@@ -183,9 +189,9 @@ Route::get('/', function () {
     return view('Pages.home');
 })->name('home');
 
-Route::get('/profile-user', function () {
-    return view('Pages.profile-user'); 
-})->name('profile-user');
+// Route::get('/profile-user', function () {
+//     return view('Pages.profile-user'); 
+// })->name('profile-user');
 
 Route::get('/loker', function () {
     return view('Pages.loker');

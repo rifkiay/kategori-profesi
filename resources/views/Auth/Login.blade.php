@@ -38,7 +38,8 @@
                                 <div class="text-center">
                                     <h4 class="mb-4">Login</h4>  
                                 </div>
-                                <form class="login-form" id="loginForm">
+                                <form class="login-form" id="loginForm" method="POST" action="{{ route('login.authenticate') }}">
+                                    @csrf 
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group position-relative">
@@ -55,9 +56,9 @@
                                         <div class="col-lg-12 mb-0">
                                             <button type="submit" class="btn btn-primary w-100">Sign in</button>
                                         </div>
-                                        <div class="col-12 text-center mt-3">
+                                        {{-- <div class="col-12 text-center mt-3">
                                             <p id="error-message" class="text-danger" style="display: none;">Username atau password salah!</p>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </form>
                             </div>
@@ -77,7 +78,7 @@
     <script src="{{ asset('Assets/js/app.js') }}"></script>
     
     <!-- Script untuk validasi login -->
-    <script>
+    {{-- <script>
         document.querySelector('#loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             var emailInput = document.querySelector('#email').value;
@@ -95,6 +96,6 @@
                 alert('Email atau password salah!');
             }
         });
-    </script>
+    </script> --}}
 </body>
 </html>

@@ -67,22 +67,30 @@
                     </ul>
                 </div>
 
-                <!-- Profil di Ujung Kanan dengan Dropdown -->
-                <div class="dropdown ms-3">
-                    <button class="btn btn-link d-flex align-items-center profile-name" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ asset('Assets/images/profile.png') }}" alt="User Avatar" class="rounded-circle" width="32" height="32">
-                        <span class="ms-2 profile-text">Wilda Agustina</span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                        <li><a class="dropdown-item" href="{{ url('profile-user') }}">Profile</a></li>
-                        <li>
-                            <form action="{{ url('logout') }}" method="POST">
-                                @csrf
-                                <button type="submit" class="dropdown-item">Logout</button>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
+                @guest
+                    <div class="buy-button">
+                        <a href="{{ url('login') }}" class="btn btn-primary"><i class="mdi mdi-account"></i> Masuk</a>
+                    </div>
+                @endguest
+
+                @auth
+                    <!-- Profil di Ujung Kanan dengan Dropdown -->
+                    <div class="dropdown ms-3">
+                        <button class="btn btn-link d-flex align-items-center profile-name" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="{{ asset('Assets/images/profile.png') }}" alt="User Avatar" class="rounded-circle" width="32" height="32">
+                            <span class="ms-2 profile-text">{{ Auth::user()->nama }}</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="{{  route('user.index') }}">Profile</a></li>
+                            <li>
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                @endauth
             </div>
         </div>
     </header>

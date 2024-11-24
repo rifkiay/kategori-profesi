@@ -13,13 +13,10 @@ use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
     // =============================================================View User=================================================================
-    public function index($id)
+    public function index()
     {
         try {
-            \Log::info("Mengambil data user dengan ID: $id");
-            $user = User::find($id);
-
-            return view('user.detail', compact('user'));
+            return view('pages.profile-user');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
         }

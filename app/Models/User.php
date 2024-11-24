@@ -13,15 +13,19 @@ class User extends Authenticatable
 
     protected $table = 'users';
 
-     protected $fillable = [
-         'id_kategori_profesi',
-         'nama',
-         'username',
-         'email',
-         'email_verified_at',
-         'password',
-         'minat',
-         'bio',
-         'foto_profile',
-     ];
+    protected $fillable = [
+        'id_kategori_profesi',
+        'nama',
+        'username',
+        'email',
+        'email_verified_at',
+        'minat',
+        'bio',
+        'foto_profile',
+    ];
+
+    protected $hidden = [
+       'password',
+       'remember_token',
+   ];
 }

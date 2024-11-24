@@ -26,8 +26,8 @@
                 <div class="card shadow-lg p-4">
                     <div class="text-center">
                         <img src="{{ asset('Assets/images/profile.png') }}" alt="Avatar Pengguna" class="rounded-circle mb-2" style="width: 100px; height: 100px; border: 4px solid #ffffff;">
-                        <h3 class="font-weight-bold mb-1">Wilda Agustina</h3>
-                        <p class="text-muted mb-1">wildaagustina56@gmail.com</p>
+                        <h3 class="font-weight-bold mb-1">{{ Auth::user()->name }}</h3>
+                        <p class="text-muted mb-1">{{ Auth::user()->email }}</p>
                     </div>
 
                     <div class="px-3"> <!-- Memberi padding di kiri dan kanan -->
