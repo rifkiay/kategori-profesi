@@ -25,7 +25,7 @@
 
                 <!-- Start Cards -->
                 <div class="row">
-                    <div class="col-xxl-3 col-sm-6">
+                    <div class="col-xxl-3 col-sm-4">
                         <div class="card widget-flat text-bg-pink">
                             <div class="card-body">
                                 <div class="float-end">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xxl-3 col-sm-6">
+                    <div class="col-xxl-3 col-sm-4">
                         <div class="card widget-flat text-bg-purple">
                             <div class="card-body">
                                 <div class="float-end">
@@ -56,7 +56,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xxl-3 col-sm-6">
+                    <div class="col-xxl-3 col-sm-4">
                         <div class="card widget-flat text-bg-info">
                             <div class="card-body">
                                 <div class="float-end">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xxl-3 col-sm-6">
+                    <div class="col-xxl-3 col-sm-4">
                         <div class="card widget-flat text-bg-success">
                             <div class="card-body">
                                 <div class="float-end">
@@ -86,7 +86,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xxl-3 col-sm-6">
+                    <div class="col-xxl-3 col-sm-4">
                         <div class="card widget-flat text-bg-primary">
                             <div class="card-body">
                                 <div class="float-end">

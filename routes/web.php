@@ -50,9 +50,11 @@ Route::prefix('admin/perusahaan')->group(function () {
 // Route CRUD Profesi
 Route::prefix('admin/profesi')->group(function () {
     Route::get('/', [ProfesiController::class, 'view'])->name('profesi.view');
+    Route::get('/create', [ProfesiController::class, 'create'])->name('profesi.create');
     Route::post('/', [ProfesiController::class, 'store'])->name('profesi.store');
     Route::get('/{profesi}', [ProfesiController::class, 'show'])->name('profesi.show');
-    Route::put('/{profesi}', [ProfesiController::class, 'update'])->name('profesi.update');
+    Route::get('/edit/{profesi}', [ProfesiController::class, 'edit'])->name('profesi.edit');
+    Route::put('/edit/{profesi}', [ProfesiController::class, 'update'])->name('profesi.update');
     Route::delete('/{profesi}', [ProfesiController::class, 'destroy'])->name('profesi.destroy');
 });
 
@@ -100,6 +102,12 @@ Route::prefix('')->group(function () {
 Route::get('/dashboard', function () {
     return view('Admin.Dashboard');
 });
+Route::get('/admin/kategori-profesi/create', function () {
+    return view('kategori_profesi.create');
+});
+Route::get('/admin/kategori-profesi/update', function () {
+    return view('kategori_profesi.update');
+});
 Route::get('/profile', function () {
     return view('Admin.profile');
 });
@@ -145,22 +153,52 @@ Route::prefix('loker')->group(function () {
 
 // ===============================================================Route User Dari Frontend=====================================================================
 
-// Route::get('/', function () {
-//     return view('Pages.home');
-// })->name('home');
-
-Route::get('/kategori/{namaKategori}', function ($namaKategori) {
-    return view('pages.detail-profesi', ['kategori' => $namaKategori]);
+Route::get('/login', function () {
+    return view('Auth.login');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('Admin.Dashboard');
-// })->name('Dashboard');
+Route::get('/sign-up', function () {
+    return view('Auth.sign-up');
+});
 
-Route::get('/detail-profesi', function () {
-    return view('Pages.kategori-profesi');
+    Route::post('/login-submit', function () {
+        session(['is_logged_in' => true]);
+        return redirect('/');
+    });
+
+    Route::get('/logout', function () {
+        session()->forget('is_logged_in');
+        return redirect('/');
+    });
+
+Route::get('/about', function () {
+    return view('Pages.about');
+})->name('about');
+
+Route::get('/contact', function () {
+    return view('Pages.contact');
+})->name('contact');
+
+Route::get('/', function () {
+    return view('Pages.home');
+})->name('home');
+
+Route::get('/profile-user', function () {
+    return view('Pages.profile-user'); 
+})->name('profile-user');
+
+Route::get('/loker', function () {
+    return view('Pages.loker');
+})->name('loker');
+
+Route::get('/profesi', function () {
+    return view('Pages.profesi'); 
+})->name('profesi');
+
+Route::get('/profesi/kategori/{kategori}', function ($kategori) {
+    return view('Pages.kategori-profesi', ['kategori' => $kategori]);
 })->name('kategori-profesi');
 
-Route::get('/login', function () {
-    return view('Auth.Login');
-})->name('login');
+Route::get('/profesi/detail/{id}', function ($id) {
+    return view('Pages.detail-profesi', ['id' => $id]);
+})->name('profesi.detail');

@@ -1,0 +1,26 @@
+/* Profile Header */
+.profile-header {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px 0; /* Reduced padding */
+}
+
+.profile-details {
+    padding-top: 20px; /* Reduced padding */
+    padding-bottom: 30px;
+}
+
+/* Profile Avatar */
+.profile-avatar {
+    width: 130px;
+    height: 130px;
+    border: 5px solid #ffffff;
+    margin-top: -65px; /* Slightly raised position */
+}
+
+/* Reduced margin for spacing between sections */
+h5 {
+    font-weight: bold;
+    margin-top: 20px;
+}

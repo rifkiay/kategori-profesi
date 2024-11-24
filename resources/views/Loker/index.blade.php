@@ -13,48 +13,87 @@
                 @section('namaPage2', 'Data Lowongan Pekerjaan')
                 @include('Layouts.breadcrumb')
 
+                @include('Layouts.alert')
+
                 <!-- Start Table -->
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="header-title">Data Lowongan Pekerjaan</h4>
-                                <p class="text-muted mb-0">
-                                    Berikut adalah data seluruh lowongan pekerjaan yang telah terdaftar!
-                                </p>
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div>
+
+                                    <h4 class="header-title">Data Lowongan Pekerjaan</h4>
+                                    <p class="text-muted mb-0">
+                                        Berikut adalah data seluruh lowongan pekerjaan yang telah terdaftar!
+                                    </p>
+                                </div>
+                                <a href="{{ url('/loker/create') }}" class="btn btn-info">
+                                    <i class="ri-add-line"></i> Tambah Data Baru
+                                </a>
                             </div>
                             <div class="card-body">
 
-                                <table id="scroll-horizontal-datatable" class="table table-striped w-100 nowrap">
-                                    <thead>
+                                <table id="scroll-horizontal-datatable" class="table table-striped table-responsive">
+                                    <thead class="text-center text-nowrap">
                                         <tr>
-                                            <!-- <th style="text-align: center;">ID Pekerjaan</th> -->
-                                            <th style="text-align: center;">ID Kategori Profesi</th>
-                                            <th style="text-align: center;">ID Perusahaan</th>
-                                            <th style="text-align: center;">Nama Pekerjaan</th>
-                                            <th style="text-align: center;">Nama Perusahaan</th>
+                                            <th class="text-center align-middle">No</th>
+                                            <th class="text-center align-middle">ID Kategori Profesi</th>
+                                            <th class="text-center align-middle">ID Perusahaan</th>
+                                            <th class="text-center align-middle">Nama Pekerjaan</th>
+                                            <th class="text-center align-middle">Nama Perusahaan</th>
                                             <th style="text-align: center; width: 40%;">Deskripsi Pekerjaan</th>
-                                            <th style="text-align: center;">Gaji</th>
-                                            <th style="text-align: center;">Kualifikasi</th>
-                                            <th style="text-align: center;">Tanggal Posting</th>
-                                            <th style="text-align: center;">Akhir Pendaftaran</th>
-                                            <th style="text-align: center;">Status</th>
+                                            <th class="text-center align-middle">Gaji</th>
+                                            <th class="text-center align-middle">Kualifikasi</th>
+                                            <th class="text-center align-middle">Tanggal Posting</th>
+                                            <th class="text-center align-middle">Akhir Pendaftaran</th>
+                                            <th class="text-center align-middle">Status</th>
+                                            <th class="text-center align-middle">Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody style="font-size: 0.7rem;">
                                         @foreach ($loker as $item)
                                         <tr>
-                                            <!-- <td style="text-align: center;">{{ $item->id_loker }}</td> -->
-                                            <td style="text-align: center;">{{ $item->id_kategori_profesi }}</td>
-                                            <td style="text-align: center;">{{ $item->id_perusahaan }}</td>
-                                            <td style="text-align: center;"> {{ $item->judul }}</td>
-                                            <td style="text-align: center;">{{ $item->nama_perusahaan }}</td>
-                                            <td style="text-align: center;">{{ $item->deskripsi_loker}}</td>
-                                            <td style="text-align: center;">{{ $item->gaji }}</td>
-                                            <td style="text-align: center;">{{ $item->kualifikasi }}</td>
-                                            <td style="text-align: center;">{{ $item->tanggal_posting }}</td>
-                                            <td style="text-align: center;">{{ $item->akhir_pendaftaran }}</td>
-                                            <td style="text-align: center;">{{ $item->status }}</td>
+                                            <td class="text-center align-middle">{{ $loop->iteration }}</td>
+                                            <td class="text-center align-middle">{{ $item->id_kategori_profesi }}</td>
+                                            <td class="text-center align-middle">{{ $item->id_perusahaan }}</td>
+                                            <td class="text-center align-middle"> {{ $item->judul }}</td>
+                                            <td class="text-center align-middle">{{ $item->nama_perusahaan }}</td>
+                                            <td class="text-center align-middle">{{ $item->deskripsi_loker}}</td>
+                                            <td class="text-center text-nowrap align-middle">
+                                                <span class="badge bg-info bg-opacity-15 p-1">
+                                                    Rp {{ number_format((float) $item->gaji, 0, ',', '.') }}
+                                                </span>
+                                            </td>
+                                            <td class="text-center align-middle">{{ $item->kualifikasi }}</td>
+                                            <td class="text-center align-middle">{{ $item->tanggal_posting }}</td>
+                                            <td class="text-center align-middle">{{ $item->akhir_pendaftaran }}</td>
+                                            <td class="text-center align-middle">
+                                                @if($item->status == 'available')
+                                                <span class="badge bg-success bg-opacity-12 p-1">
+                                                    {{ $item->status }}
+                                                </span>
+                                                @elseif($item->status == 'closed')
+                                                <span class="badge bg-danger bg-opacity-12 p-1">
+                                                    {{ $item->status }}
+                                                </span>
+                                                @else
+                                                <span class="badge bg-secondary bg-opacity-12 p-1">
+                                                    {{ $item->status }}
+                                                </span>
+                                                @endif
+                                            </td>
+                                            <td class="text-center align-middle">
+                                                <div class="d-flex justify-content-center align-items-center gap-1" style="min-height: auto;">
+                                                    <a href="{{ url('/loker/update') }}" class="btn btn-info btn-sm">
+                                                        <i class="ri-pencil-fill"></i>
+                                                    </a>
+                                                    <form action="#" method="POST" style="display:inline;">
+                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                                            <i class="ri-delete-bin-fill"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </td>
                                         </tr>
 
                                         @endforeach

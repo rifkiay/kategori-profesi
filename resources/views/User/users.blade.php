@@ -27,37 +27,43 @@
 
                                 <table id="scroll-horizontal-datatable" class="table table-striped w-100 nowrap">
                                     <thead>
-                                        <tr>
-                                            <th style="text-align: center;">ID Pengguna</th>
-                                            <th style="text-align: center;">ID Kategori Profesi</th>
-                                            <th style="text-align: center;">Nama Pengguna</th>
-                                            <th style="text-align: center;">Username</th>
-                                            <th style="text-align: center;">Email</th>
-                                            <th style="text-align: center;">Verifikasi Email</th>
-                                            <th style="text-align: center;">Kata Sandi</th>
-                                            <th style="text-align: center;">Minat Pekerjaan</th>
-                                            <th style="text-align: center;">Bio</th>
-                                            <th style="text-align: center;">Foto Profile</th>
-                                            <th style="text-align: center;">Aksi</th>
+                                        <tr class="text-center text-nowrap">
+                                            <th class="text-center align-middle">No</th>
+                                            <th class="text-center align-middle">ID Kategori Profesi</th>
+                                            <th class="text-center align-middle">Nama Pengguna</th>
+                                            <th class="text-center align-middle">Username</th>
+                                            <th class="text-center align-middle">Email</th>
+                                            <th class="text-center align-middle">Verifikasi Email</th>
+                                            <th class="text-center align-middle">Kata Sandi</th>
+                                            <th class="text-center align-middle">Minat Pekerjaan</th>
+                                            <th class="text-center align-middle">Bio</th>
+                                            <th class="text-center align-middle">Foto Profile</th>
+                                            <th class="text-center align-middle">Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody style="font-size: 0.7rem;">
                                         @foreach ($users as $item)
                                         <tr>
-                                            <td style="text-align: center;">1</td>
-                                            <td style="text-align: center;">{{$item->id_kategori_profesi}}</td>
-                                            <td style="text-align: center;">{{$item->nama}}</td>
-                                            <td style="text-align: center;">{{$item->username}}</td>
-                                            <td style="text-align: center;">{{$item->email}}</td>
-                                            <td style="text-align: center;">{{$item->email_verified_at}}</td>
-                                            <td style="text-align: center;">{{$item->password}}</td>
-                                            <td style="text-align: center;">{{$item->minat}}</td>
-                                            <td style="text-align: center;">{{$item->bio}}</td>
-                                            <td style="text-align: center;">{{$item->foto_profile}}</td>
-                                            <td style="text-align: center;">
-                                                <a href="#" class="btn btn-primary"><i class="ri-eye-fill"></i></a>
-                                                <a href="#" class="btn btn-danger">Delete</a>
-                                                <a href="#" class="btn btn-warning">Banned</a>
+                                            <td class="text-center align-middle">{{$loop->iteration}}</td>
+                                            <td class="text-center align-middle">{{$item->id_kategori_profesi}}</td>
+                                            <td class="text-center align-middle">{{$item->nama}}</td>
+                                            <td class="text-center align-middle">{{$item->username}}</td>
+                                            <td class="text-center align-middle">{{$item->email}}</td>
+                                            <td class="text-center align-middle">{{$item->email_verified_at}}</td>
+                                            <td class="text-center align-middle">{{$item->password}}</td>
+                                            <td class="text-center align-middle">{{$item->minat}}</td>
+                                            <td class="text-center align-middle">{{$item->bio}}</td>
+                                            <td class="text-center align-middle">{{$item->foto_profile}}</td>
+                                            <td class="text-center align-middle">
+                                                <div class="d-flex justify-content-center align-items-center gap-1" style="min-height: auto;">
+                                                <a href="#" class="btn btn-primary btn-sm"><i class="ri-eye-fill"></i></a>
+                                                <a href="#" class="btn btn-warning btn-sm"><i class="ri-spam-3-fill"></i></a>
+                                                    <form action="#" method="POST" style="display:inline;">
+                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                                            <i class="ri-delete-bin-fill"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
                                             </td>
                                         </tr>
 

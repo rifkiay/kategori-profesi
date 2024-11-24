@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +7,9 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('Assets/images/favicon.ico') }}">
+
+    <!-- Link to Google Fonts (Nunito) -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="{{ asset('Assets/css/bootstrap.min.css') }}" type="text/css">
@@ -17,6 +19,20 @@
     <link rel="stylesheet" href="{{ asset('Assets/css/owl.carousel.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('Assets/css/style.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('Assets/css/style.css') }}" type="text/css">
+
+    <!-- Custom CSS for Scroll Color Change -->
+    <style>
+        /* Default profile text color (white) */
+        .profile-text {
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        /* Profile text color after scroll (black) */
+        .scrolled .profile-text {
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,28 +49,40 @@
     <!-- Navbar -->
     <header id="topnav" class="defaultscroll scroll-active">
         <div class="container">
-            <!-- Logo container-->
-            <div>
+            <!-- Navbar Flexbox -->
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <!-- Logo -->
                 <a href="{{ url('/') }}" class="logo">
                     <img src="{{ asset('Assets/images/logo-light.png') }}" alt="Logo" class="logo-light" height="18" />
                     <img src="{{ asset('Assets/images/logo-dark-utama.png') }}" alt="Logo" class="logo-dark" height="18" />
                 </a>
-            </div>                 
 
-            <!-- Tombol Masuk -->
-            <div class="buy-button">
-                <a href="{{ url('login') }}" class="btn btn-primary"><i class="mdi mdi-account"></i> Masuk</a>
-            </div>
+                <!-- Menu Navigasi di Tengah -->
+                <div id="navigation" class="mx-auto">
+                    <ul class="navigation-menu d-flex align-items-center">
+                        <li><a href="{{ url('/') }}">Beranda</a></li>
+                        <li><a href="{{ url('about') }}">Tentang Kami</a></li>
+                        <li><a href="{{ url('profesi') }}">Profesi</a></li>
+                        <li><a href="{{ url('contact') }}">Kontak</a></li>
+                    </ul>
+                </div>
 
-            <!-- Navigation Menu -->
-            <div id="navigation">
-            <ul class="navigation-menu">
-                <li><a href="{{ url('/') }}">Beranda</a></li>
-                <li><a href="{{ url('about') }}">Tentang Kami</a></li>
-                <li><a href="#kategori-profesi">Profesi</a></li>
-                <li><a href="{{ url('dashboard') }}" id="dashboard-link">Dashboard</a></li>
-                <li><a href="{{ url('contact') }}">Kontak</a></li>
-            </ul>
+                <!-- Profil di Ujung Kanan dengan Dropdown -->
+                <div class="dropdown ms-3">
+                    <button class="btn btn-link d-flex align-items-center profile-name" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{ asset('Assets/images/profile.png') }}" alt="User Avatar" class="rounded-circle" width="32" height="32">
+                        <span class="ms-2 profile-text">Wilda Agustina</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="{{ url('profile-user') }}">Profile</a></li>
+                        <li>
+                            <form action="{{ url('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="dropdown-item">Logout</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
@@ -63,7 +91,19 @@
     @yield('content')
 
     <script>
-         var loginUrl = "{{ url('login') }}";
+        var loginUrl = "{{ url('login') }}";
+    </script>
+
+    <!-- Scroll Detection Script -->
+    <script>
+        window.addEventListener("scroll", function() {
+            var header = document.getElementById("topnav");
+            if (window.scrollY > 50) { // Adjust scroll distance as needed
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
     </script>
 
     <!-- Scripts -->

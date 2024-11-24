@@ -13,6 +13,8 @@
                 @section('namaPage2', 'Tambah Perusahaan')
                 @include('Layouts.breadcrumb')
 
+                @include('Layouts.alert')
+
                 <!-- Start Form -->
                 <div class="col-lg-12">
                     <div class="card">
@@ -22,71 +24,23 @@
                             </p>
                         </div>
                         <div class="card-body">
-                            <form class="form-horizontal">
+                            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 <div class="row mb-3">
-                                    <label for="inputEmail3" class="col-3 col-form-label">ID Perusahaan</label>
+                                    <label for="nama_perusahaan" class="col-3 col-form-label">Nama Perusahaan</label>
                                     <div class="col-9">
-                                        <input type="number" class="form-control" id="id"
-                                            placeholder="1">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-3 col-form-label">Nama Perusahaan</label>
-                                    <div class="col-9">
-                                        <input type="text" class="form-control" id="nama-perusahaan"
+                                        <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan"
                                             placeholder="Ajinomoto">
                                     </div>
                                 </div>
-                                <!-- <div class="row mb-3">
-                                    <label for="inputPassword5" class="col-3 col-form-label">Kategori Perusahaan</label>
-                                    <div class="col-9">
-                                        <select class="form-control select2" data-toggle="select2">
-                                            <option>Pilih Kategori</option>
-                                            <option value="TI">Teknologi Informasi</option>
-                                            <option value="KS">Kesehatan</option>
-                                            <option value="PD">Pendidikan</option>
-                                            <option value="KU">Keuangan</option>
-                                            <option value="HK">Hukum</option>
-                                            <option value="KT">Konstruksi</option>
-                                            <option value="SD">Seni & Desain</option>
-                                            <option value="PM">Pemasaran</option>
-                                            <option value="IF">Influencer</option>
-                                            <option value="OR">Olahraga</option>
-                                        </select>
-                                    </div>
-                                </div> -->
                                 <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-3 col-form-label">Logo Perusahaan</label>
+                                    <label for="logo_perusahaan" class="col-3 col-form-label">Logo Perusahaan</label>
                                     <div class="col-9">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="card">
-
-                                                    <div class="card-body">
-                                                        <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
-                                                            data-upload-preview-template="#uploadPreviewTemplate">
-
-                                                            <div class="fallback">
-                                                                <input name="file" type="file" multiple />
-                                                            </div>
-
-                                                            <div class="dz-message needsclick">
-                                                                <i class="h1 text-muted ri-upload-cloud-2-line"></i>
-                                                                <h3>Drop files here or click to upload.</h3>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <!-- end card-body -->
-                                                </div>
-                                                <!-- end card-->
-                                            </div>
-                                            <!-- end col-->
-                                        </div>
+                                        <input type="file" class="form-control" name="logo_perusahaan" id="logo_perusahaan">
                                     </div>
                                 </div>
                         </div>
-                        <div class="justify-content-end row">
-                            <div class="col-1 mb-3">
+                        <div class="row justify-content-end">
+                            <div class="col-auto p-4 ">
                                 <button type="submit" class="btn btn-info">Simpan</button>
                             </div>
                         </div>

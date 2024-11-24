@@ -50,10 +50,6 @@
                             <li>
                                 <a href="{{ url('/Perusahaan/create') }}">Tambah Perusahaan</a>
                             </li>
-                            <li>
-                                <a href="{{ url('/Perusahaan/update') }}">Update Perusahaan</a>
-                            </li>
-
                         </ul>
                     </div>
                 </li>
@@ -73,10 +69,6 @@
                             <li>
                                 <a href="{{ url('/profesi/create') }}">Tambah Profesi</a>
                             </li>
-                            <li>
-                                <a href="{{ url('/profesi/update') }}">Update Profesi</a>
-                            </li>
-
                         </ul>
                     </div>
                 </li>
@@ -95,9 +87,6 @@
                             </li>
                             <li>
                                 <a href="">Tambah Kategori Profesi</a>
-                            </li>
-                            <li>
-                                <a href="">Update Kategori Profesi</a>
                             </li>
 
                         </ul>
@@ -118,9 +107,6 @@
                             </li>
                             <li>
                                 <a href="{{ url('/loker/create') }}">Tambah Loker</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('/loker/update') }}">Update Loker</a>
                             </li>
 
                         </ul>
