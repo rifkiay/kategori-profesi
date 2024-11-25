@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CheckIfAuthenticated;
+use App\Http\Middleware\CheckIfAuthenticatedAdmin;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategoriProfesiController;
 use App\Http\Controllers\LokerController;
 use App\Http\Controllers\PerusahaanController;
@@ -15,20 +16,20 @@ use App\Http\Controllers\AuthController;
 // ===============================================================Route Admin=====================================================================
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-    // Route::post('/', [KategoriProfesiController::class, 'store'])->name('admin.store'); 
-    // Route::get('/{admin}', [KategoriProfesiController::class, 'show'])->name('admin.show');
-    // Route::put('/{admin}', [KategoriProfesiController::class, 'update'])->name('admin.update'); 
-    // Route::delete('/{admin}', [KategoriProfesiController::class, 'destroy'])->name('admin.destroy'); 
+    Route::post('/', [AdminController::class, 'login'])->name('admin.login');
+    Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout');
+
+    Route::middleware(CheckIfAuthenticatedAdmin::class)->group(function () {
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    });
 });
 
 // Route CRUD Kategori Profesi
 Route::prefix('admin/kategori_profesi')->group(function () {
     Route::get('/', [KategoriProfesiController::class, 'view'])->name('kategori_profesi.view');
-    Route::get('/create', [KategoriProfesiController::class, 'create'])->name('kategori_profesi.create');
-    Route::post('/create', [KategoriProfesiController::class, 'store'])->name('kategori_profesi.store');
+    Route::post('/', [KategoriProfesiController::class, 'store'])->name('kategori_profesi.store');
     Route::get('/{kategori_profesi}', [KategoriProfesiController::class, 'show'])->name('kategori_profesi.show');
-    Route::put('/edit/{kategori_profesi}', [KategoriProfesiController::class, 'edit'])->name('kategori_profesi.edit');
-    Route::put('/edit/{kategori_profesi}', [KategoriProfesiController::class, 'update'])->name('kategori_profesi.update');
+    Route::put('/{kategori_profesi}', [KategoriProfesiController::class, 'update'])->name('kategori_profesi.update');
     Route::delete('/{kategori_profesi}', [KategoriProfesiController::class, 'destroy'])->name('kategori_profesi.destroy');
 });
 
@@ -53,11 +54,9 @@ Route::prefix('admin/perusahaan')->group(function () {
 // Route CRUD Profesi
 Route::prefix('admin/profesi')->group(function () {
     Route::get('/', [ProfesiController::class, 'view'])->name('profesi.view');
-    Route::get('/create', [ProfesiController::class, 'create'])->name('profesi.create');
     Route::post('/', [ProfesiController::class, 'store'])->name('profesi.store');
     Route::get('/{profesi}', [ProfesiController::class, 'show'])->name('profesi.show');
-    Route::get('/edit/{profesi}', [ProfesiController::class, 'edit'])->name('profesi.edit');
-    Route::put('/edit/{profesi}', [ProfesiController::class, 'update'])->name('profesi.update');
+    Route::put('/{profesi}', [ProfesiController::class, 'update'])->name('profesi.update');
     Route::delete('/{profesi}', [ProfesiController::class, 'destroy'])->name('profesi.destroy');
 });
 
@@ -81,13 +80,20 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // // Route Profile User
 Route::prefix('profileuser')->middleware(CheckIfAuthenticated::class)->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('user.index');
-    Route::get('/edit/{user}', [UserController::class, 'detail'])->name('user.detail');
-    Route::put('/edit/{user}', [UserController::class, 'edit'])->name('user.edit');
+    Route::post('/', [UserController::class, 'store'])->name('user.store');
+    Route::get('/{user}', [UserController::class, 'show'])->name('user.show');
+    Route::put('/{user}', [UserController::class, 'update'])->name('user.update');
+    Route::delete('/{user}', [UserController::class, 'destroy'])->name('user.destroy');
 });
 
 // Route Home
 Route::prefix('')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
+    Route::get('/about', [HomeController::class, 'about'])->name('home.about');
+    Route::get('/profesi', [HomeController::class, 'profesi'])->name('home.profesi');
+    Route::get('/profesi/detail/{id}', [HomeController::class, 'profesidetail'])->name('home.profesidetail');
+    Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
+    Route::get('/loker', [HomeController::class, 'loker'])->name('home.loker');
 });
 
 // Route Detail Profesi
@@ -105,15 +111,9 @@ Route::prefix('')->group(function () {
 
 // ===============================================================Route Admin Dari Frontend=====================================================================
 
-Route::get('/dashboard', function () {
-    return view('Admin.Dashboard');
-});
-Route::get('/admin/kategori-profesi/create', function () {
-    return view('kategori_profesi.create');
-});
-Route::get('/admin/kategori-profesi/update', function () {
-    return view('kategori_profesi.update');
-});
+// Route::get('/dashboard', function () {
+//     return view('Admin.Dashboard');
+// });
 Route::get('/profile', function () {
     return view('Admin.profile');
 });
@@ -177,29 +177,29 @@ Route::get('/sign-up', function () {
     //     return redirect('/');
     // });
 
-Route::get('/about', function () {
-    return view('Pages.about');
-})->name('about');
+// Route::get('/about', function () {
+//     return view('Pages.about');
+// })->name('about');
 
-Route::get('/contact', function () {
-    return view('Pages.contact');
-})->name('contact');
+// Route::get('/contact', function () {
+//     return view('Pages.contact');
+// })->name('contact');
 
-Route::get('/', function () {
-    return view('Pages.home');
-})->name('home');
+// Route::get('/', function () {
+//     return view('Pages.home');
+// })->name('home');
 
 // Route::get('/profile-user', function () {
 //     return view('Pages.profile-user'); 
 // })->name('profile-user');
 
-Route::get('/loker', function () {
-    return view('Pages.loker');
-})->name('loker');
+// Route::get('/loker', function () {
+//     return view('Pages.loker');
+// })->name('loker');
 
-Route::get('/profesi', function () {
-    return view('Pages.profesi'); 
-})->name('profesi');
+// Route::get('/profesi', function () {
+//     return view('Pages.profesi'); 
+// })->name('profesi');
 
 Route::get('/profesi/kategori/{kategori}', function ($kategori) {
     return view('Pages.kategori-profesi', ['kategori' => $kategori]);

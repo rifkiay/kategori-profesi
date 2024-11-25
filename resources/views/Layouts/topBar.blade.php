@@ -78,7 +78,7 @@
                                 <img src="{{asset('assets')}}/images/users/avatar-2.jpg" alt="user-image" width="32" class="rounded-circle">
                             </span>
                             <span class="d-lg-block d-none">
-                                <h5 class="my-0 fw-normal">Adminku <i
+                                <h5 class="my-0 fw-normal">{{ Auth::guard('admin')->user()->nama }} <i
                                         class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i></h5>
                             </span>
                         </a>
@@ -95,10 +95,16 @@
                             </a>
 
                             <!-- item-->
-                            <a href="auth-logout-2.html" class="dropdown-item">
+                            <a href="#" class="dropdown-item" 
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
                                 <span>Logout</span>
                             </a>
+
+                            <!-- Form Logout -->
+                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </li>
                 </ul>

@@ -61,9 +61,9 @@
                 <div id="navigation" class="mx-auto">
                     <ul class="navigation-menu d-flex align-items-center">
                         <li><a href="{{ url('/') }}">Beranda</a></li>
-                        <li><a href="{{ url('about') }}">Tentang Kami</a></li>
-                        <li><a href="{{ url('profesi') }}">Profesi</a></li>
-                        <li><a href="{{ url('contact') }}">Kontak</a></li>
+                        <li><a href="{{ route('home.about') }}">Tentang Kami</a></li>
+                        <li><a href="{{ route('home.profesi') }}">Profesi</a></li>
+                        <li><a href="{{ route('home.contact') }}">Kontak</a></li>
                     </ul>
                 </div>
 

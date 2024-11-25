@@ -10,7 +10,7 @@
                 <div class="text-center text-white">
                     <h4 class="text-uppercase title mb-4">Loker</h4>
                     <ul class="page-next d-inline-block mb-0">
-                        <li><a href="{{ route('home') }}" class="text-uppercase font-weight-bold">Home</a></li>
+                        <li><a href="{{ route('home.index') }}" class="text-uppercase font-weight-bold">Home</a></li>
                         <li><span class="text-uppercase text-white font-weight-bold">Loker</span></li> 
                     </ul>
                 </div>

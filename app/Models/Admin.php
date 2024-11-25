@@ -3,32 +3,26 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Model
+class Admin extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
      protected $table = 'admin';
 
      protected $fillable = [
-         'nama',
-         'username',
-         'email',
-         'password',
-         'foto_profile',
-     ];
- 
-     // Mengamankan password dengan hash saat model dibuat
-     protected static function boot()
-     {
-         parent::boot();
- 
-         static::creating(function ($admin) {
-             // Pastikan password di-hash sebelum disimpan
-             if (isset($admin->password)) {
-                 $admin->password = bcrypt($admin->password);
-             }
-         });
-     }
+        'nama',
+        'username',
+        'email',
+        'password',
+        'foto_profile',
+    ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
 }

@@ -4,46 +4,45 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
-        //
+        return view('auth.loginadmin');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function dashboard()
     {
-        //
+        return view('admin.dashboard');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Admin $admin)
+    public function login(Request $request)
     {
-        //
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if (Auth::guard('admin')->attempt($request->only('email', 'password'), $request->filled('remember'))) {
+            return redirect()->route('admin.dashboard');
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Admin $admin)
+    public function logout(Request $request): RedirectResponse
     {
-        //
-    }
+        Auth::logout();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Admin $admin)
-    {
-        //
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('admin.index')->with('success', 'Succesfully Logout'); 
     }
 }

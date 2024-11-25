@@ -9,9 +9,6 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         try {
@@ -25,35 +22,29 @@ class HomeController extends Controller
         }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function about(){
+        return view('pages.about');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+    public function profesi(){
+        return view('pages.profesi');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+    public function profesidetail($id){
+        try {
+            $profesi = Profesi::where('id_kategori_profesi', $id)->get();
+
+            return view('pages.detail-profesi', compact('loker', 'kategoriProfesi', 'profesi'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+    public function contact(){
+        return view('pages.contact');
+    }
+
+    public function loker(){
+        return view('pages.loker');
     }
 }

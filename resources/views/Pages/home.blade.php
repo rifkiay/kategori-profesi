@@ -136,7 +136,7 @@
 
             <!-- Tombol Selengkapnya -->
             <div class="text-center mt-4">
-                <a href="{{ route('profesi') }}" class="btn btn-primary">Selengkapnya</a>
+                <a href="{{ route('home.profesi') }}" class="btn btn-primary">Selengkapnya</a>
             </div>
         </div>
     </section>
@@ -291,7 +291,7 @@
 
     <!-- Button untuk 'Lihat Selengkapnya' -->
     <div class="text-center mt-4">
-    <a href="{{ route('loker') }}" class="btn btn-primary">Selengkapnya</a>
+    <a href="{{ route('home.loker') }}" class="btn btn-primary">Selengkapnya</a>
     </div>
 </section>
 <!-- Daftar Pekerjaan Populer end -->

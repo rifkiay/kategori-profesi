@@ -29,7 +29,7 @@
                                     <div class="profile-user-img"><img src="{{asset('assets')}}/images/users/avatar-2.jpg" alt=""
                                             class="avatar-lg rounded-circle"></div>
                                     <div class="">
-                                        <h4 class="mt-4 fs-17 ellipsis">Michael A. Franklin</h4>
+                                        <h4 class="mt-4 fs-17 ellipsis">{{ Auth::guard('admin')->user()->nama }}</h4>
                                         <p class="font-13"> User Experience Specialist</p>
                                         <p class="text-muted mb-0"><small>California, United States</small></p>
                                     </div>
