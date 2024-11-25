@@ -25,7 +25,7 @@ Route::prefix('admin')->group(function () {
 });
 
 // Route CRUD Kategori Profesi
-Route::prefix('admin/kategori_profesi')->group(function () {
+Route::prefix('admin/kategori_profesi')->middleware(CheckIfAuthenticated::class)->group(function () {
     Route::get('/', [KategoriProfesiController::class, 'view'])->name('kategori_profesi.view');
     Route::post('/', [KategoriProfesiController::class, 'store'])->name('kategori_profesi.store');
     Route::get('/{kategori_profesi}', [KategoriProfesiController::class, 'show'])->name('kategori_profesi.show');
@@ -34,7 +34,7 @@ Route::prefix('admin/kategori_profesi')->group(function () {
 });
 
 // Route CRUD Loker
-Route::prefix('admin/loker')->group(function () {
+Route::prefix('admin/loker')->middleware(CheckIfAuthenticated::class)->group(function () {
     Route::get('/', [LokerController::class, 'index'])->name('loker.index');
     Route::post('/', [LokerController::class, 'store'])->name('loker.store');
     Route::get('/{loker}', [LokerController::class, 'show'])->name('loker.show');
@@ -43,7 +43,7 @@ Route::prefix('admin/loker')->group(function () {
 });
 
 // Route CRUD Perusahaan
-Route::prefix('admin/perusahaan')->group(function () {
+Route::prefix('admin/perusahaan')->middleware(CheckIfAuthenticated::class)->group(function () {
     Route::get('/', [PerusahaanController::class, 'index'])->name('perusahaan.index');
     Route::post('/', [PerusahaanController::class, 'store'])->name('perusahaan.store');
     Route::get('/{perusahaan}', [PerusahaanController::class, 'show'])->name('perusahaan.show');
@@ -52,7 +52,7 @@ Route::prefix('admin/perusahaan')->group(function () {
 });
 
 // Route CRUD Profesi
-Route::prefix('admin/profesi')->group(function () {
+Route::prefix('admin/profesi')->middleware(CheckIfAuthenticated::class)->group(function () {
     Route::get('/', [ProfesiController::class, 'view'])->name('profesi.view');
     Route::post('/', [ProfesiController::class, 'store'])->name('profesi.store');
     Route::get('/{profesi}', [ProfesiController::class, 'show'])->name('profesi.show');
@@ -61,7 +61,7 @@ Route::prefix('admin/profesi')->group(function () {
 });
 
 // Route CRUD User (uji coba dulu)
-Route::prefix('admin/user')->group(function () {
+Route::prefix('admin/user')->middleware(CheckIfAuthenticated::class)->group(function () {
     Route::get('/', [UserController::class, 'view'])->name('user.view');
     Route::post('/', [UserController::class, 'store'])->name('user.store');
     Route::get('/{user}', [UserController::class, 'show'])->name('user.show');
