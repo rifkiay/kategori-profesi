@@ -26,4 +26,14 @@ class StoreKategoriProfesiRequest extends FormRequest
             'icon' => 'required|string|max:255',
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'kategori_profesi.required' => 'Kategori profesi wajib diisi.',
+            'kategori_profesi.string' => 'Kategori profesi harus berupa teks.',
+            'kategori_profesi.max' => 'Kategori profesi tidak boleh lebih dari 255 karakter.',
+            'icon.required' => 'Icon wajib diisi.',
+        ];
+    }
 }

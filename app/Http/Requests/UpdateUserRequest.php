@@ -34,4 +34,30 @@ class UpdateUserRequest extends FormRequest
             'foto_profile' => 'sometimes|nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'id_kategori_profesi.integer' => 'ID kategori profesi harus berupa angka.',
+            'id_kategori_profesi.exists' => 'ID kategori profesi tidak valid atau tidak ditemukan.',
+            'nama.string' => 'Nama harus berupa teks.',
+            'nama.max' => 'Nama tidak boleh lebih dari 255 karakter.',
+            'username.string' => 'Username harus berupa teks.',
+            'username.max' => 'Username tidak boleh lebih dari 255 karakter.',
+            'username.unique' => 'Username sudah digunakan. Harap pilih username lain.',
+            'email.email' => 'Format email tidak valid.',
+            'email.max' => 'Email tidak boleh lebih dari 255 karakter.',
+            'email.unique' => 'Email sudah terdaftar. Gunakan email lain.',
+            'email_verified_at.date' => 'Tanggal verifikasi email harus berupa format tanggal yang valid.',
+            'password.string' => 'Password harus berupa teks.',
+            'password.min' => 'Password harus memiliki minimal 8 karakter.',
+            'minat.string' => 'Minat harus berupa teks.',
+            'minat.max' => 'Minat tidak boleh lebih dari 500 karakter.',
+            'bio.string' => 'Bio harus berupa teks.',
+            'bio.max' => 'Bio tidak boleh lebih dari 1000 karakter.',
+            'foto_profile.image' => 'Foto profil harus berupa file gambar.',
+            'foto_profile.mimes' => 'Foto profil harus memiliki format jpeg, png, jpg, atau gif.',
+            'foto_profile.max' => 'Ukuran foto profil tidak boleh lebih dari 2048 kilobyte.',
+        ];
+    }
 }
