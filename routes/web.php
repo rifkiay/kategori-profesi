@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfesiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\AuthController;
 
 // ===============================================================Route Admin=====================================================================
@@ -25,7 +26,7 @@ Route::prefix('admin')->group(function () {
 });
 
 // Route CRUD Kategori Profesi
-Route::prefix('admin/kategori_profesi')->middleware(CheckIfAuthenticated::class)->group(function () {
+Route::prefix('admin/kategori_profesi')->middleware(CheckIfAuthenticatedAdmin::class)->group(function () {
     Route::get('/', [KategoriProfesiController::class, 'view'])->name('kategori_profesi.view');
     Route::post('/', [KategoriProfesiController::class, 'store'])->name('kategori_profesi.store');
     Route::get('/{kategori_profesi}', [KategoriProfesiController::class, 'show'])->name('kategori_profesi.show');
@@ -34,7 +35,7 @@ Route::prefix('admin/kategori_profesi')->middleware(CheckIfAuthenticated::class)
 });
 
 // Route CRUD Loker
-Route::prefix('admin/loker')->middleware(CheckIfAuthenticated::class)->group(function () {
+Route::prefix('admin/loker')->middleware(CheckIfAuthenticatedAdmin::class)->group(function () {
     Route::get('/', [LokerController::class, 'index'])->name('loker.index');
     Route::post('/', [LokerController::class, 'store'])->name('loker.store');
     Route::get('/{loker}', [LokerController::class, 'show'])->name('loker.show');
@@ -43,7 +44,7 @@ Route::prefix('admin/loker')->middleware(CheckIfAuthenticated::class)->group(fun
 });
 
 // Route CRUD Perusahaan
-Route::prefix('admin/perusahaan')->middleware(CheckIfAuthenticated::class)->group(function () {
+Route::prefix('admin/perusahaan')->middleware(CheckIfAuthenticatedAdmin::class)->group(function () {
     Route::get('/', [PerusahaanController::class, 'index'])->name('perusahaan.index');
     Route::post('/', [PerusahaanController::class, 'store'])->name('perusahaan.store');
     Route::get('/{perusahaan}', [PerusahaanController::class, 'show'])->name('perusahaan.show');
@@ -52,7 +53,7 @@ Route::prefix('admin/perusahaan')->middleware(CheckIfAuthenticated::class)->grou
 });
 
 // Route CRUD Profesi
-Route::prefix('admin/profesi')->middleware(CheckIfAuthenticated::class)->group(function () {
+Route::prefix('admin/profesi')->middleware(CheckIfAuthenticatedAdmin::class)->group(function () {
     Route::get('/', [ProfesiController::class, 'view'])->name('profesi.view');
     Route::post('/', [ProfesiController::class, 'store'])->name('profesi.store');
     Route::get('/{profesi}', [ProfesiController::class, 'show'])->name('profesi.show');
@@ -61,7 +62,7 @@ Route::prefix('admin/profesi')->middleware(CheckIfAuthenticated::class)->group(f
 });
 
 // Route CRUD User (uji coba dulu)
-Route::prefix('admin/user')->middleware(CheckIfAuthenticated::class)->group(function () {
+Route::prefix('admin/user')->middleware(CheckIfAuthenticatedAdmin::class)->group(function () {
     Route::get('/', [UserController::class, 'view'])->name('user.view');
     Route::post('/', [UserController::class, 'store'])->name('user.store');
     Route::get('/{user}', [UserController::class, 'show'])->name('user.show');
@@ -70,6 +71,11 @@ Route::prefix('admin/user')->middleware(CheckIfAuthenticated::class)->group(func
 });
 
 // ===============================================================Route User=====================================================================
+Route::prefix('signup')->group(function () {
+    Route::get('/', [SignUpController::class, 'index'])->name('signup.index');
+    Route::post('/', [SignUpController::class, 'store'])->name('signup.store');
+});
+
 Route::prefix('login')->group(function () {
     Route::get('/', [LoginController::class, 'index'])->name('login.index');
     Route::post('/', [LoginController::class, 'authenticate'])->name('login.authenticate');
@@ -92,6 +98,7 @@ Route::prefix('')->group(function () {
     Route::get('/about', [HomeController::class, 'about'])->name('home.about');
     Route::get('/profesi', [HomeController::class, 'profesi'])->name('home.profesi');
     Route::get('/profesi/detail/{id}', [HomeController::class, 'profesidetail'])->name('home.profesidetail');
+    Route::get('/profesi/kategori/{kategori}', [HomeController::class, 'kategori'])->name('home.kategori');
     Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
     Route::get('/loker', [HomeController::class, 'loker'])->name('home.loker');
 });

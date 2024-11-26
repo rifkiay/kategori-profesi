@@ -34,7 +34,17 @@ class HomeController extends Controller
         try {
             $profesi = Profesi::where('id_kategori_profesi', $id)->get();
 
-            return view('pages.detail-profesi', compact('loker', 'kategoriProfesi', 'profesi'));
+            return view('pages.detail-profesi', compact( 'profesi'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
+        }
+    }
+
+    public function kategori($id){
+        try {
+            $kategoriprofesi = KategoriProfesi::where('id', $id)->get();
+
+            return view('pages.kategori-profesi', compact('kategoriprofesi'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
         }

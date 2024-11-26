@@ -19,6 +19,7 @@ class User extends Authenticatable
         'username',
         'email',
         'email_verified_at',
+        'password',
         'minat',
         'bio',
         'foto_profile',

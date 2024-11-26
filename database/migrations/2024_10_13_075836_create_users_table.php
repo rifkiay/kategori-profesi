@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_kategori_profesi')->constrained('kategori_profesi')->onDelete('cascade');
             $table->string('nama'); 
-            $table->string('username'); 
-            $table->string('email');
+            $table->string('username')->unique(); 
+            $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('minat');
-            $table->text('bio');
+            $table->string('minat')->nullable();
+            $table->text('bio')->nullable();
             $table->text('foto_profile')->nullable();
             $table->rememberToken();
             $table->timestamps();
