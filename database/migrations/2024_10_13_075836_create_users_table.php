@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_kategori_profesi')->constrained('kategori_profesi')->onDelete('cascade');
             $table->string('nama'); 
-            $table->string('username')->unique(); 
+            $table->string('username')->unique()->nullable(); 
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

@@ -23,7 +23,7 @@ class SignUpController extends Controller
 
             if ($request->hasFile('foto_profile')) {
                 // Ambil nama dari 'nama' untuk digunakan dalam penamaan file
-                $namaProfile = $data['username']; // Ambil nama pengguna dari data
+                $namaProfile = $data['nama']; // Ambil nama pengguna dari data
                 $timestamp = time(); // Ambil timestamp saat ini
                 $extension = $request->file('foto_profile')->getClientOriginalExtension(); // Ekstensi file
                 $fileName = Str::slug($namaProfile) . "_{$timestamp}.{$extension}"; // Nama file unik
