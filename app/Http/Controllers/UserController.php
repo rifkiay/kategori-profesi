@@ -73,30 +73,30 @@ class UserController extends Controller
         }
     }
 
-    public function store(StoreUserRequest $request)
-    {
-        try {
-            $data = $request->validated();
+    // public function store(StoreUserRequest $request)
+    // {
+    //     try {
+    //         $data = $request->validated();
     
-            // Enkripsi password
-            $data['password'] = bcrypt($request->password);
+    //         // Enkripsi password
+    //         $data['password'] = bcrypt($request->password);
     
-            if ($request->hasFile('foto_profile')) {
-                $userName =  Str::slug($data['username']);
-                $timestamp = time(); 
-                $extension = $request->file('foto_profile')->getClientOriginalExtension();
-                $fileName = "{$userName}_{$timestamp}.{$extension}";
+    //         if ($request->hasFile('foto_profile')) {
+    //             $userName =  Str::slug($data['nama']);
+    //             $timestamp = time(); 
+    //             $extension = $request->file('foto_profile')->getClientOriginalExtension();
+    //             $fileName = "{$nama}_{$timestamp}.{$extension}";
 
-                $data['foto_profile'] = $request->file('foto_profile')->storeAs("gambar/user/{$data['username']}", $fileName, 'public');
-            }
+    //             $data['foto_profile'] = $request->file('foto_profile')->storeAs("gambar/user/{$data['nama']}", $fileName, 'public');
+    //         }
     
-            User::create($data);
+    //         User::create($data);
 
-            return redirect()->route('admin.users')->with('success', 'User berhasil ditambahkan!');
-        } catch (\Exception $e) {
-            return back()->with('error', 'Gagal menambahkan user: ' . $e->getMessage());
-        }
-    }
+    //         return redirect()->route('admin.users')->with('success', 'User berhasil ditambahkan!');
+    //     } catch (\Exception $e) {
+    //         return back()->with('error', 'Gagal menambahkan user: ' . $e->getMessage());
+    //     }
+    // }
 
     public function show(User $user)
     {
@@ -120,12 +120,12 @@ class UserController extends Controller
                 if ($user->foto_profile) {
                     Storage::disk('public')->delete($user->foto_profile);
                 }
-                $userName = Str::slug($data['username']);
+                $Name = Str::slug($data['nama']);
                 $timestamp = time(); 
                 $extension = $request->file('foto_profile')->getClientOriginalExtension();
-                $fileName = "{$userName}_{$timestamp}.{$extension}";
+                $fileName = "{$Name}_{$timestamp}.{$extension}";
     
-                $data['foto_profile'] = $request->file('foto_profile')->storeAs("gambar/user/{$data['username']}", $fileName, 'public');
+                $data['foto_profile'] = $request->file('foto_profile')->storeAs("gambar/user/{$data['nama']}", $fileName, 'public');
             }
 
             $user->update($data);

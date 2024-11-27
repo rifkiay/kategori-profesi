@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateUserRequest extends FormRequest
 {
@@ -21,14 +22,25 @@ class UpdateUserRequest extends FormRequest
      */
     public function rules(): array
     {
+        $userId = $this->route('user'); // Ganti 'user' sesuai dengan parameter route Anda untuk mendapatkan ID user yang sedang diedit.
+
         return [
             'id_kategori_profesi' => 'sometimes|nullable|integer|exists:kategori_profesi,id',
             'nama' => 'sometimes|string|max:255',
-            'username' => 'sometimes|string|max:255|unique:users,username',
-            'email' => 'sometimes|email|max:255|unique:users,email',
+            'username' => [
+                'sometimes',
+                'string',
+                'max:255',
+                Rule::unique('users', 'username')->ignore($userId),
+            ],
+            'email' => [
+                'sometimes',
+                'email',
+                'max:255',
+                Rule::unique('users', 'email')->ignore($userId),
+            ],
             'email_verified_at' => 'sometimes|nullable|date',
             'password' => 'sometimes|string|min:8',
-            // 'password' => 'sometimes|string|min:8|confirmed',
             'minat' => 'sometimes|nullable|string|max:500',
             'bio' => 'sometimes|nullable|string|max:1000',
             'foto_profile' => 'sometimes|nullable|image|mimes:jpeg,png,jpg,gif|max:2048',

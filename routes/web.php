@@ -87,8 +87,8 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::prefix('profileuser')->middleware(CheckIfAuthenticated::class)->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('user.index');
     Route::post('/', [UserController::class, 'store'])->name('user.store');
-    Route::get('/{user}', [UserController::class, 'show'])->name('user.show');
-    Route::put('/{user}', [UserController::class, 'update'])->name('user.update');
+    Route::get('/edit/{user}', [UserController::class, 'show'])->name('user.show');
+    Route::put('/edit/{user}', [UserController::class, 'update'])->name('user.update');
     Route::delete('/{user}', [UserController::class, 'destroy'])->name('user.destroy');
 });
 

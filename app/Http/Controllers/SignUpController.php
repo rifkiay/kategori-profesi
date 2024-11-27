@@ -20,17 +20,6 @@ class SignUpController extends Controller
     {
         try {
             $data = $request->validated();
-
-            if ($request->hasFile('foto_profile')) {
-                // Ambil nama dari 'nama' untuk digunakan dalam penamaan file
-                $namaProfile = $data['nama']; // Ambil nama pengguna dari data
-                $timestamp = time(); // Ambil timestamp saat ini
-                $extension = $request->file('foto_profile')->getClientOriginalExtension(); // Ekstensi file
-                $fileName = Str::slug($namaProfile) . "_{$timestamp}.{$extension}"; // Nama file unik
-            
-                // Menyimpan file dengan path yang sesuai, dan menggunakan disk 'public'
-                $data['foto_profile'] = $request->file('foto_profile')->storeAs("gambar/profiles/{$namaProfile}", $fileName, 'public');
-            }
  
             $data['password'] = Hash::make($data['password']);
 
