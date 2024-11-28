@@ -212,6 +212,6 @@ Route::get('/profesi/kategori/{kategori}', function ($kategori) {
     return view('Pages.kategori-profesi', ['kategori' => $kategori]);
 })->name('kategori-profesi');
 
-Route::get('/profesi/detail/{id}', function ($id) {
-    return view('Pages.detail-profesi', ['id' => $id]);
-})->name('profesi.detail');
+// Route::get('/profesi/detail/{id}', function ($id) {
+//     return view('Pages.detail-profesi', ['id' => $id]);
+// })->name('profesi.detail');
