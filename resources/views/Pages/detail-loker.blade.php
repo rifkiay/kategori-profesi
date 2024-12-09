@@ -1,64 +1,75 @@
-@extends('layouts.app')
+@extends('Layouts.navbar-utama')
+@section('title', 'Detail Loker')
 
 @section('content')
-<div class="container py-5">
-    <div class="card shadow-sm border-0">
-        <div class="card-body">
-            <!-- Header Pekerjaan -->
-            <div class="d-flex align-items-center mb-3">
-                <img src="https://via.placeholder.com/50" alt="Company Logo" class="me-3">
-                <div>
-                    <h4 class="mb-0">{{ $pekerjaan['title'] }}</h4>
-                    <p class="text-muted mb-0">{{ $pekerjaan['company'] }} - {{ $pekerjaan['location'] }}</p>
-                </div>
-            </div>
-            
-            <!-- Informasi Pekerjaan -->
-            <p><strong>Gaji:</strong> {{ $pekerjaan['salary'] }}</p>
-            <p><strong>Jenis Pekerjaan:</strong> {{ $pekerjaan['type'] }}</p>
-            <p><strong>Waktu Kerja:</strong> {{ $pekerjaan['work_time'] }}</p>
-            <p><strong>Kualifikasi:</strong> {{ $pekerjaan['qualification'] }}</p>
-            <p><strong>Pengalaman:</strong> {{ $pekerjaan['experience'] }}</p>
-            
-            <div class="text-muted">
-                <small>Diposting {{ $pekerjaan['posted'] }} | Diperbarui {{ $pekerjaan['updated'] }}</small>
-            </div>
-
-            <!-- Tombol Aksi -->
-            <div class="d-flex mt-4">
-                <button class="btn btn-primary me-2">Lamar Cepat</button>
-                <button class="btn btn-outline-secondary me-2">Tandai</button>
-                <button class="btn btn-outline-secondary">Bagikan</button>
-            </div>
-
-            <!-- Persyaratan -->
-            <hr>
-            <h5>Persyaratan</h5>
-            <div class="mb-3">
-                <span class="badge bg-secondary">Kerja di kantor</span>
-                <span class="badge bg-secondary">{{ $pekerjaan['experience'] }}</span>
-                <span class="badge bg-secondary">{{ $pekerjaan['qualification'] }}</span>
-                <span class="badge bg-secondary">22-35 tahun</span>
-            </div>
-
-            <!-- Skills -->
-            <h5>Skills</h5>
-            <div class="mb-3">
-                @foreach ($pekerjaan['skills'] as $skill)
-                    <span class="badge bg-secondary">{{ $skill }}</span>
-                @endforeach
-            </div>
-
-            <!-- Informasi Pengelola -->
-            <h5>Loker ini dikelola oleh</h5>
-            <div class="d-flex align-items-center">
-                <img src="https://via.placeholder.com/40" alt="Manager" class="rounded-circle me-2">
-                <div>
-                    <strong>{{ $pekerjaan['manager']['name'] }}</strong><br>
-                    <small>{{ $pekerjaan['manager']['status'] }}</small>
+<!-- Header Section -->
+<section class="bg-half page-next-level"> 
+    <div class="bg-overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="text-center text-white">
+                    <h4 class="text-uppercase title mb-4">Detail Loker</h4>
+                    <ul class="page-next d-inline-block mb-0">
+                        <li><a href="{{ url('/') }}" class="text-uppercase font-weight-bold">Beranda</a></li>
+                        <li><span class="text-uppercase text-white font-weight-bold">Detail Loker</span></li> 
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<!-- Job Detail Section -->
+<section class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Job Detail Card -->
+            <div class="card shadow-lg border-0 rounded p-4">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- Gambar Perusahaan -->
+                        <img src="{{ $lokerItem->logo_perusahaan }}" class="img-fluid rounded-circle border" alt="Company Logo" style="border: 3px solid #e5e5e5;">
+                    </div>
+                    <div class="col-md-8">
+                        <!-- Job Title -->
+                        <h3 class="job-title text-dark mb-3" style="font-size: 1.8rem; font-weight: bold; border-bottom: 2px solid #ccc; padding-bottom: 5px;">{{ $lokerItem->judul }}</h3>
+                        <p class="company-name text-muted mb-2" style="font-size: 1.1rem;"><strong>{{ $lokerItem->nama_perusahaan }}</strong></p>
+                        <p class="text-muted mb-3"><i class="mdi mdi-map-marker"></i> {{ $lokerItem->lokasi ?? 'Lokasi tidak tersedia' }}</p>
+                        <!-- Status -->
+                        <span class="badge {{ $lokerItem->status == 'available' ? 'bg-success' : 'bg-danger' }} p-2 text-white" style="font-size: 1rem;">
+                            {{ $lokerItem->status == 'available' ? 'Aktif Merekrut' : 'Tutup' }}
+                        </span>
+
+                        <hr class="my-4" style="border-top: 2px solid #e5e5e5;">
+
+                        <!-- Deskripsi Pekerjaan -->
+                        <h5 class="mt-4" style="font-size: 1.4rem; font-weight: bold;">Deskripsi Pekerjaan:</h5>
+                        <p>{{ $lokerItem->deskripsi_loker }}</p>
+
+                        <hr class="my-4" style="border-top: 2px solid #e5e5e5;">
+
+                        <!-- Kualifikasi -->
+                        <h5 class="mt-4" style="font-size: 1.4rem; font-weight: bold;">Kualifikasi:</h5>
+                        <p>{{ $lokerItem->kualifikasi }}</p>
+
+                        <hr class="my-4" style="border-top: 2px solid #e5e5e5;">
+
+                        <!-- Gaji -->
+                        <h5 class="mt-4" style="font-size: 1.4rem; font-weight: bold;">Gaji:</h5>
+                        <p class="text-success" style="font-size: 1.2rem; font-weight: bold;">{{ $lokerItem->gaji }}</p>
+
+                        <hr class="my-4" style="border-top: 2px solid #e5e5e5;">
+
+                        <!-- Tanggal Posting dan Pendaftaran -->
+                        <p><strong>Tanggal Posting:</strong> {{ \Carbon\Carbon::parse($lokerItem->tanggal_posting)->format('d M Y') }}</p>
+                        <p><strong>Akhir Pendaftaran:</strong> {{ \Carbon\Carbon::parse($lokerItem->akhir_pendaftaran)->format('d M Y') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@include('layouts.footer-utama')
 @endsection
