@@ -49,8 +49,8 @@
 </section>
 <!-- end home -->
 
-    <!-- Kategori Populer -->
-    <section id="kategori-profesi" class="mt-5 pt-5">
+        <!-- Kategori Populer -->
+        <section id="kategori-profesi" class="mt-5 pt-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
@@ -60,78 +60,21 @@
                 </div>
             </div>
             <div class="row">
-                <!-- Tampilkan hanya 6 kategori -->
-                <a href="detail-profesi?kategori=teknologi-informasi" class="col-lg-4 col-md-6 mt-4 pt-2">
-                    <div class="popu-category-box bg-light rounded text-center p-4">
-                        <div class="popu-category-icon mb-3">
-                            <i class="mdi mdi-desktop-classic d-inline-block rounded-pill h3 text-primary"></i>
+                <!-- Loop untuk menampilkan kategori profesi -->
+                @foreach ($kategoriProfesi as $kategori)
+                    <a href="{{ route('profesi.index', ['kategori' => strtolower(str_replace(' ', '-', $kategori->kategori_profesi))]) }}" class="col-lg-4 col-md-6 mt-4 pt-2">
+                        <div class="popu-category-box bg-light rounded text-center p-4">
+                            <div class="popu-category-icon mb-3">
+                                <!-- Menampilkan icon dengan class dari database -->
+                                <i class="{{ $kategori->icon }} d-inline-block rounded-pill h3 text-primary"></i>
+                            </div>
+                            <div class="popu-category-content">
+                                <h5 class="mb-2 text-dark title">{{ $kategori->kategori_profesi }}</h5>
+                                <p class="text-success mb-0 rounded">20 Pekerjaan</p>
+                            </div>
                         </div>
-                        <div class="popu-category-content">
-                            <h5 class="mb-2 text-dark title">Teknologi Informasi</h5>
-                            <p class="text-success mb-0 rounded">20 Pekerjaan</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="detail-profesi?kategori=kesehatan" class="col-lg-4 col-md-6 mt-4 pt-2">
-                    <div class="popu-category-box bg-light rounded text-center p-4">
-                        <div class="popu-category-icon mb-3">
-                            <i class="mdi mdi-heart-pulse d-inline-block rounded-pill h3 text-primary"></i>
-                        </div>
-                        <div class="popu-category-content">
-                            <h5 class="mb-2 text-dark title">Kesehatan</h5>
-                            <p class="text-success mb-0 rounded">20 Pekerjaan</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="detail-profesi?kategori=pendidikan" class="col-lg-4 col-md-6 mt-4 pt-2">
-                    <div class="popu-category-box bg-light rounded text-center p-4">
-                        <div class="popu-category-icon mb-3">
-                            <i class="mdi mdi-school d-inline-block rounded-pill h3 text-primary"></i>
-                        </div>
-                        <div class="popu-category-content">
-                            <h5 class="mb-2 text-dark title">Pendidikan</h5>
-                            <p class="text-success mb-0 rounded">20 Pekerjaan</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="detail-profesi?kategori=keuangan" class="col-lg-4 col-md-6 mt-4 pt-2">
-                    <div class="popu-category-box bg-light rounded text-center p-4">
-                        <div class="popu-category-icon mb-3">
-                            <i class="mdi mdi-cash-multiple d-inline-block rounded-pill h3 text-primary"></i>
-                        </div>
-                        <div class="popu-category-content">
-                            <h5 class="mb-2 text-dark title">Keuangan</h5>
-                            <p class="text-success mb-0 rounded">20 Pekerjaan</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="detail-profesi?kategori=hukum" class="col-lg-4 col-md-6 mt-4 pt-2">
-                    <div class="popu-category-box bg-light rounded text-center p-4">
-                        <div class="popu-category-icon mb-3">
-                            <i class="mdi mdi-gavel d-inline-block rounded-pill h3 text-primary"></i>
-                        </div>
-                        <div class="popu-category-content">
-                            <h5 class="mb-2 text-dark title">Hukum</h5>
-                            <p class="text-success mb-0 rounded">20 Pekerjaan</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="detail-profesi?kategori=konstruksi" class="col-lg-4 col-md-6 mt-4 pt-2">
-                    <div class="popu-category-box bg-light rounded text-center p-4">
-                        <div class="popu-category-icon mb-3">
-                            <i class="mdi mdi-office-building d-inline-block rounded-pill h3 text-primary"></i>
-                        </div>
-                        <div class="popu-category-content">
-                            <h5 class="mb-2 text-dark title">Konstruksi</h5>
-                            <p class="text-success mb-0 rounded">20 Pekerjaan</p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                @endforeach
             </div>
 
             <!-- Tombol Selengkapnya -->
@@ -199,102 +142,49 @@
     </section>
     <!-- counter end -->
 
-<!-- Daftar Pekerjaan Populer -->
+    <!-- Daftar Loker Populer -->
 <section class="container pb-5">
-    <!-- Judul Utama -->
     <div class="section-title text-center mb-4">
-        <h4 class="title">Daftar Pekerjaan Populer</h4>
+        <h4 class="title">Daftar Loker Populer</h4>
         <p class="text-muted">Temukan pekerjaan yang sesuai dengan keahlian Anda.</p>
     </div>
-    <!-- Baris untuk menampilkan kartu pekerjaan -->
+
     <div class="row">
-        <!-- Kartu Pekerjaan 1 -->
-        <div class="col-lg-3 col-md-6 mt-4 pt-2">
-            <div class="job-card border rounded p-3 bg-white">
-                <h5 class="job-title mt-2">Guru Sekolah Dasar (SD)</h5>
-                <p class="company">Sekolah Negeri</p>
-                <p class="location"><i class="mdi mdi-map-marker"></i> Jakarta Selatan, DKI Jakarta</p>
-                <div class="info">
-                    <span class="badge bg-primary">1 - 3 tahun</span>
-                    <span class="badge bg-secondary">Minimal Sarjana (S1)</span>
-                </div>
-                <div class="status mt-2 d-flex align-items-center">
-                    <span class="badge bg-success me-2">Aktif Merekrut</span>
-                    <span class="badge bg-primary">Rp 3 jt - 4.5 jt</span>
-                </div>
-                <div class="apply-link mt-3">
-                    <a href="#" class="text-primary">Apply Now <i class="mdi mdi-chevron-right"></i></a>
-                </div>
-            </div>
-        </div>
+        @foreach ($loker as $lokerItem)
+            <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                <a href="{{ route('loker.detail', ['id' => $lokerItem->id]) }}" class="text-decoration-none">
+                    <div class="job-card border rounded p-3 bg-white">
+                        <!-- Judul Pekerjaan -->
+                        <h5 class="job-title mt-2">{{ $lokerItem->judul }}</h5>
 
-        <!-- Kartu Pekerjaan 2 -->
-        <div class="col-lg-3 col-md-6 mt-4 pt-2">
-            <div class="job-card border rounded p-3 bg-white">
-                <h5 class="job-title mt-2">Dosen Perguruan Tinggi</h5>
-                <p class="company">Universitas Swasta</p>
-                <p class="location"><i class="mdi mdi-map-marker"></i> Surabaya, Jawa Timur</p>
-                <div class="info">
-                    <span class="badge bg-primary">2 - 4 tahun</span>
-                    <span class="badge bg-secondary">Minimal S2</span>
-                </div>
-                <div class="status mt-2 d-flex align-items-center">
-                    <span class="badge bg-success me-2">Aktif Merekrut</span>
-                    <span class="badge bg-primary">Rp 4 jt - 6 jt</span>
-                </div>
-                <div class="apply-link mt-3">
-                    <a href="#" class="text-primary">Apply Now <i class="mdi mdi-chevron-right"></i></a>
-                </div>
-            </div>
-        </div>
+                        <!-- Nama Perusahaan -->
+                        <p class="company">{{ $lokerItem->nama_perusahaan }}</p>
 
-        <!-- Kartu Pekerjaan 3 -->
-        <div class="col-lg-3 col-md-6 mt-4 pt-2">
-            <div class="job-card border rounded p-3 bg-white">
-                <h5 class="job-title mt-2">Konselor Pendidikan</h5>
-                <p class="company">Bimbingan Konseling</p>
-                <p class="location"><i class="mdi mdi-map-marker"></i> Bandung, Jawa Barat</p>
-                <div class="info">
-                    <span class="badge bg-primary">1 - 2 tahun</span>
-                    <span class="badge bg-secondary">Minimal Sarjana (S1)</span>
-                </div>
-                <div class="status mt-2 d-flex align-items-center">
-                    <span class="badge bg-success me-2">Aktif Merekrut</span>
-                    <span class="badge bg-primary">Rp 5 jt - 7 jt</span>
-                </div>
-                <div class="apply-link mt-3">
-                    <a href="#" class="text-primary">Apply Now <i class="mdi mdi-chevron-right"></i></a>
-                </div>
-            </div>
-        </div>
+                        <!-- Kualifikasi -->
+                        <p class="qualification"><strong>Kualifikasi:</strong> {{ $lokerItem->kualifikasi }}</p>
 
-        <!-- Kartu Pekerjaan 4 -->
-        <div class="col-lg-3 col-md-6 mt-4 pt-2">
-            <div class="job-card border rounded p-3 bg-white">
-                <h5 class="job-title mt-2">Pengembang Kurikulum</h5>
-                <p class="company">Kementerian Pendidikan</p>
-                <p class="location"><i class="mdi mdi-map-marker"></i> Yogyakarta</p>
-                <div class="info">
-                    <span class="badge bg-primary">3 - 5 tahun</span>
-                    <span class="badge bg-secondary">Minimal Sarjana (S1)</span>
-                </div>
-                <div class="status mt-2 d-flex align-items-center">
-                    <span class="badge bg-success me-2">Aktif Merekrut</span>
-                    <span class="badge bg-primary">Rp 6 jt - 8 jt</span>
-                </div>
-                <div class="apply-link mt-3">
-                    <a href="#" class="text-primary">Apply Now <i class="mdi mdi-chevron-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
+                        <!-- Status dan Gaji -->
+                        <div class="status mt-2 d-flex align-items-center">
+                            @if ($lokerItem->status == 'available')
+                                <span class="badge bg-success me-2">Aktif Merekrut</span>
+                            @else
+                                <span class="badge bg-danger me-2">Tutup</span>
+                            @endif
+                            <span class="badge bg-primary">{{ $lokerItem->gaji }}</span>
+                        </div>
 
-    <!-- Button untuk 'Lihat Selengkapnya' -->
-    <div class="text-center mt-4">
-    <a href="{{ route('home.loker') }}" class="btn btn-primary">Selengkapnya</a>
+                        <!-- Link Detail -->
+                        <div class="apply-link mt-3">
+                            <span class="text-primary">Lihat Detail <i class="mdi mdi-chevron-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        @endforeach
     </div>
 </section>
-<!-- Daftar Pekerjaan Populer end -->
+<!-- Daftar Loker Populer end -->
+
 
     @include('Layouts.footer-utama')
     @endsection
