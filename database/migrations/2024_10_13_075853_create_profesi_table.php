@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama_profesi');
             $table->text('deskripsi_profesi');
             $table->text('keterampilan');
-            $table->string('gaji');
+            $table->text('gaji');
             $table->text('gambar_profesi')->nullable();
             $table->timestamps();
         });

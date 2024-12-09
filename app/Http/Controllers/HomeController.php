@@ -32,7 +32,7 @@ class HomeController extends Controller
 
     public function profesidetail($id){
         try {
-            $profesi = Profesi::where('id_kategori_profesi', $id)->get();
+            $profesi = Profesi::where('id', $id)->get();
 
             return view('pages.detail-profesi', compact( 'profesi'));
         } catch (\Exception $e) {
