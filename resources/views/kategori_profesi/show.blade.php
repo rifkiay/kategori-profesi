@@ -13,18 +13,20 @@
                 @section('namaPage2', 'Data Kategori Profesi')
                 @include('Layouts.breadcrumb')
 
+                @include('Layouts.alert')
+
                 <!-- Start Table -->
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header d-flex justify-content-between align-items-center">
-                            <div>
+                                <div>
                                     <h4 class="header-title">Data Kategori Profesi</h4>
                                     <p class="text-muted mb-0">
                                         Berikut adalah seluruh data kategori profesi yang telah terdaftar!
                                     </p>
                                 </div>
-                                <a href="{{ url('admin/kategori-profesi/create') }}" class="btn btn-info">
+                                <a href="{{ route('kategori_profesi.create') }}" class=" btn btn-info">
                                     <i class="ri-add-line"></i> Tambah Data Baru
                                 </a>
                             </div>
@@ -46,13 +48,17 @@
                                             <!-- <td style="text-align: center;">{{ $item->id_kategori_profesi }}</td> -->
                                             <td style="text-align: center;">{{ $loop->iteration }}</td>
                                             <td style="text-align: center;">{{ $item->kategori_profesi }}</td>
-                                            <td style="text-align: center;">{{ $item->icon }}</td>
+                                            <td style="text-align: center;"><i class="{{ $item->icon}}  h1 text-info ">
+
+                                                </i></td>
                                             <td class="text-center align-middle">
                                                 <div class="d-flex justify-content-center align-items-center gap-1" style="min-height: auto;">
-                                                    <a href="#" class="btn btn-info btn-sm">
+                                                    <a href="{{route('kategori_profesi.edit', $item->id)}}" class="btn btn-info btn-sm">
                                                         <i class="ri-pencil-fill"></i>
                                                     </a>
-                                                    <form action="#" method="POST" style="display:inline;">
+                                                    <form action="{{route('kategori_profesi.destroy', $item->id)}}" method="POST" style="display:inline;">
+                                                        @csrf
+                                                        @method('DELETE')
                                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
                                                             <i class="ri-delete-bin-fill"></i>
                                                         </button>
