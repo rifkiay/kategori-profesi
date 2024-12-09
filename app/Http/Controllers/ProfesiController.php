@@ -79,7 +79,7 @@ class ProfesiController extends Controller
 
     public function show(Profesi $profesi)
     {
-        return view('profesi.update', compact('profesi'));
+        return view('profesi.detail', compact('profesi'));
     }
 
     public function edit(Profesi $profesi)
