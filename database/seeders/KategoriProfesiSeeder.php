@@ -14,16 +14,16 @@ class KategoriProfesiSeeder extends Seeder
     public function run(): void
     {
         $kategoriProfesi = [
-            ['kategori_profesi' => 'Teknologi Informasi', 'icon' => 'it_icon.png'],
-            ['kategori_profesi' => 'Kesehatan', 'icon' => 'health_icon.png'],
-            ['kategori_profesi' => 'Pendidikan', 'icon' => 'education_icon.png'],
-            ['kategori_profesi' => 'Keuangan', 'icon' => 'finance_icon.png'],
-            ['kategori_profesi' => 'Hukum', 'icon' => 'law_icon.png'],
-            ['kategori_profesi' => 'Konstruksi', 'icon' => 'construction_icon.png'],
-            ['kategori_profesi' => 'Seni dan Desain', 'icon' => 'art_design_icon.png'],
-            ['kategori_profesi' => 'Pemasaran', 'icon' => 'marketing_icon.png'],
-            ['kategori_profesi' => 'Influencer', 'icon' => 'influencer_icon.png'],
-            ['kategori_profesi' => 'Olahraga', 'icon' => 'sports_icon.png'],
+            ['kategori_profesi' => 'Teknologi Informasi', 'icon' => 'mdi mdi-desktop-classic'],
+            ['kategori_profesi' => 'Kesehatan', 'icon' => 'mdi mdi-heart-pulse'],
+            ['kategori_profesi' => 'Pendidikan', 'icon' => 'mdi mdi-school'],
+            ['kategori_profesi' => 'Keuangan', 'icon' => 'mdi mdi-cash-multiple'],
+            ['kategori_profesi' => 'Hukum', 'icon' => 'mdi mdi-gavel'],
+            ['kategori_profesi' => 'Konstruksi', 'icon' => 'mdi mdi-office-building'],
+            ['kategori_profesi' => 'Seni dan Desain', 'icon' => 'mdi mdi-palette'],
+            ['kategori_profesi' => 'Pemasaran', 'icon' => 'mdi mdi-bullhorn'],
+            ['kategori_profesi' => 'Influencer', 'icon' => 'mdi mdi-account-group'],
+            ['kategori_profesi' => 'Olahraga', 'icon' => 'mdi mdi-soccer'],
         ];
         
         foreach ($kategoriProfesi as $kategori) {

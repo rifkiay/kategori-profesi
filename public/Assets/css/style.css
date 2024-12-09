@@ -2268,3 +2268,58 @@ body {
 .container.daftar-pekerjaan {
   margin-bottom: 80px;
 }}
+
+/* Styling untuk card utama */
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+/* Gambar perusahaan */
+.card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-top: 20px;
+  border-radius: 50%;
+  border: 3px solid #007bff;
+}
+
+/* Hover effect pada card pekerjaan */
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Badge status pekerjaan */
+.badge {
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  border-radius: 25px;
+}
+
+/* Styling untuk bagian pekerjaan serupa */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+/* Tombol "Lihat Detail" */
+.btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
