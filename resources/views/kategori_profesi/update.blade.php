@@ -24,18 +24,21 @@
                             </p>
                         </div>
                         <div class="card-body">
-                            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="{{route('kategori_profesi.update', $kategoriProfesi->id)}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
+                                @method('PUT')
+
                                 <div class="row mb-3">
-                                    <label for="Kategori_Profesi" class="col-3 col-form-label">Nama Kategori Profesi</label>
+                                    <label for="kategori_profesi" class="col-3 col-form-label">Nama Kategori Profesi</label>
                                     <div class="col-9">
-                                        <input type="text" class="form-control" id="Kategori_Profesi" name="Kategori_Profesi"
-                                            placeholder="Ajinomoto" value="">
+                                        <input type="text" class="form-control" id="kategori_profesi" name="kategori_profesi"
+                                            placeholder="Teknologi" value="{{$kategoriProfesi->kategori_profesi}}">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="icon" class="col-3 col-form-label">Icon Profesi</label>
                                     <div class="col-9">
-                                        <input type="file" class="form-control" name="icon" id="icon">
+                                        <input type="text" class="form-control" name="icon" id="icon" placeholder="mdi mdi-heart-pulse" value="{{$kategoriProfesi->icon}}">
                                     </div>
                                 </div>
                         </div>

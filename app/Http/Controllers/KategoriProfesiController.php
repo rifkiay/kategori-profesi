@@ -13,7 +13,7 @@ class KategoriProfesiController extends Controller
     {
         try {
             $kategori = KategoriProfesi::all();
-    
+
             return view('kategori_profesi.index', compact('kategori'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
@@ -27,7 +27,7 @@ class KategoriProfesiController extends Controller
     {
         try {
             $kategori = KategoriProfesi::all();
-    
+
             return view('kategori_profesi.show', compact('kategori'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
@@ -37,7 +37,7 @@ class KategoriProfesiController extends Controller
     // View create
     public function create()
     {
-        return view('kategori_profesi.createKategoriPerusahaan');
+        return view('kategori_profesi.create');
     }
 
     public function store(StoreKategoriProfesiRequest $request)
@@ -46,22 +46,22 @@ class KategoriProfesiController extends Controller
             $data = $request->validated();
 
             KategoriProfesi::create($data);
-    
-            return redirect()->route('kategori_profesi.view')->with('success', 'Kategori Profesi successfully created.');
+
+            return redirect()->route('kategori_profesi.view')->with('success', 'Kategori Profesi berhasil ditambahkan!');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to create Kategori Profesi: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat menambahkan Kategori Profesi. Silakan coba lagi.');
         }
     }
 
     public function show(KategoriProfesi $kategoriProfesi)
     {
-        return view('kategori_profesi.show', compact('profesi'));
+        return view('kategori_profesi.show', compact('kategori'));
     }
 
     // View edit
     public function edit(KategoriProfesi $kategoriProfesi)
     {
-        return view('kategori_profesi.update', compact('profesi'));
+        return view('kategori_profesi.update', compact('kategoriProfesi'));
     }
 
     public function update(StoreKategoriProfesiRequest $request, KategoriProfesi $kategoriProfesi)
@@ -70,10 +70,10 @@ class KategoriProfesiController extends Controller
             $data = $request->validated();
 
             $kategoriProfesi->update($data);
-    
-            return redirect()->route('kategori_profesi.view')->with('success', 'Kategori Profesi successfully updated.');
+
+            return redirect()->route('kategori_profesi.view')->with('success', 'Kategori Profesi berhasil diperbarui!');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to update Kategori Profesi: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat memperbarui Kategori Profesi. Silakan coba lagi.');
         }
     }
 
@@ -81,10 +81,10 @@ class KategoriProfesiController extends Controller
     {
         try {
             $kategoriProfesi->delete();
-    
-            return redirect()->route('kategori_profesi.view')->with('success', 'Kategori Profesi successfully deleted.');
+
+            return redirect()->route('kategori_profesi.view')->with('success', 'Kategori Profesi berhasil dihapus.');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to delete Kategori Profesi: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat menghapus Kategori Profesi. Silakan coba lagi.');
         }
     }
 }

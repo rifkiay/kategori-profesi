@@ -24,18 +24,20 @@
                             </p>
                         </div>
                         <div class="card-body">
-                            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="{{route('kategori_profesi.store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
+
                                 <div class="row mb-3">
-                                    <label for="Kategori_Profesi" class="col-3 col-form-label">Nama Kategori Profesi</label>
+                                    <label for="kategori_profesi" class="col-3 col-form-label">Nama Kategori Profesi</label>
                                     <div class="col-9">
-                                        <input type="text" class="form-control" id="Kategori_Profesi" name="Kategori_Profesi"
-                                            placeholder="Ajinomoto">
+                                        <input type="text" class="form-control" id="kategori_profesi" name="kategori_profesi"
+                                            placeholder="Teknologi">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="icon" class="col-3 col-form-label">Icon Profesi</label>
                                     <div class="col-9">
-                                        <input type="file" class="form-control" name="icon" id="icon">
+                                        <input type="text" class="form-control" name="icon" id="icon" placeholder="mdi mdi-school">
                                     </div>
                                 </div>
                         </div>

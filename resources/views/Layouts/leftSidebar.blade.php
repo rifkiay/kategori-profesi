@@ -2,7 +2,7 @@
     <div class="leftside-menu">
 
         <!-- Brand Logo Light -->
-        <a href="{{ url('/') }}" class="logo logo-light">
+        <a href="{{ url('/admin/dashboard') }}" class="logo logo-light">
             <span class="logo-lg">
                 <img src="{{asset('assets')}}/images/logo.png" alt="logo">
             </span>
@@ -29,7 +29,7 @@
                 <li class="side-nav-title">Utama</li>
 
                 <li class="side-nav-item">
-                    <a href="{{ url('/') }}" class="side-nav-link">
+                    <a href="{{ url('/admin/dashboard') }}" class="side-nav-link">
                         <i class="ri-dashboard-3-line"></i>
                         <span> Dashboard </span>
                     </a>
@@ -67,7 +67,7 @@
                                 <a href="{{ route('profesi.view') }}">Data Profesi</a>
                             </li>
                             <li>
-                                <a href="{{ url('/profesi/create') }}">Tambah Profesi</a>
+                                <a href="{{ route('profesi.create') }}">Tambah Profesi</a>
                             </li>
                         </ul>
                     </div>
@@ -86,7 +86,7 @@
                                 <a href="{{ route('kategori_profesi.view') }}">Data Kategori Profesi</a>
                             </li>
                             <li>
-                                <a href="">Tambah Kategori Profesi</a>
+                                <a href="{{ route('kategori_profesi.create') }}">Tambah Kategori Profesi</a>
                             </li>
 
                         </ul>

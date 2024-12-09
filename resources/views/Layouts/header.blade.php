@@ -29,6 +29,8 @@
     <!-- Icons css -->
     <!-- <link href="{{asset('assets')}}/css/icons.min.css" rel="stylesheet" type="text/css" /> -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('Assets/css/materialdesignicons.min.css') }}" type="text/css">
+
 
 </head>
 
