@@ -28,8 +28,10 @@ Route::prefix('admin')->group(function () {
 // Route CRUD Kategori Profesi
 Route::prefix('admin/kategori_profesi')->middleware(CheckIfAuthenticatedAdmin::class)->group(function () {
     Route::get('/', [KategoriProfesiController::class, 'view'])->name('kategori_profesi.view');
+    Route::get('/create', [KategoriProfesiController::class, 'create'])->name('kategori_profesi.create');
     Route::post('/', [KategoriProfesiController::class, 'store'])->name('kategori_profesi.store');
     Route::get('/{kategori_profesi}', [KategoriProfesiController::class, 'show'])->name('kategori_profesi.show');
+    Route::get('/edit/{kategori_profesi}', [KategoriProfesiController::class, 'edit'])->name('kategori_profesi.edit');
     Route::put('/{kategori_profesi}', [KategoriProfesiController::class, 'update'])->name('kategori_profesi.update');
     Route::delete('/{kategori_profesi}', [KategoriProfesiController::class, 'destroy'])->name('kategori_profesi.destroy');
 });
@@ -55,8 +57,10 @@ Route::prefix('admin/perusahaan')->middleware(CheckIfAuthenticatedAdmin::class)-
 // Route CRUD Profesi
 Route::prefix('admin/profesi')->middleware(CheckIfAuthenticatedAdmin::class)->group(function () {
     Route::get('/', [ProfesiController::class, 'view'])->name('profesi.view');
+    Route::get('/create', [ProfesiController::class, 'create'])->name('profesi.create');
     Route::post('/', [ProfesiController::class, 'store'])->name('profesi.store');
     Route::get('/{profesi}', [ProfesiController::class, 'show'])->name('profesi.show');
+    Route::get('/edit/{profesi}', [ProfesiController::class, 'edit'])->name('profesi.edit');
     Route::put('/{profesi}', [ProfesiController::class, 'update'])->name('profesi.update');
     Route::delete('/{profesi}', [ProfesiController::class, 'destroy'])->name('profesi.destroy');
 });
