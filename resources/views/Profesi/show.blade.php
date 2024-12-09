@@ -68,6 +68,7 @@
                                             </td>
                                             <td class="text-center">
                                                 <div class="d-flex justify-content-center align-items-center gap-1" style="min-height: 100px;">
+                                                <a href="{{ route('profesi.show', $item->id) }}" class="btn btn-warning btn-sm"><i class="ri-eye-fill"></i></a>
                                                     <a href="{{ route('profesi.edit', $item->id) }}" class="btn btn-info btn-sm">
                                                         <i class="ri-pencil-fill"></i>
                                                     </a>
