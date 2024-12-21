@@ -46,27 +46,6 @@ class ProfesiController extends Controller
         }
     }
 
-    // public function profesi($id_kategori){
-    //     try {
-    //         $kategori = KategoriProfesi::all();
-    //         $profesi = Profesi::where('id_kategori_profesi', $id_kategori)->get();
-
-    //         return view('pages.profesi', compact('kategori', 'profesi'));
-    //     } catch (\Exception $e) {
-    //         return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
-    //     }
-    // }
-    
-    // public function profesidetail($id){
-    //     try {
-    //         $profesi = Profesi::where('id', $id)->get();
-
-    //         return view('pages.detail-profesi', compact( 'profesi'));
-    //     } catch (\Exception $e) {
-    //         return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
-    //     }
-    // }
-
     // ================================================================CRUD===================================================================
     public function view()
     {
