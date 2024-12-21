@@ -15,28 +15,57 @@ use Illuminate\Support\Str;
 class ProfesiController extends Controller
 {
     // Menampilkan profesi yang sesuai dengan kategori_profesi yang dipilih
-    public function index($id_kategori)
+    public function index($kategori_profesi)
     {
         try {
-            $profesi = Profesi::where('id_kategori_profesi', $id_kategori)->get();
+            // Mengambil data kategori berdasarkan slug dari nama kategori
+            $kategoriData = KategoriProfesi::where('kategori_profesi', 'LIKE', str_replace('-', ' ', $kategori_profesi))->first();
 
-            return view('profesi.index', compact('profesi'));
+            if (!$kategoriData) {
+                return redirect()->back()->with('error', 'Kategori tidak ditemukan.');
+            }
+
+            $kategori = KategoriProfesi::all();
+            $profesi = Profesi::where('id_kategori_profesi', $kategoriData->id)->get();
+
+            return view('pages.profesi', compact('kategori', 'profesi'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
         }
     }
 
     // Menampilkan artikel profesi yang sesuai dengan profesi yang dipilih
-    public function detail($id_profesi)
+    public function detail($id)
     {
         try {
-            $profesi = Profesi::find($id_profesi);
+            $profesi = Profesi::where('id', $id)->get();
 
-            return view('profesi.index', compact('profesi'));
+            return view('pages.detail-profesi', compact( 'profesi'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
         }
     }
+
+    // public function profesi($id_kategori){
+    //     try {
+    //         $kategori = KategoriProfesi::all();
+    //         $profesi = Profesi::where('id_kategori_profesi', $id_kategori)->get();
+
+    //         return view('pages.profesi', compact('kategori', 'profesi'));
+    //     } catch (\Exception $e) {
+    //         return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
+    //     }
+    // }
+    
+    // public function profesidetail($id){
+    //     try {
+    //         $profesi = Profesi::where('id', $id)->get();
+
+    //         return view('pages.detail-profesi', compact( 'profesi'));
+    //     } catch (\Exception $e) {
+    //         return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
+    //     }
+    // }
 
     // ================================================================CRUD===================================================================
     public function view()

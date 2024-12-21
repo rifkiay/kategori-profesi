@@ -62,24 +62,24 @@
             <div class="row">
                 <!-- Loop untuk menampilkan kategori profesi -->
                 @foreach ($kategoriProfesi as $kategori)
-                    <a href="{{ route('profesi.index', ['kategori' => strtolower(str_replace(' ', '-', $kategori->kategori_profesi))]) }}" class="col-lg-4 col-md-6 mt-4 pt-2">
-                        <div class="popu-category-box bg-light rounded text-center p-4">
-                            <div class="popu-category-icon mb-3">
-                                <!-- Menampilkan icon dengan class dari database -->
-                                <i class="{{ $kategori->icon }} d-inline-block rounded-pill h3 text-primary"></i>
-                            </div>
-                            <div class="popu-category-content">
-                                <h5 class="mb-2 text-dark title">{{ $kategori->kategori_profesi }}</h5>
-                                <p class="text-success mb-0 rounded">20 Pekerjaan</p>
-                            </div>
+                <a href="{{ route('profesi.index', ['kategori' => strtolower(str_replace(' ', '-', $kategori->kategori_profesi))]) }}" class="col-lg-4 col-md-6 mt-4 pt-2">
+                    <div class="popu-category-box bg-light rounded text-center p-4">
+                        <div class="popu-category-icon mb-3">
+                            <!-- Menampilkan icon dengan class dari database -->
+                            <i class="{{ $kategori->icon }} d-inline-block rounded-pill h3 text-primary"></i>
                         </div>
-                    </a>
+                        <div class="popu-category-content">
+                            <h5 class="mb-2 text-dark title">{{ $kategori->kategori_profesi }}</h5>
+                            <p class="text-success mb-0 rounded">20 Pekerjaan</p>
+                        </div>
+                    </div>
+                </a>
                 @endforeach
-            </div>
+            </div>            
 
             <!-- Tombol Selengkapnya -->
             <div class="text-center mt-4">
-                <a href="{{ route('home.profesi') }}" class="btn btn-primary">Selengkapnya</a>
+                <a href="{{ route('kategori.index') }}" class="btn btn-primary">Selengkapnya</a>
             </div>
         </div>
     </section>

@@ -98,23 +98,21 @@ Route::prefix('profileuser')->middleware(CheckIfAuthenticated::class)->group(fun
 
 // Route Home
 Route::prefix('')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/', [HomeController::class, 'index'])->name('home.index');
     Route::get('/about', [HomeController::class, 'about'])->name('home.about');
-    Route::get('/profesi', [HomeController::class, 'profesi'])->name('home.profesi');
-    Route::get('/profesi/detail/{id}', [HomeController::class, 'profesidetail'])->name('home.profesidetail');
-    Route::get('/profesi/{kategori}', [HomeController::class, 'index'])->name('profesi.index');
-    Route::get('/profesi/kategori/{kategori}', [HomeController::class, 'kategori'])->name('home.kategori');
     Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
-    Route::get('/loker', [HomeController::class, 'loker'])->name('loker');
+    Route::get('/loker', [HomeController::class, 'loker'])->name('loker.index');
     Route::get('/loker/{id}', [HomeController::class, 'lokerDetail'])->name('loker.detail');
 });
 
-// Route Detail Profesi
-// // Route Detail Profesi
-// Route::prefix('')->group(function () {
-//     Route::get('/{id}', [ProfesiController::class, 'index'])->name('profesi.index');
-//     Route::get('/{detail}/{id}', [ProfesiController::class, 'detail'])->name('detailprofesi.detail');
-// });
+Route::prefix('profesi')->group(function () {
+    Route::get('/{kategori}', [ProfesiController::class, 'index'])->name('profesi.index');
+    Route::get('/detail/{id}', [ProfesiController::class, 'detail'])->name('profesi.detail');
+});
+
+Route::prefix('kategori')->group(function () {
+    Route::get('/', [KategoriProfesiController::class, 'index'])->name('kategori.index');
+});
 
 // Route Loker
 // // Route Loker
@@ -214,9 +212,9 @@ Route::get('/sign-up', function () {
 //     return view('Pages.profesi'); 
 // })->name('profesi');
 
-Route::get('/profesi/kategori/{kategori}', function ($kategori) {
-    return view('Pages.kategori-profesi', ['kategori' => $kategori]);
-})->name('kategori-profesi');
+// Route::get('/profesi/kategori/{kategori}', function ($kategori) {
+//     return view('Pages.kategori-profesi', ['kategori' => $kategori]);
+// })->name('kategori-profesi');
 
 // Route::get('/profesi/detail/{id}', function ($id) {
 //     return view('Pages.detail-profesi', ['id' => $id]);

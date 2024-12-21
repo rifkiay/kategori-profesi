@@ -62,7 +62,7 @@
                     <ul class="navigation-menu d-flex align-items-center">
                         <li><a href="{{ url('/') }}">Beranda</a></li>
                         <li><a href="{{ route('home.about') }}">Tentang Kami</a></li>
-                        <li><a href="{{ route('home.profesi') }}">Profesi</a></li>
+                        <li><a href="{{ route('kategori.index') }}">Profesi</a></li>
                         <li><a href="{{ route('home.contact') }}">Kontak</a></li>
                     </ul>
                 </div>

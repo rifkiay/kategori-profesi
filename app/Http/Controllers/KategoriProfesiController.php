@@ -12,14 +12,13 @@ class KategoriProfesiController extends Controller
     public function index()
     {
         try {
-            $kategori = KategoriProfesi::all();
+            $kategoriprofesi = KategoriProfesi::all();
 
-            return view('kategori_profesi.index', compact('kategori'));
+            return view('pages.kategori-profesi', compact('kategoriprofesi'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
         }
     }
-
 
     // =============================================================CRUD Admin=================================================================
     // All Data

@@ -26,30 +26,6 @@ class HomeController extends Controller
         return view('pages.about');
     }
 
-    public function profesi(){
-        return view('pages.profesi');
-    }
-
-    public function profesidetail($id){
-        try {
-            $profesi = Profesi::where('id', $id)->get();
-
-            return view('pages.detail-profesi', compact( 'profesi'));
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
-        }
-    }
-
-    public function kategori($id){
-        try {
-            $kategoriprofesi = KategoriProfesi::where('id', $id)->get();
-
-            return view('pages.kategori-profesi', compact('kategoriprofesi'));
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
-        }
-    }
-
     public function contact(){
         return view('pages.contact');
     }

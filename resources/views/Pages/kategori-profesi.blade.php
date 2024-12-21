@@ -36,8 +36,8 @@
             ];
         @endphp
 
-        @foreach($categories as $category)
-        <a href="{{ route('kategori-profesi', ['kategori' => $category['slug']]) }}" class="col-lg-3 col-md-6 mt-4 pt-2">
+        @foreach($kategoriprofesi as $category)
+        <a href="{{ route('profesi.index', ['kategori' => strtolower(str_replace(' ', '-', $category->kategori_profesi))]) }}" class="col-lg-3 col-md-6 mt-4 pt-2">
             <div class="popu-category-box bg-light rounded text-center p-4">
                 <div class="popu-category-icon mb-3">
                     <i class="mdi {{ $category['icon'] }} d-inline-block rounded-pill h3 text-primary"></i>
