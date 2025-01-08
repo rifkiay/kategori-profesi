@@ -51,7 +51,7 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card shadow-sm rounded-lg overflow-hidden h-100">
                     <!-- Center the image using d-block mx-auto and ensuring good aspect ratio -->
-                    <img src="{{ asset('assets/images/blog/' . $item->gambar_profesi) }}" class="card-img-top d-block mx-auto" alt="Profesi {{ $item->nama_profesi }}" style="max-height: 200px; object-fit: cover;">
+                    <img src="{{ asset('Assets/images/' . $item->gambar_profesi) }}" class="card-img-top d-block mx-auto" alt="Profesi {{ $item->nama_profesi }}" style="max-height: 200px; object-fit: cover;">
                     
                     <div class="card-body">
                         <h5 class="card-title text-dark">
