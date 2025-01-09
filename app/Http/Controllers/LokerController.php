@@ -3,53 +3,48 @@
 namespace App\Http\Controllers;
 
 use App\Models\Loker;
+use App\Http\Requests\StoreLokerRequest;
+use App\Http\Requests\UpdateLokerRequest;
 use Illuminate\Http\Request;
 
 class LokerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        try {
-            $loker = Loker::all();
-    
-            return view('loker.index', compact('loker',));
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
-        }
+        $loker = Loker::all();
+        return view('loker.index', compact('loker'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function create()
     {
-        //
+        return view('loker.createLoker');
     }
 
-    /**
-     * Display the specified resource.
-     */
+    public function store(StoreLokerRequest $request)
+    {
+        Loker::create($request->validated());
+        return redirect()->route('loker.index')->with('success', 'Lowongan berhasil ditambahkan.');
+    }
+
     public function show(Loker $loker)
     {
-        //
+        return view('loker.index', compact('loker'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Loker $loker)
+    public function edit(Loker $loker)
     {
-        //
+        return view('loker.updateloker', compact('loker'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    public function update(UpdateLokerRequest $request, Loker $loker)
+    {
+        $loker->update($request->validated());
+        return redirect()->route('loker.index')->with('success', 'Lowongan berhasil diperbarui.');
+    }
+
     public function destroy(Loker $loker)
     {
-        //
+        $loker->delete();
+        return redirect()->route('loker.index')->with('success', 'Lowongan berhasil dihapus.');
     }
 }
