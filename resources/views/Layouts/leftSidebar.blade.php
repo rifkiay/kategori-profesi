@@ -93,7 +93,7 @@
                 </div>
             </li>
 
-            <!-- Pekerjaan -->
+            <!-- Loker -->
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false" aria-controls="sidebarPagesAuth" class="side-nav-link">
                     <i class="ri-briefcase-line"></i>
@@ -103,10 +103,10 @@
                 <div class="collapse" id="sidebarPagesAuth">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{ route('loker.index') }}">Data Loker</a>
+                            <a href="{{ route('lokeradmin.index') }}">Data Loker</a>
                         </li>
                         <li>
-                            <a href="{{ url('/loker/create') }}">Tambah Loker</a>
+                            <a href="{{ route('loker.create') }}">Tambah Loker</a>
                         </li>
 
                     </ul>
