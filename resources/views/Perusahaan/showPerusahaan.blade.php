@@ -13,6 +13,8 @@
                 @section('namaPage2', 'Data Perusahaan')
                 @include('Layouts.breadcrumb')
 
+                @include('Layouts.alert')
+
                 <!-- Start Table -->
                 <div class="row">
                     <div class="col-12">
@@ -24,7 +26,7 @@
                                         Berikut adalah data seluruh perusahaan yang telah terdaftar!
                                     </p>
                                 </div>
-                                <a href="{{ url('/Perusahaan/create') }}" class="btn btn-info">
+                                <a href="{{ route('perusahaan.create') }}" class="btn btn-info">
                                     <i class="ri-add-line"></i> Tambah Data Baru
                                 </a>
                             </div>
@@ -41,16 +43,26 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($perusahaans as $item)
                                         <tr>
-                                            <td class="text-center align-middle">1</td>
-                                            <td class="text-center align-middle">Nixon</td>
-                                            <td class="text-center align-middle">logo.png</td>
+                                            <td class="text-center align-middle">{{ $loop->iteration }}</td>
+                                            <td class="text-center align-middle">{{ $item->nama_perusahaan }}</td>
+                                            <td class="text-center align-middle">
+                                                @if($item->logo_perusahaan)
+                                                <img src="{{ asset('storage/' . $item->logo_perusahaan) }}" alt="Logo Perusahaan" width="100">
+                                                @else
+                                                <span>Gambar tidak tersedia</span>
+                                                @endif
+                                            </td>
                                             <td class="text-center align-middle">
                                                 <div class="d-flex justify-content-center align-items-center gap-1" style="min-height: auto;">
-                                                    <a href="{{ url('/Perusahaan/create') }}" class="btn btn-info btn-sm">
+                                                    <a href="{{ route('perusahaan.edit', $item->id) }}" class="btn btn-info btn-sm">
                                                         <i class="ri-pencil-fill"></i>
                                                     </a>
-                                                    <form action="#" method="POST" style="display:inline;">
+                                                    <form action="{{ route('perusahaan.destroy', $item->id) }}" method="POST" style="display:inline;">
+                                                    @csrf
+                                                    @method('DELETE')
+
                                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
                                                             <i class="ri-delete-bin-fill"></i>
                                                         </button>
@@ -58,6 +70,7 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
 
