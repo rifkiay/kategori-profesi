@@ -12,18 +12,18 @@ class LokerController extends Controller
     public function index()
     {
         $loker = Loker::all();
-        return view('loker.index', compact('loker'));
+        return view('Loker.index', compact('loker'));
     }
 
     public function create()
     {
-        return view('loker.createLoker');
+        return view('Loker.createLoker');
     }
 
     public function store(StoreLokerRequest $request)
     {
         Loker::create($request->validated());
-        return redirect()->route('loker.index')->with('success', 'Lowongan berhasil ditambahkan.');
+        return redirect()->route('lokeradmin.index')->with('success', 'Lowongan berhasil ditambahkan.');
     }
 
     public function show(Loker $loker)
@@ -39,12 +39,12 @@ class LokerController extends Controller
     public function update(UpdateLokerRequest $request, Loker $loker)
     {
         $loker->update($request->validated());
-        return redirect()->route('loker.index')->with('success', 'Lowongan berhasil diperbarui.');
+        return redirect()->route('lokeradmin.index')->with('success', 'Lowongan berhasil diperbarui.');
     }
 
     public function destroy(Loker $loker)
     {
         $loker->delete();
-        return redirect()->route('loker.index')->with('success', 'Lowongan berhasil dihapus.');
+        return redirect()->route('lokeradmin.index')->with('success', 'Lowongan berhasil dihapus.');
     }
 }
