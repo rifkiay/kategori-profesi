@@ -23,12 +23,14 @@
             </div>
         </div>
     </div>
+
     <!-- Back to home -->
     <div class="back-to-home rounded d-none d-sm-block">
         <a href="{{ url('/') }}" class="text-white rounded d-inline-block text-center"><i class="mdi mdi-home"></i></a>
     </div>
-    <!-- Hero Start -->
-    <section class="vh-100" style="background-image: url('{{ asset('Assets/images/user.jpg') }}');">
+
+    <!-- Hero Section -->
+    <section class="vh-100" style="background-image: url('{{ asset('Assets/images/user.jpg') }}'); background-size: cover; background-position: center;">
         <div class="home-center">
             <div class="home-desc-center">
                 <div class="container">
@@ -44,21 +46,23 @@
                                         <div class="col-lg-12">
                                             <div class="form-group position-relative">
                                                 <label>Your Email <span class="text-danger">*</span></label>
-                                                <input type="email" class="form-control" placeholder="Email" name="email" id="email" required="">
+                                                <input type="email" class="form-control" placeholder="Email" name="email" id="email" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group position-relative">
                                                 <label>Password <span class="text-danger">*</span></label>
-                                                <input type="password" class="form-control" placeholder="Password" name="password" id="password" required="">
+                                                <input type="password" class="form-control" placeholder="Password" name="password" id="password" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mb-0">
                                             <button type="submit" class="btn btn-primary w-100">Sign in</button>
                                         </div>
-                                        {{-- <div class="col-12 text-center mt-3">
-                                            <p id="error-message" class="text-danger" style="display: none;">Username atau password salah!</p>
-                                        </div> --}}
+                                        <div class="col-12 text-center mt-3">
+                                            <p class="mb-0">Belum punya akun? 
+                                                <a href="{{ route('signup.index') }}" class="text-primary">Daftar Sekarang</a>
+                                            </p>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -68,6 +72,7 @@
             </div>
         </div>
     </section>
+
     <!-- Javascript -->
     <script src="{{ asset('Assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('Assets/js/bootstrap.bundle.min.js') }}"></script>
@@ -76,26 +81,5 @@
     <script src="{{ asset('Assets/js/selectize.min.js') }}"></script>
     <script src="{{ asset('Assets/js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('Assets/js/app.js') }}"></script>
-    
-    <!-- Script untuk validasi login -->
-    {{-- <script>
-        document.querySelector('#loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var emailInput = document.querySelector('#email').value;
-            var passwordInput = document.querySelector('#password').value;
-            var userData = {
-                email: 'admin@gmail.com',
-                password: 'admin123'
-            };
-            if (emailInput === userData.email && passwordInput === userData.password) {
-                alert('Login berhasil!');
-                // Simpan status login di sesi lokal
-                localStorage.setItem('user_logged_in', true);
-                window.location.href = '/'; // Redirect ke halaman home
-            } else {
-                alert('Email atau password salah!');
-            }
-        });
-    </script> --}}
 </body>
 </html>

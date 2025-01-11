@@ -179,7 +179,7 @@ Route::prefix('loker')->group(function () {
 // });
 
 Route::get('/sign-up', function () {
-    return view('Auth.sign-up');
+    return view('Auth.Sign-up');
 });
 
     // Route::post('/login-submit', function () {
