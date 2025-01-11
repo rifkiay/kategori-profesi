@@ -38,7 +38,7 @@ Route::prefix('admin/kategori_profesi')->middleware(CheckIfAuthenticatedAdmin::c
 
 // Route CRUD Loker
 Route::prefix('admin/loker')->group(function () {
-    Route::get('/', [LokerController::class, 'index'])->name('loker.index');
+    Route::get('/', [LokerController::class, 'index'])->name('lokeradmin.index');
     Route::get('/create', [LokerController::class, 'create'])->name('loker.create');
     Route::post('/', [LokerController::class, 'store'])->name('loker.store');
     // Route::get('/{loker}', [LokerController::class, 'show'])->name('loker.show');
