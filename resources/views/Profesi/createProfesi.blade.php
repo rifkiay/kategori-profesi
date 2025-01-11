@@ -26,25 +26,19 @@
                         <div class="card-body">
                             <form action="{{ route('profesi.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
-
                                 <div class="row mb-3">
                                     <label for="id_kategori_profesi" class="col-3 col-form-label">ID Kategori Profesi</label>
                                     <div class="col-9">
-                                        <select class="form-control select2" name="id_kategori_profesi" id="id_kategori_profesi" data-toggle="select2">
-                                            <option>Pilih Kategori</option>
-                                            <option value="1">Teknologi Informasi</option>
-                                            <option value="2">Kesehatan</option>
-                                            <option value="3">Pendidikan</option>
-                                            <option value="4">Keuangan</option>
-                                            <option value="5">Hukum</option>
-                                            <option value="6">Konstruksi</option>
-                                            <option value="7">Seni & Desain</option>
-                                            <option value="8">Pemasaran</option>
-                                            <option value="9">Influencer</option>
-                                            <option value="10">Olahraga</option>
+                                        <select class="form-control" name="id_kategori_profesi" id="id_kategori_profesi">
+                                            <option value="">Pilih Kategori Profesi</option>
+                                            @foreach ($kategori as $item)
+                                            <option value="{{ $item->id }}" {{ old('id_kategori_profesi') == $item->id ? 'selected' : '' }}>
+                                            {{ $item->id }} - {{ $item->kategori_profesi }}
+                                            </option>
+                                            @endforeach
                                         </select>
                                         @error('id_kategori_profesi')
-                                        <div class="text-danger">* {{ $message }}</div>
+                                        <div class="alert alert-danger">* {{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
