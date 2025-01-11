@@ -24,7 +24,9 @@
                             </p>
                         </div>
                         <div class="card-body">
-                            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="{{route('perusahaan.store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            @csrf
+
                                 <div class="row mb-3">
                                     <label for="nama_perusahaan" class="col-3 col-form-label">Nama Perusahaan</label>
                                     <div class="col-9">
