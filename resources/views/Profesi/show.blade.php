@@ -56,7 +56,7 @@
                                             <td class="text-center align-middle">{{ $item->keterampilan }}</td>
                                             <td class="text-center text-nowrap align-middle ">
                                                 <span class="badge bg-success bg-opacity-15 p-1">
-                                                    Rp {{ number_format((float) $item->gaji, 0, ',', '.') }}
+                                                    Rp {{$item->gaji}}
                                                 </span>
                                             </td>
                                             <td class="text-center">
