@@ -14,7 +14,7 @@
                 @include('Layouts.breadcrumb')
 
                 @include('Layouts.alert')
-                
+
                 <!-- Start Form -->
                 <div class="col-lg-12">
                     <div class="card">
@@ -31,7 +31,7 @@
                                     <label for="id_kategori_profesi" class="col-3 col-form-label">ID Kategori Profesi</label>
                                     <div class="col-9">
                                         <select class="form-control select2" name="id_kategori_profesi" id="id_kategori_profesi" data-toggle="select2">
-                                        <option>Pilih Kategori</option>
+                                            <option>Pilih Kategori</option>
                                             <option value="1">Teknologi Informasi</option>
                                             <option value="2">Kesehatan</option>
                                             <option value="3">Pendidikan</option>
@@ -43,6 +43,9 @@
                                             <option value="9">Influencer</option>
                                             <option value="10">Olahraga</option>
                                         </select>
+                                        @error('id_kategori_profesi')
+                                        <div class="text-danger">* {{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -50,16 +53,22 @@
                                     <label for="nama_profesi" class="col-3 col-form-label">Nama Profesi</label>
                                     <div class="col-9">
                                         <input type="text" class="form-control" id="nama_profesi" name="nama_profesi"
-                                            placeholder="Software Developer">
+                                            placeholder="Software Developer" required>
                                     </div>
+                                    @error('nama_profesi')
+                                    <div class="text-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="deskripsi_profesi" class="col-3 col-form-label">Deskripsi Profesi</label>
+                                    <label for="deskripsi_profesi" class="col-3 col-form-label"> Deskripsi Profesi</label>
                                     <div class="col-9">
                                         <textarea class="form-control" id="deskripsi_profesi" name="deskripsi_profesi"
                                             rows="5"></textarea>
                                     </div>
+                                    @error('deskripsi_profesi')
+                                    <div class="text-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="row mb-3">
                                     <label for="keterampilan" class="col-3 col-form-label">Keterampilan</label>
@@ -67,14 +76,20 @@
                                         <textarea class="form-control" id="keterampilan" name="keterampilan"
                                             rows="5"></textarea>
                                     </div>
+                                    @error('keterampilan')
+                                    <div class="text-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="gaji" class="col-3 col-form-label">Gaji</label>
                                     <div class="col-9">
-                                        <input type="number" class="form-control" id="gaji" name="gaji"
+                                        <input type="text" class="form-control" id="gaji" name="gaji"
                                             placeholder="10.000.000">
                                     </div>
+                                    @error('gaji')
+                                    <div class="text-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -82,6 +97,9 @@
                                     <div class="col-9">
                                         <input type="file" class="form-control" name="gambar_profesi" id="gambar_profesi">
                                     </div>
+                                    @error('gambar_profesi')
+                                    <div class="text-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
                         </div>
                         <div class="row justify-content-end">

@@ -73,7 +73,7 @@
                                 <div class="row mb-3">
                                     <label for="gaji" class="col-3 col-form-label">Gaji</label>
                                     <div class="col-9">
-                                        <input type="number" class="form-control" id="gaji" name="gaji" value="{{ $profesi->gaji }}"
+                                        <input type="text" class="form-control" id="gaji" name="gaji" value="{{ $profesi->gaji }}"
                                             placeholder="10.000.000">
                                     </div>
                                 </div>

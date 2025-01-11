@@ -43,7 +43,7 @@
                                         </h5>
 
                                         <p class="text-muted mb-0 text-lg"><small> <span class="badge bg-success bg-opacity-13 p-2">
-                                                    Gaji : Rp {{ number_format((float) $profesi->gaji, 0, ',', '.') }}
+                                                   Rp. {{$profesi->gaji}}
                                                 </span></small></p>
                                     </div>
                                 </div>
