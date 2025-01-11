@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Loker;
 use App\Http\Requests\StoreLokerRequest;
 use App\Http\Requests\UpdateLokerRequest;
+use App\Models\KategoriProfesi;
+use App\Models\Perusahaan;
 use Illuminate\Http\Request;
 
 class LokerController extends Controller
@@ -17,7 +19,9 @@ class LokerController extends Controller
 
     public function create()
     {
-        return view('Loker.createLoker');
+        $kategori = KategoriProfesi::all();
+        $perusahaans = Perusahaan::all();
+        return view('Loker.createLoker', compact('kategori', 'perusahaans'));
     }
 
     public function store(StoreLokerRequest $request)
