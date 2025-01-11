@@ -14,12 +14,12 @@ class PerusahaanController extends Controller
     public function index()
     {
         $perusahaans = Perusahaan::all();
-        return view('perusahaan.showperusahaan', compact('perusahaans'));
+        return view('Perusahaan.showPerusahaan', compact('perusahaans'));
     }
 
     public function create()
     {
-        return view('perusahaan.createperusahaan');
+        return view('Perusahaan.createPerusahaan');
     }
 
     public function store(StorePerusahaanRequest $request)
