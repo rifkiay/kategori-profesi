@@ -27,7 +27,7 @@
                                         Berikut adalah data seluruh lowongan pekerjaan yang telah terdaftar!
                                     </p>
                                 </div>
-                                <a href="{{ url('/loker/create') }}" class="btn btn-info">
+                                <a href="{{ route('loker.create') }}" class="btn btn-info">
                                     <i class="ri-add-line"></i> Tambah Data Baru
                                 </a>
                             </div>
@@ -61,7 +61,7 @@
                                             <td class="text-center align-middle">{{ $item->deskripsi_loker}}</td>
                                             <td class="text-center text-nowrap align-middle">
                                                 <span class="badge bg-info bg-opacity-15 p-1">
-                                                    Rp {{ number_format((float) $item->gaji, 0, ',', '.') }}
+                                                    Rp {{ $item->gaji }}
                                                 </span>
                                             </td>
                                             <td class="text-center align-middle">{{ $item->kualifikasi }}</td>
@@ -84,10 +84,14 @@
                                             </td>
                                             <td class="text-center align-middle">
                                                 <div class="d-flex justify-content-center align-items-center gap-1" style="min-height: auto;">
-                                                    <a href="{{ url('/loker/update') }}" class="btn btn-info btn-sm">
+                                                    <a href="#" class="btn btn-warning btn-sm"><i class="ri-eye-fill"></i></a>
+                                                    <a href="{{ route('loker.edit', $item->id) }}" class="btn btn-info btn-sm">
                                                         <i class="ri-pencil-fill"></i>
                                                     </a>
-                                                    <form action="#" method="POST" style="display:inline;">
+                                                    <form action="{{ route('loker.destroy', $item->id) }}" method="POST" style="display:inline;">
+                                                        @csrf
+                                                        @method('DELETE')
+
                                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
                                                             <i class="ri-delete-bin-fill"></i>
                                                         </button>
