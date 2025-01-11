@@ -24,7 +24,7 @@
                             </p>
                         </div>
                         <div class="card-body">
-                            <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="{{ route('loker.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
 
                                 <div class="row mb-3">
@@ -44,6 +44,9 @@
                                             <option value="10">Olahraga</option>
                                         </select>
                                     </div>
+                                    @error('id_kategori_profesi')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -52,6 +55,9 @@
                                         <input type="text" class="form-control" id="id_perusahaan" name="id_perusahaan"
                                             placeholder="2">
                                     </div>
+                                    @error('id_perusahaan')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -60,6 +66,9 @@
                                         <input type="text" class="form-control" id="judul" name="judul"
                                             placeholder="Software Developer">
                                     </div>
+                                    @error('judul')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -68,6 +77,9 @@
                                         <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan"
                                             placeholder="Ajinomoto">
                                     </div>
+                                    @error('nama_perusahaan')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -76,14 +88,20 @@
                                         <textarea class="form-control" id="deskripsi_loker" name="deskripsi_loker"
                                             rows="5"></textarea>
                                     </div>
+                                    @error('deskripsi_loker')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="gaji" class="col-3 col-form-label">Gaji</label>
                                     <div class="col-9">
-                                        <input type="number" class="form-control" id="gaji" name="gaji"
+                                        <input type="text" class="form-control" id="gaji" name="gaji"
                                             placeholder="10.000.000">
                                     </div>
+                                    @error('gaji')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -92,6 +110,9 @@
                                         <textarea class="form-control" id="kualifikasi" name="kualifikasi"
                                             rows="5"></textarea>
                                     </div>
+                                    @error('kualifikasi')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -99,6 +120,9 @@
                                     <div class="col-9">
                                         <input type="date" class="form-control" name="tanggal_posting" id="tanggal_posting">
                                     </div>
+                                    @error('tanggal_posting')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -106,17 +130,22 @@
                                     <div class="col-9">
                                         <input type="date" class="form-control" name="akhir_pendaftaran" id="akhir_pendaftaran">
                                     </div>
+                                    @error('akhir_pendaftaran')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="status" class="col-3 col-form-label">Status</label>
                                     <div class="col-9">
                                         <select class="form-control select2" name="status" id="Status" data-toggle="select2">
-                                            <option>Pilih Status</option>
-                                            <option value="1">Available</option>
-                                            <option value="2">Closed</option>
-
+                                            <option value="">Pilih Status</option>
+                                            <option value="available" {{ old('status') == 'available' ? 'selected' : '' }}>Available</option>
+                                            <option value="closed" {{ old('status') == 'closed' ? 'selected' : '' }}>Closed</option>
                                         </select>
+                                        @error('status')
+                                        <div class="alert alert-danger">* {{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                         </div>
