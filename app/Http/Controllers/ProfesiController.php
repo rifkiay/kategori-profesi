@@ -60,7 +60,8 @@ class ProfesiController extends Controller
 
     public function create()
     {
-        return view('Profesi.createProfesi');
+        $kategori = KategoriProfesi::all();
+        return view('Profesi.createProfesi', compact('kategori'));
     }
 
     public function store(StoreProfesiRequest $request)
