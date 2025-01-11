@@ -24,7 +24,7 @@ class ProfesiSeeder extends Seeder
             Alat Manajemen Proyek: Git, GitHub, JIRA, Trello.',
 
             'gaji' => '6.000.000',
-            'gambar_profesi' => 'profesi/teknologi_informasi/sofware_developer/software-developer.jpg',
+            'gambar_profesi' => 'gambar/profesi/teknologi_informasi/sofware_developer/software-developer.jpg',
         ]);
 
         Profesi::create([
@@ -41,7 +41,7 @@ class ProfesiSeeder extends Seeder
             Visualisasi Data
             Pemahaman Bisnis',
             'gaji' => '6.000.000 - 15.000.000',
-            'gambar_profesi' => 'profesi/teknologi_informasi/data_science/data_scientist.jpg',
+            'gambar_profesi' => 'gambar/profesi/teknologi_informasi/data_science/data_scientist.jpg',
         ]);        
 
         Profesi::create([
@@ -57,7 +57,7 @@ class ProfesiSeeder extends Seeder
             Virtualisasi
             Monitoring Tools',
             'gaji' => '5.000.000 - 10.000.000',
-            'gambar_profesi' => 'profesi/teknologi_informasi/network_engineer/network_engineer.jpg',
+            'gambar_profesi' => 'gambar/profesi/teknologi_informasi/network_engineer/network_engineer.jpg',
         ]);        
              
         Profesi::create([
@@ -74,7 +74,7 @@ class ProfesiSeeder extends Seeder
             CEH
             CISSP',
             'gaji' => '7.000.000 - 12.000.000',
-            'gambar_profesi' => 'profesi/teknologi_informasi/cyber_securtiy/cybersecurity_analyst.jpg',
+            'gambar_profesi' => 'gambar/profesi/teknologi_informasi/cyber_securtiy/cybersecurity_analyst.jpg',
         ]);
         
         Profesi::create([
@@ -90,7 +90,7 @@ class ProfesiSeeder extends Seeder
             Mikroservices
             Sertifikasi',
             'gaji' => '10.000.000 - 12.000.000',
-            'gambar_profesi' => 'profesi/teknologi_informasi/cloud/cloud.jpeg',
+            'gambar_profesi' => 'gambar/profesi/teknologi_informasi/cloud/cloud.jpeg',
         ]);
         
 
@@ -108,7 +108,7 @@ class ProfesiSeeder extends Seeder
             Keputusan
             Lisensi Praktik',
             'gaji' => '4.000.000 - 10.000.000',
-            'gambar_profesi' => 'profesi/kesehatan/dokter_umum/dokter_umum.jpg',
+            'gambar_profesi' => 'gambar/profesi/kesehatan/dokter_umum/dokter_umum.jpg',
         ]);
         
         Profesi::create([
@@ -117,13 +117,13 @@ class ProfesiSeeder extends Seeder
             'deskripsi_profesi' => 'Perawat adalah tenaga kesehatan yang memiliki peran vital dalam memberikan perawatan langsung kepada pasien di berbagai fasilitas medis, seperti rumah sakit, klinik, dan puskesmas. Mereka bertanggung jawab untuk memantau kondisi pasien, memberikan pengobatan sesuai dengan instruksi dokter, serta memastikan kenyamanan dan kebutuhan fisik pasien terpenuhi. Selain itu, perawat juga berperan dalam merawat pasien pascaoperasi, mengelola perawatan luka, serta membantu dalam prosedur medis yang diperlukan. Perawat bekerja dalam tim medis yang lebih luas dan sering kali menjadi penghubung utama antara pasien dan dokter atau tenaga medis lainnya.
         
             Selain tugas medis, perawat juga memberikan edukasi penting kepada pasien dan keluarga mengenai cara mengelola kondisi kesehatan atau penyakit tertentu, seperti diabetes, hipertensi, atau penyakit kronis lainnya. Keterampilan komunikasi yang baik sangat dibutuhkan dalam profesi ini, karena perawat sering kali berinteraksi langsung dengan pasien yang mungkin mengalami stres atau kecemasan terkait kondisi kesehatannya. Perawat juga harus memiliki ketahanan fisik dan mental yang kuat, mengingat pekerjaan mereka yang sering kali memerlukan waktu yang panjang dan melibatkan situasi emosional yang kompleks. Keberhasilan dalam profesi ini sangat bergantung pada kemampuan perawat dalam memberikan perawatan yang penuh perhatian dan responsif terhadap kebutuhan pasien.',
-            'keterampilan' => 'Pengetahuan Keperawatan
+            'keterampilan' => 'gambar/Pengetahuan Keperawatan
             Komunikasi
             Empati
             Manajemen Waktu
             Ketahanan Fisik dan Mental',
             'gaji' => '3.000.000 - 6.000.000',
-            'gambar_profesi' => 'profesi/kesehatan/perawat/perawat.jpg',
+            'gambar_profesi' => 'gambar/profesi/kesehatan/perawat/perawat.jpg',
         ]);
         
         Profesi::create([
@@ -138,7 +138,7 @@ class ProfesiSeeder extends Seeder
             Manajemen Obat
             Regulasi Farmasi',
             'gaji' => '4.000.000 - 8.000.000',
-            'gambar_profesi' => 'profesi/kesehatan/apoteker/apoteker.jpg',
+            'gambar_profesi' => 'gambar/profesi/kesehatan/apoteker/apoteker.jpg',
         ]);
     
         Profesi::create([
@@ -153,7 +153,7 @@ class ProfesiSeeder extends Seeder
             Penelitian
             Empati',
             'gaji' => '3.000.000 - 6.000.000',
-            'gambar_profesi' => 'profesi/kesehatan/ahli_gizi/ahli_gizi.jpg',
+            'gambar_profesi' => 'gambar/profesi/kesehatan/ahli_gizi/ahli_gizi.jpg',
         ]);
         
         Profesi::create([
@@ -168,7 +168,7 @@ class ProfesiSeeder extends Seeder
             Komunikasi
             Pemecahan Masalah',
             'gaji' => '4.000.000 - 7.000.000',
-            'gambar_profesi' => 'profesi/kesehatan/radiologis/radiologis.jpg',
+            'gambar_profesi' => 'gambar/profesi/kesehatan/radiologis/radiologis.jpg',
         ]);      
     }
 }
