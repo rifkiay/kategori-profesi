@@ -24,7 +24,7 @@
                             </p>
                         </div>
                         <div class="card-body">
-                            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="{{ route('perusahaan.update', $perusahaan->id) }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
                                 @method('PUT')
 
@@ -32,13 +32,16 @@
                                     <label for="nama_perusahaan" class="col-3 col-form-label">Nama Perusahaan</label>
                                     <div class="col-9">
                                         <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan"
-                                            placeholder="Ajinomoto" value="">
+                                            placeholder="Ajinomoto" value="{{ $perusahaan->nama_perusahaan }}">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="logo_perusahaan" class="col-3 col-form-label">Logo Perusahaan</label>
                                     <div class="col-9">
                                         <input type="file" class="form-control" name="logo_perusahaan" id="logo_perusahaan">
+                                        @if($perusahaan->logo_perusahaan)
+                                        <img src="{{ asset('storage/' . $perusahaan->  logo_perusahaan) }}" alt="Logo Perusahaan" width="100" class="mt-2">
+                                        @endif
                                     </div>
                                 </div>
                         </div>
