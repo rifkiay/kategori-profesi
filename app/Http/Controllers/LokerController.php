@@ -37,7 +37,10 @@ class LokerController extends Controller
 
     public function edit(Loker $loker)
     {
-        return view('loker.updateloker', compact('loker'));
+        $loker = Loker::with('perusahaan')->findOrFail($loker->id);
+        $kategori = KategoriProfesi::all();
+        $perusahaans = Perusahaan::all();
+        return view('loker.updateLoker', compact('loker', 'kategori', 'perusahaans'));
     }
 
     public function update(UpdateLokerRequest $request, Loker $loker)
