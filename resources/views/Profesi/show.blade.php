@@ -33,6 +33,7 @@
                             </div>
 
                             <div class="card-body">
+                                <div class="table-responsive">
                                 <table id="scroll-horizontal-datatable" class="table table-striped w-100 nowrap">
                                     <thead>
                                         <tr class="text-center text-nowrap">
@@ -52,7 +53,7 @@
                                             <td class="text-center align-middle">{{ $loop->iteration }}</td>
                                             <td class="text-center align-middle">{{ $item->id_kategori_profesi }}</td>
                                             <td class="text-center align-middle">{{ $item->nama_profesi }}</td>
-                                            <td class="align-middle" style="text-align: justify;">{{ $item->deskripsi_profesi }}</td>
+                                            <td class="align-middle text-wrap" style="text-align: justify; max-width: 200px;">{{ $item->deskripsi_profesi }}</td>
                                             <td class="text-center align-middle">{{ $item->keterampilan }}</td>
                                             <td class="text-center text-nowrap align-middle ">
                                                 <span class="badge bg-success bg-opacity-15 p-1">
@@ -86,6 +87,9 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+
+                                </div>
+                               
                             </div> <!-- end card-body -->
                         </div> <!-- end card -->
                     </div> <!-- end col -->
