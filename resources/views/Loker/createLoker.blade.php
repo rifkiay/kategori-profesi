@@ -34,7 +34,7 @@
                                             <option value="">Pilih Kategori Profesi</option>
                                             @foreach ($kategori as $item)
                                             <option value="{{ $item->id }}" {{ old('id_kategori_profesi') == $item->id ? 'selected' : '' }}>
-                                            {{ $item->id }} - {{ $item->kategori_profesi }}
+                                                {{ $item->id }} - {{ $item->kategori_profesi }}
                                             </option>
                                             @endforeach
                                         </select>
@@ -50,8 +50,8 @@
                                         <select class="form-control" name="id_perusahaan" id="id_perusahaan">
                                             <option value="">Pilih Perusahaan</option>
                                             @foreach ($perusahaans as $item)
-                                            <option value="{{ $item->id }}" {{ old('id_perusahaan') == $item->id ? 'selected' : '' }}>
-                                             {{$item->id}} - {{ $item->nama_perusahaan }}
+                                            <option value="{{ $item->id }}" data-nama="{{ $item->nama_perusahaan }}" {{ old('id_perusahaan') == $item->id ? 'selected' : '' }}>
+                                                {{$item->id}} - {{ $item->nama_perusahaan }}
                                             </option>
                                             @endforeach
                                         </select>
@@ -76,7 +76,7 @@
                                     <label for="nama_perusahaan" class="col-3 col-form-label">Nama Perusahaan</label>
                                     <div class="col-9">
                                         <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan"
-                                            placeholder="Ajinomoto">
+                                            placeholder="Ajinomoto" readonly>
                                     </div>
                                     @error('nama_perusahaan')
                                     <div class="alert alert-danger">* {{ $message }}</div>
@@ -169,3 +169,21 @@
 </div>
 </div>
 <!-- END wrapper -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        document.getElementById('id_perusahaan').addEventListener('change', function() {
+            var selectedOption = this.options[this.selectedIndex];
+            var namaPerusahaan = selectedOption.getAttribute('data-nama');
+            document.getElementById('nama_perusahaan').value = namaPerusahaan;
+        });
+    });
+
+    // Buat field tanggal
+    document.querySelectorAll('input[type="date"]').forEach(function(input) {
+        input.addEventListener('click', function() {
+            this.showPicker();
+        });
+    });
+</script>

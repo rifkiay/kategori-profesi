@@ -29,30 +29,36 @@
                                 @method('PUT')
 
                                 <div class="row mb-3">
-                                    <label for="id_kategori_profesi" class="col-3 col-form-label">ID Kategori loker</label>
+                                    <label for="id_kategori_profesi" class="col-3 col-form-label">ID Kategori Profesi</label>
                                     <div class="col-9">
-                                        <select class="form-control select2" name="id_kategori_profesi" id="id_kategori_profesi" data-toggle="select2">
-                                            <option>Pilih Kategori</option>
-                                            <option value="1" {{ $loker->id_kategori_profesi == 1 ? 'selected' : '' }}>1 Teknologi Informasi</option>
-                                            <option value="2" {{ $loker->id_kategori_profesi == 2 ? 'selected' : '' }}>2 Kesehatan</option>
-                                            <option value="3" {{ $loker->id_kategori_profesi == 3 ? 'selected' : '' }}>3 Pendidikan</option>
-                                            <option value="4" {{ $loker->id_kategori_profesi == 4 ? 'selected' : '' }}>4 Keuangan</option>
-                                            <option value="5" {{ $loker->id_kategori_profesi == 5 ? 'selected' : '' }}>5 Hukum</option>
-                                            <option value="6" {{ $loker->id_kategori_profesi == 6 ? 'selected' : '' }}>6 Konstruksi</option>
-                                            <option value="7" {{ $loker->id_kategori_profesi == 7 ? 'selected' : '' }}>7 Seni & Desain</option>
-                                            <option value="8" {{ $loker->id_kategori_profesi == 8 ? 'selected' : '' }}>8 Pemasaran</option>
-                                            <option value="9" {{ $loker->id_kategori_profesi == 9 ? 'selected' : '' }}>9 Influencer</option>
-                                            <option value="10" {{ $loker->id_kategori_profesi == 10 ? 'selected' : '' }}>10 Olahraga</option>
+                                        <select class="form-control" name="id_kategori_profesi" id="id_kategori_profesi">
+                                            <option value="">Pilih Kategori Profesi</option>
+                                            @foreach ($kategori as $item)
+                                            <option value="{{ $item->id }}" {{ old('id_kategori_profesi', $loker->id_kategori_profesi) == $item->id ? 'selected' : '' }}>
+                                                {{ $item->id }} - {{ $item->kategori_profesi }}
+                                            </option>
+                                            @endforeach
                                         </select>
-                                        </select>
+                                        @error('id_kategori_profesi')
+                                        <div class="alert alert-danger">* {{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="id_perusahaan" class="col-3 col-form-label">ID Perusahaan</label>
                                     <div class="col-9">
-                                        <input type="text" class="form-control" id="id_perusahaan" name="id_perusahaan"
-                                            placeholder="2" value="{{ $loker->id_perusahaan }}">
+                                        <select class="form-control" name="id_perusahaan" id="id_perusahaan">
+                                            <option value="">Pilih Perusahaan</option>
+                                            @foreach ($perusahaans as $item)
+                                            <option value="{{ $item->id }}" data-nama="{{ $item->nama_perusahaan }}" {{ old('id_perusahaan', $loker->id_perusahaan) == $item->id ? 'selected' : '' }}>
+                                                {{ $item->id }} - {{ $item->nama_perusahaan }}
+                                            </option>
+                                            @endforeach
+                                        </select>
+                                        @error('id_perusahaan')
+                                        <div class="alert alert-danger">* {{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -62,14 +68,19 @@
                                         <input type="text" class="form-control" id="judul" name="judul"
                                             placeholder="Software Developer" value="{{ $loker->judul }}">
                                     </div>
+                                    @error('judul')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="nama_perusahaan" class="col-3 col-form-label">Nama Perusahaan</label>
                                     <div class="col-9">
-                                        <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan"
-                                            placeholder="Ajinomoto" value="{{ $loker->nama_perusahaan }}">
+                                        <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan" value="{{ old('nama_perusahaan', $loker->perusahaan->nama_perusahaan ?? '') }}" placeholder="Ajinomoto" readonly>
                                     </div>
+                                    @error('nama_perusahaan')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -78,6 +89,9 @@
                                         <textarea class="form-control" id="deskripsi_loker" name="deskripsi_loker"
                                             rows="5">{{ $loker->deskripsi_loker }}</textarea>
                                     </div>
+                                    @error('deskripsi_loker')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -86,6 +100,9 @@
                                         <input type="text" class="form-control" id="gaji" name="gaji"
                                             placeholder="10.000.000" value="{{ $loker->gaji }}">
                                     </div>
+                                    @error('gaji')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -94,20 +111,29 @@
                                         <textarea class="form-control" id="kualifikasi" name="kualifikasi"
                                             rows="5">{{ $loker->kualifikasi }}</textarea>
                                     </div>
+                                    @error('kualifikasi')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="tanggal_posting" class="col-3 col-form-label">Tanggal Posting</label>
                                     <div class="col-9">
-                                        <input type="date" class="form-control" name="tanggal_posting" id="tanggal_posting" value="{{ $loker->tanggal_posting }}">
+                                        <input type="date" class="form-control" name="tanggal_posting" id="tanggal_posting" value="{{ old('tanggal_posting', $loker->tanggal_posting) }}">
                                     </div>
+                                    @error('tanggal_posting')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
                                     <label for="akhir_pendaftaran" class="col-3 col-form-label">Batas Pendaftaran</label>
                                     <div class="col-9">
-                                        <input type="date" class="form-control" name="akhir_pendaftaran" id="akhir_pendaftaran" value="{{ $loker->akhir_pendaftaran }}">
+                                        <input type="date" class="form-control" name="akhir_pendaftaran" id="akhir_pendaftaran" value="{{ old('akhir_pendaftaran', $loker->akhir_pendaftaran) }}">
                                     </div>
+                                    @error('akhir_pendaftaran')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -140,3 +166,21 @@
 </div>
 </div>
 <!-- END wrapper -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        document.getElementById('id_perusahaan').addEventListener('change', function() {
+            var selectedOption = this.options[this.selectedIndex];
+            var namaPerusahaan = selectedOption.getAttribute('data-nama');
+            document.getElementById('nama_perusahaan').value = namaPerusahaan;
+        });
+    });
+
+    // Buat field tanggal
+    document.querySelectorAll('input[type="date"]').forEach(function(input) {
+        input.addEventListener('click', function() {
+            this.showPicker();
+        });
+    });
+</script>
