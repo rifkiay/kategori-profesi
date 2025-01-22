@@ -1,0 +1,120 @@
+/* Basic background and positioning */
+.bg-home {
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding: 100px 0;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.home-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.home-desc-center {
+    z-index: 2;
+    color: white;
+    text-align: center;
+}
+
+.home-form-position {
+    margin-top: 30px;
+}
+
+/* Registration form box adjustments */
+.registration-form-box {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+/* Positioning the icon inside input boxes */
+.registration-form-box i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+/* Input and select box styles */
+.registration-input-box,
+.registration-form select {
+    padding-left: 50px; /* Increased padding for the icon */
+    padding-right: 15px;
+    height: 45px;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.registration-input-box:focus,
+.registration-form select:focus {
+    border-color: #007bff;
+    box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.2);
+}
+
+/* Styling for the select box icon */
+.select-box-icon {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Removing default browser arrow and adding custom icon */
+.select-box-icon select {
+    width: 100%;
+    padding-left: 50px; /* Aligns text with the icon */
+    appearance: none; /* Removes default select arrow */
+    -webkit-appearance: none; /* For older browsers */
+    -moz-appearance: none; /* For Firefox */
+}
+
+/* Custom FontAwesome dropdown arrow */
+.select-box-icon::after {
+    content: "\f107"; /* FontAwesome down arrow */
+    font-family: FontAwesome;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #999;
+}
+
+/* Button styling */
+.submitBnt {
+    height: 45px;
+    width: 100%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query for larger devices */
+@media (min-width: 768px) {
+    .registration-form-box {
+        margin-bottom: 0;
+    }
+
+    .home-registration-form {
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .col-lg-4 {
+        width: calc(33.33% - 10px); /* Aligns form fields */
+    }
+}
