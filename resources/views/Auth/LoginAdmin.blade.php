@@ -2,100 +2,108 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jobya - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('Assets/images/favicon.ico') }}">
-    <!-- CSS Stylesheets -->
+    <!-- CSS External -->
     <link rel="stylesheet" href="{{ asset('Assets/css/bootstrap.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('Assets/css/materialdesignicons.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('Assets/css/selectize.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('Assets/css/nice-select.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('Assets/css/style.min.css') }}" type="text/css">
+    <!-- Custom Inline CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            width: 400px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
-    <!-- Loader -->
-    <div id="preloader">
-        <div id="status">
-            <div class="spinner">
-                <div class="double-bounce1"></div>
-                <div class="double-bounce2"></div>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <form id="loginForm" method="POST" action="{{ route('admin.login') }}">
+            @csrf
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email" required>
             </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <div class="footer">
+            <p>&copy; 2025 - Website Kategori Profesi</p>
         </div>
     </div>
-    <!-- Back to home -->
-    <div class="back-to-home rounded d-none d-sm-block">
-        <a href="{{ url('/') }}" class="text-white rounded d-inline-block text-center"><i class="mdi mdi-home"></i></a>
-    </div>
-    <!-- Hero Start -->
-    <section class="vh-100" style="background-image: url('{{ asset('Assets/images/user.jpg') }}');">
-        <div class="home-center">
-            <div class="home-desc-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="login-page bg-white shadow rounded p-4">
-                                <div class="text-center">
-                                    <h4 class="mb-4">Login</h4>  
-                                </div>
-                                <form class="login-form" id="loginForm" method="POST" action="{{ route('admin.login') }}">
-                                    @csrf 
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="form-group position-relative">
-                                                <label>Your Email <span class="text-danger">*</span></label>
-                                                <input type="email" class="form-control" placeholder="Email" name="email" id="email" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group position-relative">
-                                                <label>Password <span class="text-danger">*</span></label>
-                                                <input type="password" class="form-control" placeholder="Password" name="password" id="password" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 mb-0">
-                                            <button type="submit" class="btn btn-primary w-100">Sign in</button>
-                                        </div>
-                                        {{-- <div class="col-12 text-center mt-3">
-                                            <p id="error-message" class="text-danger" style="display: none;">Username atau password salah!</p>
-                                        </div> --}}
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <!-- Javascript -->
     <script src="{{ asset('Assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('Assets/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('Assets/js/jquery.easing.min.js') }}"></script>
-    <script src="{{ asset('Assets/js/plugins.js') }}"></script>
-    <script src="{{ asset('Assets/js/selectize.min.js') }}"></script>
-    <script src="{{ asset('Assets/js/jquery.nice-select.min.js') }}"></script>
-    <script src="{{ asset('Assets/js/app.js') }}"></script>
-    
-    <!-- Script untuk validasi login -->
-    {{-- <script>
-        document.querySelector('#loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var emailInput = document.querySelector('#email').value;
-            var passwordInput = document.querySelector('#password').value;
-            var userData = {
-                email: 'admin@gmail.com',
-                password: 'admin123'
-            };
-            if (emailInput === userData.email && passwordInput === userData.password) {
-                alert('Login berhasil!');
-                // Simpan status login di sesi lokal
-                localStorage.setItem('user_logged_in', true);
-                window.location.href = '/'; // Redirect ke halaman home
-            } else {
-                alert('Email atau password salah!');
-            }
-        });
-    </script> --}}
 </body>
 </html>
