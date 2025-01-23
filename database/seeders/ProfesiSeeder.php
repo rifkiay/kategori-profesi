@@ -185,7 +185,7 @@ class ProfesiSeeder extends Seeder
             Pengetahuan Anatomi
             Komunikasi',
             'gaji' => '5.000.000 - 10.000.000',
-            'gambar/profesi/Olahraga/Ahli_Fisioterapi_Olahraga/Ahli_Fisioterapi_Olahraga.jpg',
+            'gambar/profesi/olahraga/Ahli_Fisioterapi_Olahraga/Ahli_Fisioterapi_Olahraga.jpg',
         ]);
         
         Profesi::create([
@@ -200,7 +200,7 @@ class ProfesiSeeder extends Seeder
             Pemecahan Masalah
             Pengamatan Detail',
             'gaji' => '6.000.000 - 12.000.000',
-            'gambar/profesi/Olahraga/Analis_Kinerja_Olahraga/Analis_Kinerja_Olahraga.jpg',
+            'gambar/profesi/olahraga/Analis_Kinerja_Olahraga/Analis_Kinerja_Olahraga.jpg',
         ]);
         
         Profesi::create([
@@ -215,7 +215,7 @@ class ProfesiSeeder extends Seeder
             Kepemimpinan
             Negosiasi',
             'gaji' => '6.000.000 - 12.000.000',
-            'gambar/profesi/Olahraga/Manajer_Tim_Olahraga/Manajer_Tim_Olahraga.jpg',
+            'gambar/profesi/olahraga/Manajer_Tim_Olahraga/Manajer_Tim_Olahraga.jpg',
         ]);
     
         Profesi::create([
@@ -230,7 +230,7 @@ class ProfesiSeeder extends Seeder
             Motivasi
             Analisis Kinerja',
             'gaji' => '8.000.000 - 20.000.000',
-            'gambar/profesi/Olahraga/Pelatih_Sepak_bola/Pelatih_Sepak_bola.jpg',
+            'gambar/profesi/olahraga/Pelatih_Sepak_bola/Pelatih_Sepak_bola.jpg',
         ]);
         
         Profesi::create([
@@ -245,7 +245,7 @@ class ProfesiSeeder extends Seeder
             Pengorganisasian
             Negosiasi',
             'gaji' => '4.000.000 - 8.000.000',
-            'gambar/profesi/Olahraga/Penyelenggara_Acara_Olahraga/Penyelenggara_Acara_Olahraga.jpg',
+            'gambar/profesi/olahraga/Penyelenggara_Acara_Olahraga/Penyelenggara_Acara_Olahraga.jpg',
         ]); 
         
         // Influencer
@@ -261,7 +261,7 @@ class ProfesiSeeder extends Seeder
             Pemasaran Makanan
             Keterampilan Menulis',
             'gaji' => '3.000.000 - 20.000.000',
-            'gambar_profesi' => 'gambar/profesi/influencer/Influencer_Makanan_dan_Minuman/Influencer_Makanan_dan_Minuman.jpg',
+            'gambar/profesi/influencer/Influencer Makanan dan Minuman/Influencer_Makanan_dan_Minuman.jpg',
         ]);
 
         Profesi::create([
@@ -276,7 +276,7 @@ class ProfesiSeeder extends Seeder
             Branding dan Pemasaran
             Komunikasi Visual',
             'gaji' => '6.000.000 - 40.000.000',
-            'gambar_profesi' => 'gambar/profesi/influencer/Influencer_Fashion/Influencer_Fashion.jpg',
+            'gambar/profesi/influencer/Influencer Fashion/Influencer_Fashion.jpg',
         ]);        
 
         Profesi::create([
@@ -291,7 +291,7 @@ class ProfesiSeeder extends Seeder
             Analisis Penjualan
             Hubungan Merek',
             'gaji' => '4.000.000 - 25.000.000',
-            'gambar_profesi' => 'gambar/profesi/influencer/Influencer_E-commerce/Influencer_E-commerce.jpg',
+            'gambar/profesi/influencer/Influencer E-commerce/Influencer_E-commerce.jpg',
         ]);        
              
         Profesi::create([
@@ -306,7 +306,7 @@ class ProfesiSeeder extends Seeder
             Branding Pribadi
             Pemasaran Influencer',
             'gaji' => '5.000.000 - 50.000.000',
-            'gambar_profesi' => 'gambar/profesi/influencer/Influencer_Media_Sosial/Influencer_Media_Sosial.jpg',
+            'gambar/profesi/influencer/Influencer Media_Sosial/Influencer_Media_Sosial.jpg',
         ]);
         
         Profesi::create([
@@ -321,9 +321,143 @@ class ProfesiSeeder extends Seeder
             Pemasaran Pariwisata
             Komunikasi Visual',
             'gaji' => '4.000.000 - 30.000.000',
-            'gambar_profesi' => 'gambar/profesi/influencer/Influencer_Travel/Influencer_Travel.jpg',
+            'gambar/profesi/influencer/Influencer Travel/Influencer_Travel.jpg',
         ]);
-    }
-}  
+
+       // // keuangan
+         Profesi::create([
+            'id_kategori_profesi' => 5,
+            'nama_profesi' => 'Analis Keuangan',
+            'deskripsi_profesi' => 'Analis Keuangan menganalisis data keuangan perusahaan untuk memberikan rekomendasi strategi keuangan dan investasi.',
+
+
+            'keterampilan' => 'Analisis Keuangan
+            Pengelolaan Risiko
+            Pemahaman Pasar Keuangan',
+            'gaji' => '8.000.000',
+            'gambar/profesi/Keuangan/Analisis Keuangan/Analisis Keuangan.png',
+        ]);
+        
+        Profesi::create([
+            'id_kategori_profesi' => 5,
+            'nama_profesi' => 'Akuntan',
+            'deskripsi_profesi' => 'Akuntan bertanggung jawab untuk mencatat, menganalisis, dan menyusun laporan keuangan perusahaan.',
+
+
+            'keterampilan' => 'Akuntansi dan Pajak
+            Analisis Laporan Keuangan
+            Pemahaman Hukum Perpajakan',
+            'gaji' => '7.500.000',
+            'gambar/profesi/Keuangan/Akuntan/Akuntan.png',
+        ]);
+        
+        Profesi::create([
+            'id_kategori_profesi' => 5,
+            'nama_profesi' => 'Konsultan Keuangan',
+            'deskripsi_profesi' => 'Konsultan Keuangan membantu klien dalam merencanakan dan mengelola keuangan untuk mencapai tujuan finansial.',
+
+
+            'keterampilan' => 'Perencanaan Keuangan
+            Analisis Risiko
+            Pengelolaan Portofolio',
+            'gaji' => '10.000.000',
+            'gambar/profesi/Keuangan/Konsultan Keuangan/Konsultan Keuangan.png',
+        ]);
+    
+        Profesi::create([
+            'id_kategori_profesi' => 5,
+            'nama_profesi' => 'Manajer Investasi',
+            'deskripsi_profesi' => 'Manajer Investasi mengelola portofolio investasi klien untuk memaksimalkan keuntungan berdasarkan strategi yang disepakati.',
+
+
+            'keterampilan' => 'Manajemen Portofolio
+            Strategi Investasi
+            Analisis Pasar',
+            'gaji' => '15.000.000',
+            'gambar/profesi/Keuangan/Manajer Investasi/Manajer Investasi.png',
+        ]);
+        
+        Profesi::create([
+            'id_kategori_profesi' => 5,
+            'nama_profesi' => 'Penasihat Pajak',
+            'deskripsi_profesi' => 'Penasihat Pajak memberikan panduan kepada individu atau perusahaan terkait peraturan pajak dan strategi untuk memaksimalkan keuntungan setelah pajak.',
+
+
+            'keterampilan' => 'Pemahaman Perpajakan
+            Penyusunan Laporan Pajak
+            Kepatuhan Pajak',
+            'gaji' => '9.000.000',
+            'gambar/profesi/Keuangan/Penasihat Pajak/Penasihat Pajak.png',
+        ]); 
+
+        // // Pendidikan 
+        Profesi::create([
+            'id_kategori_profesi' => 6,
+            'nama_profesi' => 'Guru Sekolah Dasar',
+            'deskripsi_profesi' => 'Guru Sekolah Dasar bertanggung jawab untuk mendidik siswa di tingkat pendidikan dasar, menciptakan materi pembelajaran yang kreatif, dan membantu pengembangan akademik, sosial, serta emosional siswa.',
+
+
+            'keterampilan' => 'Kemampuan Mengajar
+            Pengetahuan Kurikulum
+            Teknologi Pendidikan
+            Komunikasi dan Kesabaran',
+            'gaji' => '4.500.000',
+            'gambar/profesi/pendidikan/Guru_Sd/Guru_Sd.png',
+        ]);
+        
+        Profesi::create([
+            'id_kategori_profesi' => 6,
+            'nama_profesi' => 'Dosen Perguruan Tinggi',
+            'deskripsi_profesi' => 'Dosen mengajar di perguruan tinggi, melakukan penelitian, dan membimbing mahasiswa untuk pengembangan akademik dan karier mereka.',
+
+
+            'keterampilan' => 'Pengajaran dan Penelitian
+            Penyusunan Materi Perkuliahan
+            Penulisan Akademik
+            Komunikasi',
+
+            'gaji' => '10.000.000',
+            'gambar/profesi/pendikan/Dosen/Dosen.png',
+        ]);
+        
+        Profesi::create([
+            'id_kategori_profesi' => 6,
+            'nama_profesi' => 'Konselor Pendidikan',
+            'deskripsi_profesi' => 'Konselor Pendidikan mendukung siswa dalam aspek pribadi, akademik, dan sosial dengan memberikan bimbingan terkait studi dan karier.',
+
+
+            'keterampilan' => 'Konseling Individu
+            Pemahaman Psikologi Pendidikan
+            Pemecahan Masalah
+            Komunikasi Empatik',
+            'gaji' => '7.000.000',
+            'gambar/profesi/pendidikan/konselor pendidikan/Konselor Pendidikan.png',
+        ]);
+    
+        Profesi::create([
+            'id_kategori_profesi' => 6,
+            'nama_profesi' => 'Pengembang Kurikulum',
+            'deskripsi_profesi' => 'Pengembang Kurikulum merancang dan mengevaluasi kurikulum pendidikan agar relevan dan memenuhi kebutuhan peserta didik.',
+
+
+            'keterampilan' => 'Desain Kurikulum
+            Evaluasi Pendidikan
+            Pemahaman Kebijakan Pendidikan',
+            'gaji' => '9.000.000',
+            'gambar/profesi/pendidikan/pengembang kurikulum/Pengembang Kurikulum.png',
+        ]);
+        
+        Profesi::create([
+            'id_kategori_profesi' => 6,
+            'nama_profesi' => 'Kepala Sekolah',
+            'deskripsi_profesi' => 'Kepala Sekolah adalah pemimpin sekolah yang mengelola operasional, memotivasi guru, dan memastikan keberhasilan proses pendidikan.',
+
+
+            'keterampilan' => 'Manajemen Sekolah
+            Kepemimpinan
+            Komunikasi Efektif',
+            'gaji' => '12.000.000',
+            'gambar/profesi/pendidikan/Kepala Sekolah/Kepala Sekolah.png',
+        ]);  
     }
 }
