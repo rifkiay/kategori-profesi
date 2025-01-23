@@ -176,9 +176,9 @@ class ProfesiSeeder extends Seeder
          Profesi::create([
             'id_kategori_profesi' => 3,
             'nama_profesi' => 'Ahli Fisioterapi Olahraga',
-            'deskripsi_profesi' => 'Ahli Fisioterapi Olahraga memiliki peran penting dalam pemulihan cedera fisik yang dialami oleh atlet. Mereka menggunakan teknik fisioterapi untuk mengurangi rasa sakit, meningkatkan fleksibilitas, dan membantu pemulihan otot serta sendi. Ahli Fisioterapi Olahraga juga bekerja sama dengan pelatih untuk memastikan bahwa atlet dapat berlatih dan berkompetisi dengan aman setelah cedera. Mereka melakukan evaluasi kondisi fisik atlet dan merancang program rehabilitasi yang sesuai untuk memaksimalkan potensi fisik atlet.',
-           
-           
+            'deskripsi_profesi' => 'Ahli Fisioterapi Olahraga memiliki peran penting dalam pemulihan cedera fisik yang dialami oleh atlet. Mereka menggunakan teknik fisioterapi untuk mengurangi rasa sakit, meningkatkan fleksibilitas, dan membantu pemulihan otot serta sendi. 
+            
+            Ahli Fisioterapi Olahraga juga bekerja sama dengan pelatih untuk memastikan bahwa atlet dapat berlatih dan berkompetisi dengan aman setelah cedera. Mereka melakukan evaluasi kondisi fisik atlet dan merancang program rehabilitasi yang sesuai untuk memaksimalkan potensi fisik atlet.',
             'keterampilan' => 'Rehabilitasi Cedera
             Teknik Fisioterapi
             Pemulihan Otot
@@ -390,9 +390,71 @@ class ProfesiSeeder extends Seeder
             'gambar/profesi/Keuangan/Penasihat Pajak/Penasihat Pajak.png',
         ]); 
 
-        // // Pendidikan 
+        // // kontruksi
         Profesi::create([
             'id_kategori_profesi' => 6,
+            'nama_profesi' => 'Arsitek',
+            'deskripsi_profesi' => 'Merancang bangunan dan struktur, memadukan elemen estetika dan fungsionalitas. Mereka bekerja sama dengan klien dan tim konstruksi untuk menghasilkan desain yang sesuai kebutuhan.',
+        
+            'keterampilan' => 'AutoCAD
+            SketchUp
+            Pemahaman Peraturan Bangunan
+            Kreativitas Desain',
+            'gaji' => '7.000.000'
+            'gambar/profesi/Kintruksi/Arsitek/Arsitek.jpg',
+        ]);
+        
+        Profesi::create([
+           'id_kategori_profesi' => 6,
+           'nama_profesi' => 'Manajer Proyek Konstruksi',
+           'deskripsi_profesi' => 'Mengawasi proyek konstruksi dari awal hingga selesai, mengelola anggaran, jadwal, dan tim.',
+        
+           'keterampilan' => 'Manajemen Proyek
+           Negosiasi Kontrak
+           Kepemimpinan
+           Pemahaman Hukum Konstruksi',
+           'gaji' => '15.000.000',
+           'gambar/profesi/Kontruksi/Manajer Proyek Konstruksi/Manajer Proyek Konstruksi.jpg',
+        ]);
+        
+        Profesi::create([
+            'id_kategori_profesi' => 6,
+            'nama_profesi' => 'Surveyor Konstruksi',
+            'deskripsi_profesi' => 'Mengukur tanah dan properti untuk menentukan batas lahan dan membantu dalam perencanaan konstruksi.',
+    
+            'keterampilan' => 'Penggunaan Alat Ukur
+            Keterampilan Teknis
+            Pemahaman Geodesi',
+            'gaji' => '5.000.000',
+            'gambar/profesi/kontruksi/Surveyor Konstruksi/Surveyor Konstruksi.jpg',
+        ]);
+    
+        Profesi::create([
+            'id_kategori_profesi' => 6,
+            'nama_profesi' => 'Insinyur Sipil',
+            'deskripsi_profesi' => 'Merancang dan mengawasi pembangunan infrastruktur seperti jalan, jembatan, dan gedung.',
+        
+            'keterampilan' => 'Perhitungan struktural
+            AutoCADn
+            Manajemen konstruksi',
+        'gaji' => '10.000.000 - 25.000.000',
+            'gambar/profesi/Kontruksi/Insinyur Sipil/insinyur sipil.jpg',
+        ]);
+        
+        Profesi::create([
+            'id_kategori_profesi' => 6,
+            'nama_profesi' => 'Pekerja Konstruksi',
+            'deskripsi_profesi' => 'Melakukan pekerjaan fisik dalam pembangunan, seperti memasang rangka, beton, dan material lainnya.',
+        
+            'keterampilan' => 'Penggunaan alat berat
+            Teknik konstruksi
+            Ketahanan fisik',
+            'gaji' => '3.000.000 - 7.000.000',
+            'gambar/profesi/Kontruksi/Pekerja Kontruksi/Pekerja Kontruksi.jpg',
+        ]);
+         // // Pendidikan 
+         Profesi::create([
+            'id_kategori_profesi' => 7,
             'nama_profesi' => 'Guru Sekolah Dasar',
             'deskripsi_profesi' => 'Guru Sekolah Dasar bertanggung jawab untuk mendidik siswa di tingkat pendidikan dasar, menciptakan materi pembelajaran yang kreatif, dan membantu pengembangan akademik, sosial, serta emosional siswa.',
 
@@ -406,7 +468,7 @@ class ProfesiSeeder extends Seeder
         ]);
         
         Profesi::create([
-            'id_kategori_profesi' => 6,
+            'id_kategori_profesi' => 7,
             'nama_profesi' => 'Dosen Perguruan Tinggi',
             'deskripsi_profesi' => 'Dosen mengajar di perguruan tinggi, melakukan penelitian, dan membimbing mahasiswa untuk pengembangan akademik dan karier mereka.',
 
@@ -421,7 +483,7 @@ class ProfesiSeeder extends Seeder
         ]);
         
         Profesi::create([
-            'id_kategori_profesi' => 6,
+            'id_kategori_profesi' => 7,
             'nama_profesi' => 'Konselor Pendidikan',
             'deskripsi_profesi' => 'Konselor Pendidikan mendukung siswa dalam aspek pribadi, akademik, dan sosial dengan memberikan bimbingan terkait studi dan karier.',
 
@@ -435,7 +497,7 @@ class ProfesiSeeder extends Seeder
         ]);
     
         Profesi::create([
-            'id_kategori_profesi' => 6,
+            'id_kategori_profesi' => 7,
             'nama_profesi' => 'Pengembang Kurikulum',
             'deskripsi_profesi' => 'Pengembang Kurikulum merancang dan mengevaluasi kurikulum pendidikan agar relevan dan memenuhi kebutuhan peserta didik.',
 
@@ -448,7 +510,7 @@ class ProfesiSeeder extends Seeder
         ]);
         
         Profesi::create([
-            'id_kategori_profesi' => 6,
+            'id_kategori_profesi' => 7,
             'nama_profesi' => 'Kepala Sekolah',
             'deskripsi_profesi' => 'Kepala Sekolah adalah pemimpin sekolah yang mengelola operasional, memotivasi guru, dan memastikan keberhasilan proses pendidikan.',
 
@@ -459,5 +521,68 @@ class ProfesiSeeder extends Seeder
             'gaji' => '12.000.000',
             'gambar/profesi/pendidikan/Kepala Sekolah/Kepala Sekolah.png',
         ]);  
+        // // seni & design
+        Profesi::create([
+            'id_kategori_profesi' => 8,
+            'nama_profesi' => 'Desainer Grafis',
+            'deskripsi_profesi' => 'Membuat desain visual untuk media cetak atau digital seperti logo, poster, dan situs web.',
+           
+            'keterampilan' => 'Adobe Photoshop
+            Illustrator\nInDesign
+            Kreativitas Desain',
+            'gaji' => '5.000.000',
+            'gambar/profesi/Seni&Desain/Desainer Grafis/desainer grafis.jpg',
+        ]);
+        
+        Profesi::create([
+            'id_kategori_profesi' => 8,
+            'nama_profesi' => 'Animator',
+            'deskripsi_profesi' => 'Membuat animasi untuk film, iklan, atau video game dengan menggunakan software animasi.',
+        
+            'keterampilan' => 'Adobe After Effects
+            Blender
+            Maya
+            Storytelling Visual',
+            'gaji' => '7.000.000',
+            'gambar/profesi/Seni&Desain/Animator/animator.jpg'
+        ]);
+        
+        Profesi::create([
+            'id_kategori_profesi' => 8,
+            'nama_profesi' => 'Fotografer',
+            'deskripsi_profesi' => 'Mengambil foto untuk keperluan komersial, artistik, atau dokumentasi.',
+        
+            'keterampilan' => 'Komposisi Gambar
+            Pemahaman Cahaya
+            Penggunaan Kamera Profesional',
+            'gaji' => '4.000.000',
+            'gambar/profesi/Seni&Desain/Fotografer/fotografer.jpg'
+        ]);
+    
+        Profesi::create([
+            'id_kategori_profesi' => 8,
+            'nama_profesi' => 'Desainer Interior',
+            'deskripsi_profesi' => 'Mendesain tata letak interior bangunan agar fungsional, estetis, dan sesuai dengan permintaan klien.',
+        
+            'keterampilan' => 'AutoCAD
+            SketchUp
+            Pemilihan Material
+            Pengaturan Ruang',
+            'gaji' => '6.000.000 - 18.000.000',
+            'gambar/profesi/Seni&Desain/Desainer Interior/desain interior.jpg',
+        ]);
+        
+        Profesi::create([
+            'id_kategori_profesi' => 8,
+            'nama_profesi' => 'Ilustrator',
+            'deskripsi_profesi' => 'Membuat ilustrasi untuk buku, majalah, atau materi promosi, baik secara digital maupun manual.',
+        
+            'keterampilan' => 'Menggambar
+            Kreativitas
+            Penggunaan Tablet Grafis',
+            'gaji' => '5.000.000 - 12.000.000',
+            'gambar/profesi/Seni&Desain/Ilustrator/ilustrator.jpg'
+        ]);  
+
     }
 }
