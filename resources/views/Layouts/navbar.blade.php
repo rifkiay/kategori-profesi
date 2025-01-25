@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Jobya')</title>
+    <title>@yield('title', 'Jobtiva')</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('Assets/images/favicon.ico') }}">
