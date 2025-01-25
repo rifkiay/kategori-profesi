@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jobya - Login</title>
+    <title>Jobtiva - Login</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('Assets/images/favicon.ico') }}">
     <!-- CSS Stylesheets -->
@@ -30,7 +30,7 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="vh-100" style="background-image: url('{{ asset('Assets/images/user.jpg') }}'); background-size: cover; background-position: center;">
+    <section class="vh-100" style="background-image: url('{{ asset('Assets/images/1.png') }}'); background-size: cover; background-position: center;">
         <div class="home-center">
             <div class="home-desc-center">
                 <div class="container">
