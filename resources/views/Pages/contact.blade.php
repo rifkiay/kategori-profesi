@@ -20,55 +20,55 @@
 
     <!-- Contact Info Section -->
     <section class="section pt-0 bg-light">
-        <div class="container mt-100 mt-60">
-            <div class="row align-items-center">
-                <div class="col-lg-4">
-                    <div class="contact-item mt-40">
-                        <div class="contact-icon d-inline-block border rounded-pill shadow text-primary mt-1 me-4">
-                            <i class="mdi mdi-earth"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4 class="text-dark mb-1">Website</h4>
-                            <p class="mb-0 text-muted">jobya.com</p>
-                            <p class="mb-0 text-muted">support@jobya.com</p>
-                        </div>
+    <div class="container mt-100 mt-60">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-4">
+                <div class="contact-item mt-40">
+                    <div class="contact-icon d-inline-block border rounded-pill shadow text-primary mt-1 mb-4">
+                        <i class="mdi mdi-earth"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4 class="text-dark mb-1">Website</h4>
+                        <p class="mb-0 text-muted">jobtiva.com</p>
+                        <p class="mb-0 text-muted">support@jobtiva.com</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-lg-4">
-                    <div class="contact-item mt-40">
-                        <div class="contact-icon d-inline-block border rounded-pill shadow text-primary mt-1 me-4">
-                            <i class="mdi mdi-cellphone-iphone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4 class="text-dark mb-1">Call us</h4>
-                            <p class="mb-0 text-muted">+1 800 123 456</p>
-                            <p class="mb-0 text-muted">+1 800 789 012</p>
-                        </div>
+            <div class="col-lg-4">
+                <div class="contact-item mt-40">
+                    <div class="contact-icon d-inline-block border rounded-pill shadow text-primary mt-1 mb-4">
+                        <i class="mdi mdi-cellphone-iphone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4 class="text-dark mb-1">Call us</h4>
+                        <p class="mb-0 text-muted">+62 22 123 4567</p>
+                        <p class="mb-0 text-muted">+62 22 123 4567</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-lg-4">
-                    <div class="contact-item mt-40">
-                        <div class="contact-icon d-inline-block border rounded-pill shadow text-primary mt-1 me-4">
-                            <i class="mdi mdi-email"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4 class="text-dark mb-1">Email</h4>
-                            <p class="mb-0 text-muted">info@jobya.com</p>
-                            <p class="mb-0 text-muted">help@jobya.com</p>
-                        </div>
+            <div class="col-lg-4">
+                <div class="contact-item mt-40">
+                    <div class="contact-icon d-inline-block border rounded-pill shadow text-primary mt-1 mb-4">
+                        <i class="mdi mdi-email"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4 class="text-dark mb-1">Email</h4>
+                        <p class="mb-0 text-muted">info@jobtiva.com</p>
+                        <p class="mb-0 text-muted">help@jobtiva.com</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Map Section -->
     <section class="section bg-light">
         <div class="container-fluid p-0">
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233667.82239218664!2d-118.69192185540902!3d34.020161306813886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c0be0b4a3fb1%3A0x1c72c7f9a7dfd9b1!2sLos+Angeles%2C+CA%2C+USA!5e0!3m2!1sen!2sus!4v1618264012548!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31693.276787402285!2d107.6429687!3d-6.9024748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7b660a556d1%3A0x96c7af86e40dc31!2sARS%20University!5e0!3m2!1sen!2sid!4v1618264012548!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -131,7 +131,7 @@
                             <div class="contact-location-icon bg-white text-primary rounded-pill">
                                 <i class="mdi mdi-map-marker"></i>
                             </div>
-                            <p class="text-muted pt-4 f-20 mb-0">2453 Clinton Street, Little Rock, AR 72211</p>
+                            <p class="text-muted pt-4 f-20 mb-0">Antapani, Jl. Terusan Sekolah No.1-2, Cicaheum, Kec. Kiaracondong, Kota Bandung, Jawa Barat 40282</p>
                         </div>
                         <h6 class="text-muted mt-4 mb-0">Share</h6>
                         <ul class="list-unstyled social-icon mt-3 mb-0">
