@@ -39,6 +39,21 @@
                             <div class="login-page bg-white shadow rounded p-4">
                                 <div class="text-center">
                                     <h4 class="mb-4">Login</h4>  
+                                    @if (session('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul class="mb-0">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 </div>
                                 <form class="login-form" id="loginForm" method="POST" action="{{ route('login.authenticate') }}">
                                     @csrf 
