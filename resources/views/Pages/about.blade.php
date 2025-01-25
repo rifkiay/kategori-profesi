@@ -32,149 +32,177 @@
             </div>
 
             <!-- Konten di Kanan -->
-                <div class="col-md-8">
-                <p class="about-description">
-                    Selamat datang di platform kami! Kami berkomitmen untuk menyediakan informasi lengkap mengenai berbagai profesi. Tujuan utama kami adalah membantu Anda memahami setiap profesi secara mendalam, mulai dari deskripsi pekerjaan hingga keterampilan yang diperlukan.
+            <div class="col-md-8">
+                <p class="about-description" style="line-height: 1.8; text-align: justify;">
+                    Selamat datang di platform kami! Kami hadir untuk menyediakan informasi penting tentang berbagai profesi, mulai dari deskripsi pekerjaan hingga keterampilan yang dibutuhkan. Dengan platform ini, kamu bisa mendapatkan gambaran lebih jelas tentang pilihan karier yang tersedia, sehingga dapat membuat keputusan yang lebih terarah.
                 </p>
-
-                <ul class="list-unstyled about-features">
-                    <li class="d-flex align-items-center mb-2">
-                        <i class="mdi mdi-check-circle-outline text-primary me-2"></i>
-                        <span>Informasi lengkap dan terperinci tentang profesi</span>
-                    </li>
-                    <li class="d-flex align-items-center mb-2">
-                        <i class="mdi mdi-check-circle-outline text-primary me-2"></i>
-                        <span>Deskripsi tanggung jawab dan keterampilan</span>
-                    </li>
-                    <li class="d-flex align-items-center mb-2">
-                        <i class="mdi mdi-check-circle-outline text-primary me-2"></i>
-                        <span>Wawasan tentang jalur karier dan pengembangan</span>
-                    </li>
-                </ul>
-
-                <p class="about-footer">
-                    Platform ini dirancang untuk mendukung perjalanan karier Anda, memberikan informasi yang berguna dan relevan untuk membantu Anda dalam pengambilan keputusan.
+                <p style="line-height: 1.8; text-align: justify;">
+                    Kami ingin menjadi teman perjalananmu dalam merancang masa depan. Semua informasi yang kami sajikan dirancang sederhana, namun tetap komprehensif, agar mudah dipahami oleh siapa saja. Dengan panduan ini, kami berharap kamu dapat memilih jalur karier yang paling sesuai dengan kebutuhan dan tujuan hidupmu.
+                </p>
+                <p style="line-height: 1.8; text-align: justify;">
+                    Gunakan platform ini sebagai langkah awal untuk mengeksplorasi peluang baru, mendapatkan wawasan tentang dunia kerja, dan mempersiapkan masa depan yang lebih baik. Bersama kami, rencanakan masa depanmu dengan percaya diri!
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- How It Works Section -->
-<div class="container my-5" style="padding-top: 5px;">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="section-title text-center mb-4 pb-2">
-                    <h4 class="title title-line pb-5">Cara Kerja</h4>
-                    <p class="text-muted para-desc mx-auto mb-1">Ikuti langkah-langkah sederhana untuk memaksimalkan informasi yang Anda dapatkan tentang berbagai profesi.</p>
-                </div>
+<!-- Platform Section -->
+<div class="container my-5">
+    <div class="text-center">
+        <h2 class="mb-4">Tentang Platform Kami</h2>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="icon mb-3">
+                <i class="mdi mdi-information-outline text-primary" style="font-size: 50px;"></i>
             </div>
+            <h5>Informasi Lengkap</h5>
+            <p>Kami menyediakan informasi mendalam mengenai berbagai profesi, membantu Anda memahami lebih baik apa yang diperlukan untuk sukses di dunia kerja.</p>
         </div>
-        <div class="row">
-            <!-- Step 1: Buat Akun -->
-            <div class="col-md-4 mt-4 pt-2">
-                <div class="how-it-work-box p-4 text-center rounded shadow bg-white">
-                    <div class="how-it-work-img position-relative rounded-circle mb-3 mx-auto" style="background-color: #f0f8ff; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                        <img src="{{ asset('Assets/images/how-it-work/img-1.png') }}" alt="" height="40">
-                    </div>
-                    <h5 class="mb-3">Buat Akun</h5>
-                    <p class="text-muted">Mulailah dengan membuat akun untuk menyimpan profesi yang diminati dan mendapatkan rekomendasi personal.</p>
-                </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="icon mb-3">
+                <i class="mdi mdi-clipboard-check-outline text-primary" style="font-size: 50px;"></i>
             </div>
-            
-            <!-- Step 2: Jelajahi Profesi -->
-            <div class="col-md-4 mt-4 pt-2">
-                <div class="how-it-work-box p-4 text-center rounded shadow bg-white">
-                    <div class="how-it-work-img position-relative rounded-circle mb-3 mx-auto" style="background-color: #f5f5dc; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                        <img src="{{ asset('Assets/images/how-it-work/img-2.png') }}" alt="" height="40">
-                    </div>
-                    <h5 class="mb-3">Jelajahi Profesi</h5>
-                    <p class="text-muted">Telusuri deskripsi pekerjaan, keterampilan yang dibutuhkan, serta potensi pengembangan di setiap profesi.</p>
-                </div>
+            <h5>Deskripsi Tugas</h5>
+            <p>Pelajari detail tanggung jawab dan keterampilan yang dibutuhkan untuk setiap profesi, sehingga Anda dapat mempersiapkan diri dengan baik.</p>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="icon mb-3">
+                <i class="mdi mdi-chart-line text-primary" style="font-size: 50px;"></i>
             </div>
-            
-            <!-- Step 3: Susun Rencana Karier -->
-            <div class="col-md-4 mt-4 pt-2">
-                <div class="how-it-work-box p-4 text-center rounded shadow bg-white">
-                    <div class="how-it-work-img position-relative rounded-circle mb-3 mx-auto" style="background-color: #e6e6fa; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                        <img src="{{ asset('Assets/images/how-it-work/img-3.png') }}" alt="" height="40">
-                    </div>
-                    <h5 class="mb-3">Susun Rencana Karier</h5>
-                    <p class="text-muted">Gunakan informasi untuk menentukan jalur pendidikan dan keterampilan yang dibutuhkan untuk mencapai karier impian.</p>
-                </div>
-            </div>
+            <h5>Wawasan Karier</h5>
+            <p>Kami memberikan panduan tentang jalur karier dan peluang pengembangan diri, mendukung Anda dalam merencanakan masa depan yang lebih cerah.</p>
         </div>
     </div>
-</section>
+</div>
 
-<!-- Partners Section -->
-<section class="section bg-light">
+<!-- Team Section Start -->
+<div class="section section-margin">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="section-title text-center mb-4 pb-2">
-                    <h4 class="title title-line pb-5">Perusahaan Mitra</h4>
-                    <p class="text-muted para-desc mx-auto mb-1">Kenali berbagai perusahaan yang bekerja sama dengan kami.</p>
+        <div class="row">
+            <div class="col-12" data-aos="fade-up" data-aos-delay="200">
+                <!-- Section Title Start -->
+                <div class="section-title text-center">
+                    <h1 class="title">Tim Kami</h1>
                 </div>
+                <!-- Section Title End -->
             </div>
         </div>
-        <div class="row">
-            <!-- Example Partner 1 -->
-            <div class="col-lg-4 col-md-6 mt-4 pt-2">
-                <div class="company-card border rounded p-3 bg-white">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="{{ asset('Assets/images/blog/img-1.jpg') }}" class="company-logo me-3" alt="Company Logo">
-                        <div>
-                            <h5 class="company-name">Personafic For Men</h5>
-                            <p class="company-location text-muted">Tangerang, Banten, Indonesia</p>
+
+        <div class="row mb-n6">
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="single-team-member text-center mb-6">
+                    <!-- Team Thumb Start -->
+                    <div class="team-thumb">
+                        <!-- Team Member Image Start -->
+                        <img class="fit-image" src="{{ asset('assets/images/team/Rifki.png') }}"
+                            alt="Team Image" />
+                        <!-- Team Member Image End -->
+
+                        <!-- Team Social Start -->
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
                         </div>
+                        <!-- Team Social End -->
                     </div>
-                    <div class="company-details">
-                        <p class="text-muted"><i class="mdi mdi-domain"></i> Retail</p>
-                        <p><a href="#" class="text-primary"><i class="mdi mdi-briefcase-outline"></i> 2 lowongan</a></p>
-                        <p class="last-active text-muted"><i class="mdi mdi-clock-outline"></i> Terakhir aktif 2 menit yang lalu</p>
+                    <!-- Team Thumb End -->
+
+                    <!-- Team Content Start -->
+                    <div class="team-content">
+                        <h6 class="team-member-name">Rifki Ainul Yaqin</h6>
+                        <p>17221009</p>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Example Partner 2 -->
-            <div class="col-lg-4 col-md-6 mt-4 pt-2">
-                <div class="company-card border rounded p-3 bg-white">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="{{ asset('Assets/images/blog/img-2.jpg') }}" class="company-logo me-3" alt="Company Logo">
-                        <div>
-                            <h5 class="company-name">PT Balkan Gourmet Group</h5>
-                            <p class="company-location text-muted">Tangerang, Banten, Indonesia</p>
-                        </div>
-                    </div>
-                    <div class="company-details">
-                        <p class="text-muted"><i class="mdi mdi-domain"></i> Food & Beverages</p>
-                        <p><a href="#" class="text-primary"><i class="mdi mdi-briefcase-outline"></i> 2 lowongan</a></p>
-                        <p class="last-active text-muted"><i class="mdi mdi-clock-outline"></i> Terakhir aktif 2 jam yang lalu</p>
-                    </div>
+                    <!-- Team Content End -->
                 </div>
             </div>
 
-            <!-- Example Partner 3 -->
-            <div class="col-lg-4 col-md-6 mt-4 pt-2">
-                <div class="company-card border rounded p-3 bg-white">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="{{ asset('Assets/images/blog/img-3.jpg') }}" class="company-logo me-3" alt="Company Logo">
-                        <div>
-                            <h5 class="company-name">Jakarta Surprise Planner</h5>
-                            <p class="company-location text-muted">Jakarta Pusat, DKI Jakarta, Indonesia</p>
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="single-team-member text-center mb-6">
+                    <!-- Team Thumb Start -->
+                    <div class="team-thumb">
+                        <!-- Team Member Image Start -->
+                        <img class="fit-image" src="{{ asset('assets/images/team/Azilma.png') }}"
+                            alt="Team Image" />
+                        <!-- Team Member Image End -->
+
+                        <!-- Team Social Start -->
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
                         </div>
+                        <!-- Team Social End -->
                     </div>
-                    <div class="company-details">
-                        <p class="text-muted"><i class="mdi mdi-domain"></i> Events Services</p>
-                        <p><a href="#" class="text-primary"><i class="mdi mdi-briefcase-outline"></i> 5 lowongan</a></p>
-                        <p class="last-active text-muted"><i class="mdi mdi-clock-outline"></i> Terakhir aktif 6 jam yang lalu</p>
+                    <!-- Team Thumb End -->
+
+                    <!-- Team Content Start -->
+                    <div class="team-content">
+                        <h6 class="team-member-name">Azilma Nuzul Yasinta</h6>
+                        <p>17221028</p>
                     </div>
+                    <!-- Team Content End -->
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="single-team-member text-center mb-6">
+                    <!-- Team Thumb Start -->
+                    <div class="team-thumb">
+                        <!-- Team Member Image Start -->
+                        <img class="fit-image" src="{{ asset('assets/images/team/Wilda.png') }}" alt="Team Image" />
+                        <!-- Team Member Image End -->
+
+                        <!-- Team Social Start -->
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        <!-- Team Social End -->
+                    </div>
+                    <!-- Team Thumb End -->
+
+                    <!-- Team Content Start -->
+                    <div class="team-content">
+                        <h6 class="team-member-name">Wilda Agustina</h6>
+                        <p>17223005</p>
+                    </div>
+                    <!-- Team Content End -->
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="single-team-member text-center mb-6">
+                    <!-- Team Thumb Start -->
+                    <div class="team-thumb">
+                        <!-- Team Member Image Start -->
+                        <img class="fit-image" src="{{ asset('assets/images/team/Reddis.png') }}" alt="Team Image" />
+                        <!-- Team Member Image End -->
+
+                        <!-- Team Social Start -->
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        <!-- Team Social End -->
+                    </div>
+                    <!-- Team Thumb End -->
+
+                    <!-- Team Content Start -->
+                    <div class="team-content">
+                        <h6 class="team-member-name">Reddis Angel</h6>
+                        <p>17223016</p>
+                    </div>
+                    <!-- Team Content End -->
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+<!-- Team Section End -->
 
 @include('layouts.footer-utama')
 @endsection

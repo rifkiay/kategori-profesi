@@ -3,10 +3,9 @@
 @section('title', 'Detail Profesi')
 
 @section('content')
-    @foreach ($profesi as $profesis)
-        
     
     <!-- Hero Section -->
+    @foreach ($profesi as $profesis)
     <section class="bg-half page-next-level" style="background: url('{{ asset('storage/' . $profesis->gambar_profesi) }}') center center;">
         <div class="bg-overlay"></div>
         <div class="container">

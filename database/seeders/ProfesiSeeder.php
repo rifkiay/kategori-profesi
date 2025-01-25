@@ -172,416 +172,416 @@ class ProfesiSeeder extends Seeder
         ]);
 
 
-        // // Olahraga
-        Profesi::create([
-            'id_kategori_profesi' => 3,
-            'nama_profesi' => 'Ahli Fisioterapi Olahraga',
-            'deskripsi_profesi' => 'Ahli Fisioterapi Olahraga memiliki peran penting dalam pemulihan cedera fisik yang dialami oleh atlet. Mereka menggunakan teknik fisioterapi untuk mengurangi rasa sakit, meningkatkan fleksibilitas, dan membantu pemulihan otot serta sendi. 
+//         // Olahraga
+//         Profesi::create([
+//             'id_kategori_profesi' => 3,
+//             'nama_profesi' => 'Ahli Fisioterapi Olahraga',
+//             'deskripsi_profesi' => 'Ahli Fisioterapi Olahraga memiliki peran penting dalam pemulihan cedera fisik yang dialami oleh atlet. Mereka menggunakan teknik fisioterapi untuk mengurangi rasa sakit, meningkatkan fleksibilitas, dan membantu pemulihan otot serta sendi. 
             
-            Ahli Fisioterapi Olahraga juga bekerja sama dengan pelatih untuk memastikan bahwa atlet dapat berlatih dan berkompetisi dengan aman setelah cedera. Mereka melakukan evaluasi kondisi fisik atlet dan merancang program rehabilitasi yang sesuai untuk memaksimalkan potensi fisik atlet.',
-            'keterampilan' => 'Rehabilitasi Cedera
-            Teknik Fisioterapi
-            Pemulihan Otot
-            Pengetahuan Anatomi
-            Komunikasi',
-            'gaji' => '5.000.000 - 10.000.000',
-            'gambar/profesi/olahraga/Ahli_Fisioterapi_Olahraga/Ahli_Fisioterapi_Olahraga.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 3,
-            'nama_profesi' => 'Analis Kinerja Olahraga',
-            'deskripsi_profesi' => 'Analis Kinerja Olahraga bertugas untuk menganalisis data dan statistik terkait performa atlet atau tim selama latihan dan pertandingan. Mereka menggunakan teknologi dan perangkat lunak khusus untuk mengumpulkan data mengenai gerakan, kecepatan, kekuatan, dan parameter lain yang relevan dengan kinerja atlet. Data ini digunakan untuk memberikan wawasan yang berguna bagi pelatih dan atlet dalam merencanakan latihan yang lebih efektif dan meningkatkan performa mereka di lapangan.',
-
-
-            'keterampilan' => 'Analisis Data
-            Statistik Olahraga
-            Teknologi Olahraga
-            Pemecahan Masalah
-            Pengamatan Detail',
-            'gaji' => '6.000.000 - 12.000.000',
-            'gambar/profesi/olahraga/Analis_Kinerja_Olahraga/Analis_Kinerja_Olahraga.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 3,
-            'nama_profesi' => 'Manajer Tim Olahraga',
-            'deskripsi_profesi' => 'Manajer Tim Olahraga bertugas mengelola segala aspek administratif dan operasional yang berkaitan dengan tim olahraga. Mereka bekerja untuk memastikan segala hal terkait pengaturan jadwal pertandingan, perjalanan, anggaran, serta kebutuhan logistik tim terlaksana dengan baik. Manajer juga bertanggung jawab dalam mengoordinasi komunikasi antara pelatih, pemain, sponsor, dan media. Dengan kemampuan organisasi yang baik, manajer tim olahraga berperan penting dalam memastikan tim dapat fokus pada kinerja di lapangan.',
-
-
-            'keterampilan' => 'Manajemen Tim
-            Pengorganisasian
-            Administrasi
-            Kepemimpinan
-            Negosiasi',
-            'gaji' => '6.000.000 - 12.000.000',
-            'gambar/profesi/olahraga/Manajer_Tim_Olahraga/Manajer_Tim_Olahraga.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 3,
-            'nama_profesi' => 'Pelatih Sepak Bola',
-            'deskripsi_profesi' => 'Pelatih Sepak Bola bertanggung jawab untuk melatih dan mengembangkan keterampilan para pemain sepak bola. Mereka menyusun strategi permainan, latihan, dan taktik untuk meningkatkan performa tim. Pelatih juga mengawasi perkembangan fisik dan mental pemain serta memberikan motivasi untuk mencapai tujuan tim. Dalam liga atau klub profesional, pelatih bekerja dengan tim staf untuk merancang program latihan yang komprehensif. Selain itu, mereka juga berperan dalam pemilihan pemain yang tepat untuk setiap pertandingan.',
-
-
-            'keterampilan' => 'Strategi Permainan
-            Kepemimpinan
-            Komunikasi
-            Motivasi
-            Analisis Kinerja',
-            'gaji' => '8.000.000 - 20.000.000',
-            'gambar/profesi/olahraga/Pelatih_Sepak_bola/Pelatih_Sepak_bola.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 5,
-            'nama_profesi' => 'Penyelenggara Acara Olahraga',
-            'deskripsi_profesi' => 'Penyelenggara Acara Olahraga bertanggung jawab untuk merencanakan dan mengorganisir berbagai acara olahraga, mulai dari turnamen kecil hingga event internasional besar. Mereka bekerja untuk memastikan kelancaran acara, termasuk pengaturan tempat, pengaturan logistik, serta koordinasi dengan tim, peserta, sponsor, dan media. Tugas mereka juga mencakup penyusunan anggaran, promosi acara, dan mengatasi masalah yang mungkin muncul sebelum, selama, atau setelah acara berlangsung.',
-
-
-            'keterampilan' => 'Manajemen Acara
-            Komunikasi
-            Kepemimpinan
-            Pengorganisasian
-            Negosiasi',
-            'gaji' => '4.000.000 - 8.000.000',
-            'gambar/profesi/olahraga/Penyelenggara_Acara_Olahraga/Penyelenggara_Acara_Olahraga.jpg',
-        ]);
-
-        // Influencer
-        Profesi::create([
-            'id_kategori_profesi' => 4,
-            'nama_profesi' => 'Influencer Makanan dan Minuman',
-            'deskripsi_profesi' => 'Influencer Makanan dan Minuman fokus pada konten yang berhubungan dengan makanan, resep, review restoran, dan produk minuman. Mereka sering mengulas tempat makan, menunjukkan cara memasak resep, atau mempromosikan produk makanan dan minuman tertentu. Influencer ini berperan penting dalam mempengaruhi kebiasaan makan pengikut mereka dan sering kali bekerja sama dengan brand makanan untuk mempromosikan produk mereka.',
-
-
-            'keterampilan' => 'Fotografi Makanan
-            Pengetahuan Kuliner
-            Konten Resep
-            Pemasaran Makanan
-            Keterampilan Menulis',
-            'gaji' => '3.000.000 - 20.000.000',
-            'gambar/profesi/influencer/Influencer Makanan dan Minuman/Influencer_Makanan_dan_Minuman.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 4,
-            'nama_profesi' => 'Influencer Fashion',
-            'deskripsi_profesi' => 'Influencer Fashion dikenal karena gaya pakaian mereka yang trendi dan kemampuan mereka untuk mempengaruhi tren mode. Mereka sering kali bekerja dengan merek fashion untuk mempromosikan koleksi terbaru, aksesori, atau tren pakaian. Influencer ini menciptakan konten yang menarik dengan mengenakan pakaian dari merek tertentu dan berbagi ide-ide styling yang dapat diikuti oleh pengikut mereka. Mereka juga berkolaborasi dengan desainer atau retailer fashion untuk kampanye pemasaran.',
-
-
-            'keterampilan' => 'Fashion Styling
-            Fotografi dan Mode
-            Pemahaman Tren Fashion
-            Branding dan Pemasaran
-            Komunikasi Visual',
-            'gaji' => '6.000.000 - 40.000.000',
-            'gambar/profesi/influencer/Influencer Fashion/Influencer_Fashion.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 4,
-            'nama_profesi' => 'Influencer E-commerce',
-            'deskripsi_profesi' => 'Influencer E-commerce berfokus pada promosi dan penjualan produk melalui platform e-commerce, seperti marketplace atau website pribadi. Mereka sering kali bekerja dengan merek untuk memasarkan produk tertentu dengan memberikan kode diskon, ulasan produk, atau konten yang menunjukkan bagaimana produk tersebut dapat digunakan. Influencer ini memiliki pengikut yang tertarik pada produk dan sering kali membeli melalui tautan atau promosi yang dibagikan oleh influencer.',
-
-
-            'keterampilan' => 'Pemasaran Digital
-            Strategi Penjualan
-            Konten Visual
-            Analisis Penjualan
-            Hubungan Merek',
-            'gaji' => '4.000.000 - 25.000.000',
-            'gambar/profesi/influencer/Influencer E-commerce/Influencer_E-commerce.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 4,
-            'nama_profesi' => 'Influencer Media Sosial',
-            'deskripsi_profesi' => 'Influencer Media Sosial adalah individu yang memiliki pengaruh besar di platform media sosial seperti Instagram, TikTok, dan YouTube. Mereka memanfaatkan pengikut yang banyak untuk mempromosikan produk, merek, atau gaya hidup. Influencer ini sering kali bekerja sama dengan merek untuk membuat konten yang sesuai dengan audiens mereka, baik berupa ulasan produk, tutorial, atau gaya hidup yang dapat menginspirasi pengikut. Mereka juga berperan dalam membangun hubungan dengan pengikut dan menjaga citra personal di media sosial.',
-
-
-            'keterampilan' => 'Kreativitas Konten
-            Fotografi dan Videografi
-            Komunikasi Digital
-            Branding Pribadi
-            Pemasaran Influencer',
-            'gaji' => '5.000.000 - 50.000.000',
-            'gambar/profesi/influencer/Influencer Media_Sosial/Influencer_Media_Sosial.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 4,
-            'nama_profesi' => 'Influencer Travel',
-            'deskripsi_profesi' => 'Influencer Travel berbagi pengalaman perjalanan mereka dengan pengikut, termasuk destinasi wisata, tips perjalanan, dan rekomendasi tempat makan atau akomodasi. Mereka sering berkolaborasi dengan agen perjalanan, maskapai penerbangan, atau merek pariwisata untuk mempromosikan tempat-tempat tertentu dan memotivasi orang untuk melakukan perjalanan. Konten yang mereka buat dapat berupa foto perjalanan, vlog, atau artikel tentang destinasi yang dikunjungi.',
-
-
-            'keterampilan' => 'Penulisan Perjalanan
-            Fotografi Wisata
-            Pengalaman Budaya
-            Pemasaran Pariwisata
-            Komunikasi Visual',
-            'gaji' => '4.000.000 - 30.000.000',
-            'gambar/profesi/influencer/Influencer Travel/Influencer_Travel.jpg',
-        ]);
-
-        // // keuangan
-        Profesi::create([
-            'id_kategori_profesi' => 5,
-            'nama_profesi' => 'Analis Keuangan',
-            'deskripsi_profesi' => 'Analis Keuangan menganalisis data keuangan perusahaan untuk memberikan rekomendasi strategi keuangan dan investasi.',
-
-
-            'keterampilan' => 'Analisis Keuangan
-            Pengelolaan Risiko
-            Pemahaman Pasar Keuangan',
-            'gaji' => '8.000.000',
-            'gambar/profesi/Keuangan/Analisis Keuangan/Analisis Keuangan.png',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 5,
-            'nama_profesi' => 'Akuntan',
-            'deskripsi_profesi' => 'Akuntan bertanggung jawab untuk mencatat, menganalisis, dan menyusun laporan keuangan perusahaan.',
-
-
-            'keterampilan' => 'Akuntansi dan Pajak
-            Analisis Laporan Keuangan
-            Pemahaman Hukum Perpajakan',
-            'gaji' => '7.500.000',
-            'gambar/profesi/Keuangan/Akuntan/Akuntan.png',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 5,
-            'nama_profesi' => 'Konsultan Keuangan',
-            'deskripsi_profesi' => 'Konsultan Keuangan membantu klien dalam merencanakan dan mengelola keuangan untuk mencapai tujuan finansial.',
-
-
-            'keterampilan' => 'Perencanaan Keuangan
-            Analisis Risiko
-            Pengelolaan Portofolio',
-            'gaji' => '10.000.000',
-            'gambar/profesi/Keuangan/Konsultan Keuangan/Konsultan Keuangan.png',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 5,
-            'nama_profesi' => 'Manajer Investasi',
-            'deskripsi_profesi' => 'Manajer Investasi mengelola portofolio investasi klien untuk memaksimalkan keuntungan berdasarkan strategi yang disepakati.',
-
-
-            'keterampilan' => 'Manajemen Portofolio
-            Strategi Investasi
-            Analisis Pasar',
-            'gaji' => '15.000.000',
-            'gambar/profesi/Keuangan/Manajer Investasi/Manajer Investasi.png',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 5,
-            'nama_profesi' => 'Penasihat Pajak',
-            'deskripsi_profesi' => 'Penasihat Pajak memberikan panduan kepada individu atau perusahaan terkait peraturan pajak dan strategi untuk memaksimalkan keuntungan setelah pajak.',
-
-
-            'keterampilan' => 'Pemahaman Perpajakan
-            Penyusunan Laporan Pajak
-            Kepatuhan Pajak',
-            'gaji' => '9.000.000',
-            'gambar/profesi/Keuangan/Penasihat Pajak/Penasihat Pajak.png',
-        ]);
-
-        // // kontruksi
-        Profesi::create([
-            'id_kategori_profesi' => 6,
-            'nama_profesi' => 'Arsitek',
-            'deskripsi_profesi' => 'Merancang bangunan dan struktur, memadukan elemen estetika dan fungsionalitas. Mereka bekerja sama dengan klien dan tim konstruksi untuk menghasilkan desain yang sesuai kebutuhan.',
-
-            'keterampilan' => 'AutoCAD
-            SketchUp
-            Pemahaman Peraturan Bangunan
-            Kreativitas Desain',
-            'gaji' => '7.000.000',
-            'gambar/profesi/Kintruksi/Arsitek/Arsitek.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 6,
-            'nama_profesi' => 'Manajer Proyek Konstruksi',
-            'deskripsi_profesi' => 'Mengawasi proyek konstruksi dari awal hingga selesai, mengelola anggaran, jadwal, dan tim.',
-
-            'keterampilan' => 'Manajemen Proyek
-           Negosiasi Kontrak
-           Kepemimpinan
-           Pemahaman Hukum Konstruksi',
-            'gaji' => '15.000.000',
-            'gambar/profesi/Kontruksi/Manajer Proyek Konstruksi/Manajer Proyek Konstruksi.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 6,
-            'nama_profesi' => 'Surveyor Konstruksi',
-            'deskripsi_profesi' => 'Mengukur tanah dan properti untuk menentukan batas lahan dan membantu dalam perencanaan konstruksi.',
-
-            'keterampilan' => 'Penggunaan Alat Ukur
-            Keterampilan Teknis
-            Pemahaman Geodesi',
-            'gaji' => '5.000.000',
-            'gambar/profesi/kontruksi/Surveyor Konstruksi/Surveyor Konstruksi.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 6,
-            'nama_profesi' => 'Insinyur Sipil',
-            'deskripsi_profesi' => 'Merancang dan mengawasi pembangunan infrastruktur seperti jalan, jembatan, dan gedung.',
-
-            'keterampilan' => 'Perhitungan struktural
-            AutoCADn
-            Manajemen konstruksi',
-            'gaji' => '10.000.000 - 25.000.000',
-            'gambar/profesi/Kontruksi/Insinyur Sipil/insinyur sipil.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 6,
-            'nama_profesi' => 'Pekerja Konstruksi',
-            'deskripsi_profesi' => 'Melakukan pekerjaan fisik dalam pembangunan, seperti memasang rangka, beton, dan material lainnya.',
-
-            'keterampilan' => 'Penggunaan alat berat
-            Teknik konstruksi
-            Ketahanan fisik',
-            'gaji' => '3.000.000 - 7.000.000',
-            'gambar/profesi/Kontruksi/Pekerja Kontruksi/Pekerja Kontruksi.jpg',
-        ]);
-        // // Pendidikan 
-        Profesi::create([
-            'id_kategori_profesi' => 7,
-            'nama_profesi' => 'Guru Sekolah Dasar',
-            'deskripsi_profesi' => 'Guru Sekolah Dasar bertanggung jawab untuk mendidik siswa di tingkat pendidikan dasar, menciptakan materi pembelajaran yang kreatif, dan membantu pengembangan akademik, sosial, serta emosional siswa.',
-
-
-            'keterampilan' => 'Kemampuan Mengajar
-            Pengetahuan Kurikulum
-            Teknologi Pendidikan
-            Komunikasi dan Kesabaran',
-            'gaji' => '4.500.000',
-            'gambar/profesi/pendidikan/Guru_Sd/Guru_Sd.png',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 7,
-            'nama_profesi' => 'Dosen Perguruan Tinggi',
-            'deskripsi_profesi' => 'Dosen mengajar di perguruan tinggi, melakukan penelitian, dan membimbing mahasiswa untuk pengembangan akademik dan karier mereka.',
-
-
-            'keterampilan' => 'Pengajaran dan Penelitian
-            Penyusunan Materi Perkuliahan
-            Penulisan Akademik
-            Komunikasi',
-
-            'gaji' => '10.000.000',
-            'gambar/profesi/pendikan/Dosen/Dosen.png',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 7,
-            'nama_profesi' => 'Konselor Pendidikan',
-            'deskripsi_profesi' => 'Konselor Pendidikan mendukung siswa dalam aspek pribadi, akademik, dan sosial dengan memberikan bimbingan terkait studi dan karier.',
-
-
-            'keterampilan' => 'Konseling Individu
-            Pemahaman Psikologi Pendidikan
-            Pemecahan Masalah
-            Komunikasi Empatik',
-            'gaji' => '7.000.000',
-            'gambar/profesi/pendidikan/konselor pendidikan/Konselor Pendidikan.png',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 7,
-            'nama_profesi' => 'Pengembang Kurikulum',
-            'deskripsi_profesi' => 'Pengembang Kurikulum merancang dan mengevaluasi kurikulum pendidikan agar relevan dan memenuhi kebutuhan peserta didik.',
-
-
-            'keterampilan' => 'Desain Kurikulum
-            Evaluasi Pendidikan
-            Pemahaman Kebijakan Pendidikan',
-            'gaji' => '9.000.000',
-            'gambar/profesi/pendidikan/pengembang kurikulum/Pengembang Kurikulum.png',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 7,
-            'nama_profesi' => 'Kepala Sekolah',
-            'deskripsi_profesi' => 'Kepala Sekolah adalah pemimpin sekolah yang mengelola operasional, memotivasi guru, dan memastikan keberhasilan proses pendidikan.',
-
-
-            'keterampilan' => 'Manajemen Sekolah
-            Kepemimpinan
-            Komunikasi Efektif',
-            'gaji' => '12.000.000',
-            'gambar/profesi/pendidikan/Kepala Sekolah/Kepala Sekolah.png',
-        ]);
-        // // seni & design
-        Profesi::create([
-            'id_kategori_profesi' => 8,
-            'nama_profesi' => 'Desainer Grafis',
-            'deskripsi_profesi' => 'Membuat desain visual untuk media cetak atau digital seperti logo, poster, dan situs web.',
-
-            'keterampilan' => 'Adobe Photoshop
-            Illustrator\nInDesign
-            Kreativitas Desain',
-            'gaji' => '5.000.000',
-            'gambar/profesi/Seni&Desain/Desainer Grafis/desainer grafis.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 8,
-            'nama_profesi' => 'Animator',
-            'deskripsi_profesi' => 'Membuat animasi untuk film, iklan, atau video game dengan menggunakan software animasi.',
-
-            'keterampilan' => 'Adobe After Effects
-            Blender
-            Maya
-            Storytelling Visual',
-            'gaji' => '7.000.000',
-            'gambar/profesi/Seni&Desain/Animator/animator.jpg'
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 8,
-            'nama_profesi' => 'Fotografer',
-            'deskripsi_profesi' => 'Mengambil foto untuk keperluan komersial, artistik, atau dokumentasi.',
-
-            'keterampilan' => 'Komposisi Gambar
-            Pemahaman Cahaya
-            Penggunaan Kamera Profesional',
-            'gaji' => '4.000.000',
-            'gambar/profesi/Seni&Desain/Fotografer/fotografer.jpg'
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 8,
-            'nama_profesi' => 'Desainer Interior',
-            'deskripsi_profesi' => 'Mendesain tata letak interior bangunan agar fungsional, estetis, dan sesuai dengan permintaan klien.',
-
-            'keterampilan' => 'AutoCAD
-            SketchUp
-            Pemilihan Material
-            Pengaturan Ruang',
-            'gaji' => '6.000.000 - 18.000.000',
-            'gambar/profesi/Seni&Desain/Desainer Interior/desain interior.jpg',
-        ]);
-
-        Profesi::create([
-            'id_kategori_profesi' => 8,
-            'nama_profesi' => 'Ilustrator',
-            'deskripsi_profesi' => 'Membuat ilustrasi untuk buku, majalah, atau materi promosi, baik secara digital maupun manual.',
-
-            'keterampilan' => 'Menggambar
-            Kreativitas
-            Penggunaan Tablet Grafis',
-            'gaji' => '5.000.000 - 12.000.000',
-            'gambar/profesi/Seni&Desain/Ilustrator/ilustrator.jpg'
-        ]);
-    }
-}
+//             Ahli Fisioterapi Olahraga juga bekerja sama dengan pelatih untuk memastikan bahwa atlet dapat berlatih dan berkompetisi dengan aman setelah cedera. Mereka melakukan evaluasi kondisi fisik atlet dan merancang program rehabilitasi yang sesuai untuk memaksimalkan potensi fisik atlet.',
+//             'keterampilan' => 'Rehabilitasi Cedera
+//             Teknik Fisioterapi
+//             Pemulihan Otot
+//             Pengetahuan Anatomi
+//             Komunikasi',
+//             'gaji' => '5.000.000 - 10.000.000',
+//             'gambar/profesi/olahraga/Ahli_Fisioterapi_Olahraga/Ahli_Fisioterapi_Olahraga.jpg',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 3,
+//             'nama_profesi' => 'Analis Kinerja Olahraga',
+//             'deskripsi_profesi' => 'Analis Kinerja Olahraga bertugas untuk menganalisis data dan statistik terkait performa atlet atau tim selama latihan dan pertandingan. Mereka menggunakan teknologi dan perangkat lunak khusus untuk mengumpulkan data mengenai gerakan, kecepatan, kekuatan, dan parameter lain yang relevan dengan kinerja atlet. Data ini digunakan untuk memberikan wawasan yang berguna bagi pelatih dan atlet dalam merencanakan latihan yang lebih efektif dan meningkatkan performa mereka di lapangan.',
+
+
+//             'keterampilan' => 'Analisis Data
+//             Statistik Olahraga
+//             Teknologi Olahraga
+//             Pemecahan Masalah
+//             Pengamatan Detail',
+//             'gaji' => '6.000.000 - 12.000.000',
+//             'gambar/profesi/olahraga/Analis_Kinerja_Olahraga/Analis_Kinerja_Olahraga.jpg',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 3,
+//             'nama_profesi' => 'Manajer Tim Olahraga',
+//             'deskripsi_profesi' => 'Manajer Tim Olahraga bertugas mengelola segala aspek administratif dan operasional yang berkaitan dengan tim olahraga. Mereka bekerja untuk memastikan segala hal terkait pengaturan jadwal pertandingan, perjalanan, anggaran, serta kebutuhan logistik tim terlaksana dengan baik. Manajer juga bertanggung jawab dalam mengoordinasi komunikasi antara pelatih, pemain, sponsor, dan media. Dengan kemampuan organisasi yang baik, manajer tim olahraga berperan penting dalam memastikan tim dapat fokus pada kinerja di lapangan.',
+
+
+//             'keterampilan' => 'Manajemen Tim
+//             Pengorganisasian
+//             Administrasi
+//             Kepemimpinan
+//             Negosiasi',
+//             'gaji' => '6.000.000 - 12.000.000',
+//             'gambar/profesi/olahraga/Manajer_Tim_Olahraga/Manajer_Tim_Olahraga.jpg',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 3,
+//             'nama_profesi' => 'Pelatih Sepak Bola',
+//             'deskripsi_profesi' => 'Pelatih Sepak Bola bertanggung jawab untuk melatih dan mengembangkan keterampilan para pemain sepak bola. Mereka menyusun strategi permainan, latihan, dan taktik untuk meningkatkan performa tim. Pelatih juga mengawasi perkembangan fisik dan mental pemain serta memberikan motivasi untuk mencapai tujuan tim. Dalam liga atau klub profesional, pelatih bekerja dengan tim staf untuk merancang program latihan yang komprehensif. Selain itu, mereka juga berperan dalam pemilihan pemain yang tepat untuk setiap pertandingan.',
+
+
+//             'keterampilan' => 'Strategi Permainan
+//             Kepemimpinan
+//             Komunikasi
+//             Motivasi
+//             Analisis Kinerja',
+//             'gaji' => '8.000.000 - 20.000.000',
+//             'gambar/profesi/olahraga/Pelatih_Sepak_bola/Pelatih_Sepak_bola.jpg',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 5,
+//             'nama_profesi' => 'Penyelenggara Acara Olahraga',
+//             'deskripsi_profesi' => 'Penyelenggara Acara Olahraga bertanggung jawab untuk merencanakan dan mengorganisir berbagai acara olahraga, mulai dari turnamen kecil hingga event internasional besar. Mereka bekerja untuk memastikan kelancaran acara, termasuk pengaturan tempat, pengaturan logistik, serta koordinasi dengan tim, peserta, sponsor, dan media. Tugas mereka juga mencakup penyusunan anggaran, promosi acara, dan mengatasi masalah yang mungkin muncul sebelum, selama, atau setelah acara berlangsung.',
+
+
+//             'keterampilan' => 'Manajemen Acara
+//             Komunikasi
+//             Kepemimpinan
+//             Pengorganisasian
+//             Negosiasi',
+//             'gaji' => '4.000.000 - 8.000.000',
+//             'gambar/profesi/olahraga/Penyelenggara_Acara_Olahraga/Penyelenggara_Acara_Olahraga.jpg',
+//         ]);
+
+//         // Influencer
+//         Profesi::create([
+//             'id_kategori_profesi' => 4,
+//             'nama_profesi' => 'Influencer Makanan dan Minuman',
+//             'deskripsi_profesi' => 'Influencer Makanan dan Minuman fokus pada konten yang berhubungan dengan makanan, resep, review restoran, dan produk minuman. Mereka sering mengulas tempat makan, menunjukkan cara memasak resep, atau mempromosikan produk makanan dan minuman tertentu. Influencer ini berperan penting dalam mempengaruhi kebiasaan makan pengikut mereka dan sering kali bekerja sama dengan brand makanan untuk mempromosikan produk mereka.',
+
+
+//             'keterampilan' => 'Fotografi Makanan
+//             Pengetahuan Kuliner
+//             Konten Resep
+//             Pemasaran Makanan
+//             Keterampilan Menulis',
+//             'gaji' => '3.000.000 - 20.000.000',
+//             'gambar/profesi/influencer/Influencer Makanan dan Minuman/Influencer_Makanan_dan_Minuman.jpg',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 4,
+//             'nama_profesi' => 'Influencer Fashion',
+//             'deskripsi_profesi' => 'Influencer Fashion dikenal karena gaya pakaian mereka yang trendi dan kemampuan mereka untuk mempengaruhi tren mode. Mereka sering kali bekerja dengan merek fashion untuk mempromosikan koleksi terbaru, aksesori, atau tren pakaian. Influencer ini menciptakan konten yang menarik dengan mengenakan pakaian dari merek tertentu dan berbagi ide-ide styling yang dapat diikuti oleh pengikut mereka. Mereka juga berkolaborasi dengan desainer atau retailer fashion untuk kampanye pemasaran.',
+
+
+//             'keterampilan' => 'Fashion Styling
+//             Fotografi dan Mode
+//             Pemahaman Tren Fashion
+//             Branding dan Pemasaran
+//             Komunikasi Visual',
+//             'gaji' => '6.000.000 - 40.000.000',
+//             'gambar/profesi/influencer/Influencer Fashion/Influencer_Fashion.jpg',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 4,
+//             'nama_profesi' => 'Influencer E-commerce',
+//             'deskripsi_profesi' => 'Influencer E-commerce berfokus pada promosi dan penjualan produk melalui platform e-commerce, seperti marketplace atau website pribadi. Mereka sering kali bekerja dengan merek untuk memasarkan produk tertentu dengan memberikan kode diskon, ulasan produk, atau konten yang menunjukkan bagaimana produk tersebut dapat digunakan. Influencer ini memiliki pengikut yang tertarik pada produk dan sering kali membeli melalui tautan atau promosi yang dibagikan oleh influencer.',
+
+
+//             'keterampilan' => 'Pemasaran Digital
+//             Strategi Penjualan
+//             Konten Visual
+//             Analisis Penjualan
+//             Hubungan Merek',
+//             'gaji' => '4.000.000 - 25.000.000',
+//             'gambar/profesi/influencer/Influencer E-commerce/Influencer_E-commerce.jpg',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 4,
+//             'nama_profesi' => 'Influencer Media Sosial',
+//             'deskripsi_profesi' => 'Influencer Media Sosial adalah individu yang memiliki pengaruh besar di platform media sosial seperti Instagram, TikTok, dan YouTube. Mereka memanfaatkan pengikut yang banyak untuk mempromosikan produk, merek, atau gaya hidup. Influencer ini sering kali bekerja sama dengan merek untuk membuat konten yang sesuai dengan audiens mereka, baik berupa ulasan produk, tutorial, atau gaya hidup yang dapat menginspirasi pengikut. Mereka juga berperan dalam membangun hubungan dengan pengikut dan menjaga citra personal di media sosial.',
+
+
+//             'keterampilan' => 'Kreativitas Konten
+//             Fotografi dan Videografi
+//             Komunikasi Digital
+//             Branding Pribadi
+//             Pemasaran Influencer',
+//             'gaji' => '5.000.000 - 50.000.000',
+//             'gambar/profesi/influencer/Influencer Media_Sosial/Influencer_Media_Sosial.jpg',
+//         ]);
+
+//         Profesi::create([
+ //            'id_kategori_profesi' => 4,
+ //            'nama_profesi' => 'Influencer Travel',
+ //            'deskripsi_profesi' => 'Influencer Travel berbagi pengalaman perjalanan mereka dengan pengikut, termasuk destinasi wisata, tips perjalanan, dan rekomendasi tempat makan atau akomodasi. Mereka sering berkolaborasi dengan agen perjalanan, maskapai penerbangan, atau merek pariwisata untuk mempromosikan tempat-tempat tertentu dan memotivasi orang untuk melakukan perjalanan. Konten yang mereka buat dapat berupa foto perjalanan, vlog, atau artikel tentang destinasi yang dikunjungi.',
+
+
+ //            'keterampilan' => 'Penulisan Perjalanan
+//             Fotografi Wisata
+//             Pengalaman Budaya
+//             Pemasaran Pariwisata
+//             Komunikasi Visual',
+//             'gaji' => '4.000.000 - 30.000.000',
+//             'gambar/profesi/influencer/Influencer Travel/Influencer_Travel.jpg',
+//         ]);
+
+ //        // // keuangan
+//         Profesi::create([
+//             'id_kategori_profesi' => 5,
+//             'nama_profesi' => 'Analis Keuangan',
+//             'deskripsi_profesi' => 'Analis Keuangan menganalisis data keuangan perusahaan untuk memberikan rekomendasi strategi keuangan dan investasi.',
+
+
+//             'keterampilan' => 'Analisis Keuangan
+//             Pengelolaan Risiko
+//             Pemahaman Pasar Keuangan',
+//             'gaji' => '8.000.000',
+//             'gambar/profesi/Keuangan/Analisis Keuangan/Analisis Keuangan.png',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 5,
+//             'nama_profesi' => 'Akuntan',
+//             'deskripsi_profesi' => 'Akuntan bertanggung jawab untuk mencatat, menganalisis, dan menyusun laporan keuangan perusahaan.',
+
+
+//             'keterampilan' => 'Akuntansi dan Pajak
+//             Analisis Laporan Keuangan
+//             Pemahaman Hukum Perpajakan',
+//             'gaji' => '7.500.000',
+//             'gambar/profesi/Keuangan/Akuntan/Akuntan.png',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 5,
+//             'nama_profesi' => 'Konsultan Keuangan',
+//             'deskripsi_profesi' => 'Konsultan Keuangan membantu klien dalam merencanakan dan mengelola keuangan untuk mencapai tujuan finansial.',
+
+
+//             'keterampilan' => 'Perencanaan Keuangan
+//             Analisis Risiko
+//             Pengelolaan Portofolio',
+//             'gaji' => '10.000.000',
+//             'gambar/profesi/Keuangan/Konsultan Keuangan/Konsultan Keuangan.png',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 5,
+//             'nama_profesi' => 'Manajer Investasi',
+//             'deskripsi_profesi' => 'Manajer Investasi mengelola portofolio investasi klien untuk memaksimalkan keuntungan berdasarkan strategi yang disepakati.',
+
+
+//             'keterampilan' => 'Manajemen Portofolio
+//             Strategi Investasi
+//             Analisis Pasar',
+//             'gaji' => '15.000.000',
+//             'gambar/profesi/Keuangan/Manajer Investasi/Manajer Investasi.png',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 5,
+//             'nama_profesi' => 'Penasihat Pajak',
+//             'deskripsi_profesi' => 'Penasihat Pajak memberikan panduan kepada individu atau perusahaan terkait peraturan pajak dan strategi untuk memaksimalkan keuntungan setelah pajak.',
+
+
+//             'keterampilan' => 'Pemahaman Perpajakan
+//             Penyusunan Laporan Pajak
+//             Kepatuhan Pajak',
+//             'gaji' => '9.000.000',
+//             'gambar/profesi/Keuangan/Penasihat Pajak/Penasihat Pajak.png',
+//         ]);
+
+//         // // kontruksi
+//         Profesi::create([
+//             'id_kategori_profesi' => 6,
+//             'nama_profesi' => 'Arsitek',
+//             'deskripsi_profesi' => 'Merancang bangunan dan struktur, memadukan elemen estetika dan fungsionalitas. Mereka bekerja sama dengan klien dan tim konstruksi untuk menghasilkan desain yang sesuai kebutuhan.',
+
+//             'keterampilan' => 'AutoCAD
+//             SketchUp
+//             Pemahaman Peraturan Bangunan
+//             Kreativitas Desain',
+//             'gaji' => '7.000.000',
+//             'gambar/profesi/Kintruksi/Arsitek/Arsitek.jpg',
+//         ]);
+
+//         Profesi::create([
+ //            'id_kategori_profesi' => 6,
+ //            'nama_profesi' => 'Manajer Proyek Konstruksi',
+ //            'deskripsi_profesi' => 'Mengawasi proyek konstruksi dari awal hingga selesai, mengelola anggaran, jadwal, dan tim.',
+
+ //            'keterampilan' => 'Manajemen Proyek
+//            Negosiasi Kontrak
+//            Kepemimpinan
+//            Pemahaman Hukum Konstruksi',
+ //            'gaji' => '15.000.000',
+ //            'gambar/profesi/Kontruksi/Manajer Proyek Konstruksi/Manajer Proyek Konstruksi.jpg',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 6,
+//             'nama_profesi' => 'Surveyor Konstruksi',
+//             'deskripsi_profesi' => 'Mengukur tanah dan properti untuk menentukan batas lahan dan membantu dalam perencanaan konstruksi.',
+
+//             'keterampilan' => 'Penggunaan Alat Ukur
+//             Keterampilan Teknis
+//             Pemahaman Geodesi',
+//             'gaji' => '5.000.000',
+//             'gambar/profesi/kontruksi/Surveyor Konstruksi/Surveyor Konstruksi.jpg',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 6,
+//             'nama_profesi' => 'Insinyur Sipil',
+//             'deskripsi_profesi' => 'Merancang dan mengawasi pembangunan infrastruktur seperti jalan, jembatan, dan gedung.',
+
+//             'keterampilan' => 'Perhitungan struktural
+//             AutoCADn
+//             Manajemen konstruksi',
+    //         'gaji' => '10.000.000 - 25.000.000',
+//             'gambar/profesi/Kontruksi/Insinyur Sipil/insinyur sipil.jpg',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 6,
+//             'nama_profesi' => 'Pekerja Konstruksi',
+//             'deskripsi_profesi' => 'Melakukan pekerjaan fisik dalam pembangunan, seperti memasang rangka, beton, dan material lainnya.',
+
+//             'keterampilan' => 'Penggunaan alat berat
+//             Teknik konstruksi
+//             Ketahanan fisik',
+//             'gaji' => '3.000.000 - 7.000.000',
+//             'gambar/profesi/Kontruksi/Pekerja Kontruksi/Pekerja Kontruksi.jpg',
+//         ]);
+//         // // Pendidikan 
+//         Profesi::create([
+//             'id_kategori_profesi' => 7,
+//             'nama_profesi' => 'Guru Sekolah Dasar',
+//             'deskripsi_profesi' => 'Guru Sekolah Dasar bertanggung jawab untuk mendidik siswa di tingkat pendidikan dasar, menciptakan materi pembelajaran yang kreatif, dan membantu pengembangan akademik, sosial, serta emosional siswa.',
+
+
+//             'keterampilan' => 'Kemampuan Mengajar
+//             Pengetahuan Kurikulum
+//             Teknologi Pendidikan
+//             Komunikasi dan Kesabaran',
+//             'gaji' => '4.500.000',
+//             'gambar/profesi/pendidikan/Guru_Sd/Guru_Sd.png',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 7,
+//             'nama_profesi' => 'Dosen Perguruan Tinggi',
+//             'deskripsi_profesi' => 'Dosen mengajar di perguruan tinggi, melakukan penelitian, dan membimbing mahasiswa untuk pengembangan akademik dan karier mereka.',
+
+
+//             'keterampilan' => 'Pengajaran dan Penelitian
+//             Penyusunan Materi Perkuliahan
+//             Penulisan Akademik
+//             Komunikasi',
+
+//             'gaji' => '10.000.000',
+//             'gambar/profesi/pendikan/Dosen/Dosen.png',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 7,
+//             'nama_profesi' => 'Konselor Pendidikan',
+//             'deskripsi_profesi' => 'Konselor Pendidikan mendukung siswa dalam aspek pribadi, akademik, dan sosial dengan memberikan bimbingan terkait studi dan karier.',
+
+
+//             'keterampilan' => 'Konseling Individu
+//             Pemahaman Psikologi Pendidikan
+//             Pemecahan Masalah
+//             Komunikasi Empatik',
+//             'gaji' => '7.000.000',
+//             'gambar/profesi/pendidikan/konselor pendidikan/Konselor Pendidikan.png',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 7,
+//             'nama_profesi' => 'Pengembang Kurikulum',
+//             'deskripsi_profesi' => 'Pengembang Kurikulum merancang dan mengevaluasi kurikulum pendidikan agar relevan dan memenuhi kebutuhan peserta didik.',
+
+
+//             'keterampilan' => 'Desain Kurikulum
+//             Evaluasi Pendidikan
+//             Pemahaman Kebijakan Pendidikan',
+//             'gaji' => '9.000.000',
+//             'gambar/profesi/pendidikan/pengembang kurikulum/Pengembang Kurikulum.png',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 7,
+//             'nama_profesi' => 'Kepala Sekolah',
+//             'deskripsi_profesi' => 'Kepala Sekolah adalah pemimpin sekolah yang mengelola operasional, memotivasi guru, dan memastikan keberhasilan proses pendidikan.',
+
+
+//             'keterampilan' => 'Manajemen Sekolah
+//             Kepemimpinan
+//             Komunikasi Efektif',
+//             'gaji' => '12.000.000',
+//             'gambar/profesi/pendidikan/Kepala Sekolah/Kepala Sekolah.png',
+//         ]);
+//         // // seni & design
+//         Profesi::create([
+//             'id_kategori_profesi' => 8,
+//             'nama_profesi' => 'Desainer Grafis',
+//             'deskripsi_profesi' => 'Membuat desain visual untuk media cetak atau digital seperti logo, poster, dan situs web.',
+
+//             'keterampilan' => 'Adobe Photoshop
+//             Illustrator\nInDesign
+//             Kreativitas Desain',
+//             'gaji' => '5.000.000',
+//             'gambar/profesi/Seni&Desain/Desainer Grafis/desainer grafis.jpg',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 8,
+//             'nama_profesi' => 'Animator',
+//             'deskripsi_profesi' => 'Membuat animasi untuk film, iklan, atau video game dengan menggunakan software animasi.',
+
+//             'keterampilan' => 'Adobe After Effects
+//             Blender
+//             Maya
+//             Storytelling Visual',
+//             'gaji' => '7.000.000',
+//             'gambar/profesi/Seni&Desain/Animator/animator.jpg'
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 8,
+//             'nama_profesi' => 'Fotografer',
+//             'deskripsi_profesi' => 'Mengambil foto untuk keperluan komersial, artistik, atau dokumentasi.',
+
+//             'keterampilan' => 'Komposisi Gambar
+//             Pemahaman Cahaya
+//             Penggunaan Kamera Profesional',
+//             'gaji' => '4.000.000',
+//             'gambar/profesi/Seni&Desain/Fotografer/fotografer.jpg'
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 8,
+//             'nama_profesi' => 'Desainer Interior',
+//             'deskripsi_profesi' => 'Mendesain tata letak interior bangunan agar fungsional, estetis, dan sesuai dengan permintaan klien.',
+
+//             'keterampilan' => 'AutoCAD
+//             SketchUp
+//             Pemilihan Material
+//             Pengaturan Ruang',
+//             'gaji' => '6.000.000 - 18.000.000',
+//             'gambar/profesi/Seni&Desain/Desainer Interior/desain interior.jpg',
+//         ]);
+
+//         Profesi::create([
+//             'id_kategori_profesi' => 8,
+//             'nama_profesi' => 'Ilustrator',
+//             'deskripsi_profesi' => 'Membuat ilustrasi untuk buku, majalah, atau materi promosi, baik secara digital maupun manual.',
+
+//             'keterampilan' => 'Menggambar
+//             Kreativitas
+//             Penggunaan Tablet Grafis',
+//             'gaji' => '5.000.000 - 12.000.000',
+//             'gambar/profesi/Seni&Desain/Ilustrator/ilustrator.jpg'
+//         ]);
+     }
+ }

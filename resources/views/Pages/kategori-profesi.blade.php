@@ -19,35 +19,20 @@
     </div>
 </section>
 
-<div class="container mt-5 mb-5"> <!-- Menambahkan mb-5 untuk jarak di bawah -->
+<div class="container mt-5 mb-5">
     <div class="row">
-        @php
-            $categories = [
-                ['name' => 'Teknologi Informasi', 'icon' => 'mdi-desktop-classic', 'slug' => 'teknologi-informasi'],
-                ['name' => 'Kesehatan', 'icon' => 'mdi-heart-pulse', 'slug' => 'kesehatan'],
-                ['name' => 'Pendidikan', 'icon' => 'mdi-school', 'slug' => 'pendidikan'],
-                ['name' => 'Keuangan', 'icon' => 'mdi-cash-multiple', 'slug' => 'keuangan'],
-                ['name' => 'Hukum', 'icon' => 'mdi-gavel', 'slug' => 'hukum'],
-                ['name' => 'Konstruksi', 'icon' => 'mdi-office-building', 'slug' => 'konstruksi'],
-                ['name' => 'Seni dan Desain', 'icon' => 'mdi-palette', 'slug' => 'seni-dan-desain'],
-                ['name' => 'Pemasaran', 'icon' => 'mdi-bullhorn', 'slug' => 'pemasaran'],
-                ['name' => 'Influencer', 'icon' => 'mdi-account-circle', 'slug' => 'influencer'],
-                ['name' => 'Olahraga', 'icon' => 'mdi-soccer', 'slug' => 'olahraga'],
-            ];
-        @endphp
-
-        @foreach($kategoriprofesi as $category)
-        <a href="{{ route('profesi.index', ['kategori' => strtolower(str_replace(' ', '-', $category->kategori_profesi))]) }}" class="col-lg-3 col-md-6 mt-4 pt-2">
-            <div class="popu-category-box bg-light rounded text-center p-4">
-                <div class="popu-category-icon mb-3">
-                    <i class="mdi {{ $category['icon'] }} d-inline-block rounded-pill h3 text-primary"></i>
+        @foreach ($kategoriprofesi as $kategori) 
+            <a href="{{ route('profesi.index', ['kategori' => strtolower(str_replace(' ', '-', $kategori->kategori_profesi))]) }}" class="col-lg-4 col-md-6 mt-4 pt-2">
+                <div class="popu-category-box bg-light rounded text-center p-4">
+                    <div class="popu-category-icon mb-3">
+                        <i class="{{ $kategori->icon }} d-inline-block rounded-pill h3 text-primary"></i>
+                    </div>
+                    <div class="popu-category-content">
+                        <h5 class="mb-2 text-dark title">{{ $kategori->kategori_profesi }}</h5>
+                        <p class="text-success mb-0 rounded">5 Pekerjaan</p>
+                    </div>
                 </div>
-                <div class="popu-category-content">
-                    <h5 class="mb-2 text-dark title">{{ $category['name'] }}</h5>
-                    <p class="text-success mb-0 rounded">20 Pekerjaan</p>
-                </div>
-            </div>
-        </a>
+            </a>
         @endforeach
     </div>
 </div>
