@@ -70,7 +70,7 @@
                         </div>
                         <div class="popu-category-content">
                             <h5 class="mb-2 text-dark title">{{ $kategori->kategori_profesi }}</h5>
-                            <p class="text-success mb-0 rounded">20 Pekerjaan</p>
+                            <p class="text-success mb-0 rounded">5 Pekerjaan</p>
                         </div>
                     </div>
                 </a>
