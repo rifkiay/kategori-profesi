@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jobya - Sign Up</title>
+    <title>Jobtiva - Sign Up</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('Assets/images/favicon.ico') }}">
     <!-- CSS Stylesheets -->
@@ -28,7 +28,7 @@
         <a href="{{ url('/') }}" class="text-white rounded d-inline-block text-center"><i class="mdi mdi-home"></i></a>
     </div>
     <!-- Hero Start -->
-    <section class="vh-100" style="background: url('{{ asset('Assets/images/user.jpg') }}') center center;">
+    <section class="vh-100" style="background: url('{{ asset('Assets/images/2.png') }}') center center; background-size: cover; width: 100%;">
         <div class="home-center">
             <div class="home-desc-center">
                 <div class="container">
@@ -36,39 +36,49 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="login-page bg-white shadow rounded p-4">
                                 <div class="text-center">
-                                    <h4 class="mb-4">Sign Up</h4>  
+                                    <h4 class="mb-4">Sign Up</h4>
+                                    @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    @endif  
                                 </div>
-                                <form class="signup-form" id="signupForm">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="form-group position-relative">
-                                                <label>Full Name <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" placeholder="Full Name" name="name" id="name" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group position-relative">
-                                                <label>Your Email <span class="text-danger">*</span></label>
-                                                <input type="email" class="form-control" placeholder="Email" name="email" id="email" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group position-relative">
-                                                <label>Password <span class="text-danger">*</span></label>
-                                                <input type="password" class="form-control" placeholder="Password" name="password" id="password" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 mb-0">
-                                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
-                                        </div>
-                                        <div class="col-12 text-center mt-3">
-                                            <p id="error-message" class="text-danger" style="display: none;">Error in signing up!</p>
-                                        </div>
+                                <!-- Form Start -->
+                                <form method="POST" action="{{ route('signup.store') }}">
+                                    @csrf
+                                    <div class="form-group mb-3">
+                                        <label>Kategori Profesi <span class="text-danger">*</span></label>
+                                        <select name="id_kategori_profesi" class="form-control" required>
+                                            <option value=""> Pilih Kategori </option>
+                                            @foreach ($kategori_profesi as $kategori)
+                                                <option value="{{ $kategori->id }}">{{ $kategori->kategori_profesi }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label>Full Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Full Name" name="nama" required>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label>Your Email <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" placeholder="Email" name="email" required>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label>Password <span class="text-danger">*</span></label>
+                                        <input type="password" class="form-control" placeholder="Password" name="password" required>
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        <p>Sudah punya akun? <a href="{{ route('login.index') }}" class="text-primary">Login</a></p>
                                     </div>
                                 </form>
-                                <div class="text-center mt-3">
-                                    <p>Sudah punya akun? <a href="{{ url('login') }}" class="text-primary">Login</a></p>
-                                </div>
+                                <!-- Form End -->
                             </div>
                         </div>
                     </div>
@@ -84,25 +94,5 @@
     <script src="{{ asset('Assets/js/selectize.min.js') }}"></script>
     <script src="{{ asset('Assets/js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('Assets/js/app.js') }}"></script>
-    
-    <!-- Script untuk validasi sign up -->
-    <script>
-        document.querySelector('#signupForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var nameInput = document.querySelector('#name').value;
-            var emailInput = document.querySelector('#email').value;
-            var passwordInput = document.querySelector('#password').value;
-            
-            // Simpan data user di localStorage untuk keperluan testing
-            localStorage.setItem('user_name', nameInput);
-            localStorage.setItem('user_email', emailInput);
-            localStorage.setItem('user_password', passwordInput);
-
-            alert('Sign Up berhasil!');
-            // Simpan status login di sesi lokal
-            localStorage.setItem('user_logged_in', true);
-            window.location.href = '/'; // Redirect ke halaman home
-        });
-    </script>
 </body>
 </html>

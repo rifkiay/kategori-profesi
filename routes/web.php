@@ -178,9 +178,9 @@ Route::prefix('loker')->group(function () {
 //     return view('Auth.login');
 // });
 
-Route::get('/sign-up', function () {
-    return view('Auth.Sign-up');
-});
+// Route::get('/sign-up', function () {
+//     return view('Auth.Sign-up');
+// });
 
     // Route::post('/login-submit', function () {
     //     session(['is_logged_in' => true]);
