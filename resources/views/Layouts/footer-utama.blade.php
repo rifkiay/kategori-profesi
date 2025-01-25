@@ -1,53 +1,59 @@
 <!-- Footer Start -->
 <footer class="footer">
     <div class="container">
-        <div class="row">
-            <!-- Logo dan Deskripsi -->
-            <div class="col-lg-3 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
-                <a href="{{ url('/') }}"><img src="{{ asset('Assets/images/logo-light.png') }}" height="20" alt="Logo"></a>
-                <p class="mt-4">Temukan informasi lengkap mengenai berbagai profesi untuk membantu Anda memilih karir yang tepat.</p>
-                <ul class="social-icon social list-inline mb-0">
-                    <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-facebook"></i></a></li>
-                    <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-instagram"></i></a></li>
-                    <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-linkedin"></i></a></li>
-                </ul>
-            </div>
+        <div class="row g-4"> <!-- Gunakan g-4 untuk jarak antar kolom -->
+    <!-- Logo dan Deskripsi -->
+    <div class="col-lg-4 col-md-6 col-12 mb-0 mb-md-4">
+        <a href="{{ url('/') }}"><img src="{{ asset('Assets/images/logo-light.png') }}" height="70" alt="Logo"></a>
+        <p class="mt-4">
+            Temukan informasi lengkap mengenai<br>
+            berbagai profesi untuk membantu Anda<br>
+            memilih karir yang tepat.
+        </p>
+        <ul class="social-icon social list-inline mb-0">
+            <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-linkedin"></i></a></li>
+        </ul>
+    </div>
 
-            <!-- Informasi Perusahaan -->
-            <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                <p class="text-white mb-4 footer-list-title">Perusahaan</p>
-                <ul class="list-unstyled footer-list">
-                    <li><a href="{{ url('about') }}" class="text-foot"><i class="mdi mdi-chevron-right"></i> Tentang Kami</a></li>
-                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Karir</a></li>
-                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Blog</a></li>
-                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Loker</a></li>
-                </ul>
-            </div>
+    <!-- Kategori Profesi -->
+    <div class="col-lg-3 col-md-6 col-12">
+        <p class="text-white mb-4 footer-list-title">Kategori Profesi</p>
+        <ul class="list-unstyled footer-list">
+            <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Teknologi Informasi</a></li>
+            <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Kesehatan</a></li>
+            <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Pendidikan</a></li>
+            <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Keuangan</a></li>
+            <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Seni dan Desain</a></li>
+            <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Olahraga</a></li>
+        </ul>
+    </div>
 
-            <!-- Sumber Daya -->
-            <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                <p class="text-white mb-4 footer-list-title">Sumber Daya</p>
-                <ul class="list-unstyled footer-list">
-                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Dukungan</a></li>
-                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Kebijakan Privasi</a></li>
-                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Syarat & Ketentuan</a></li>
-                    <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> FAQ</a></li>
-                </ul>
-            </div>
+    <!-- Informasi Tambahan -->
+    <div class="col-lg-3 col-md-6 col-12">
+        <p class="text-white mb-4 footer-list-title">Informasi Tambahan</p>
+        <ul class="list-unstyled footer-list">
+            <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Tentang Kami</a></li>
+            <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Kontak Kami</a></li>
+            <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right"></i> Blog</a></li>
+        </ul>
+    </div>
+        
+    <!-- Didukung Oleh -->
+    <div class="col-lg-2 col-md-6 text-center">
+        <h6 class="text-white mb-4" >Didukung oleh :</h6>
+        <a href="#" class="d-block">
+            <img src="{{ asset('Assets/images/logo-ars.png') }}" height="100" alt="University Logo">
+        </a>
+    </div>
+</div>
 
-            <!-- Jam Operasional -->
-            <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                <p class="text-white mb-4 footer-list-title">Jam Operasional</p>
-                <ul class="list-unstyled text-foot mt-4 mb-0">
-                    <li>Senin - Jumat : 09:00 - 17:00</li>
-                    <li class="mt-2">Sabtu : 10:00 - 15:00</li>
-                    <li class="mt-2">Minggu : Libur</li>
-                </ul>
-            </div>
         </div>
     </div>
 </footer>
+
 
 <hr>
 
@@ -56,7 +62,7 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="">
-                    <p class="mb-0">© 2019 -2020 Jobya. Design with <i class="mdi mdi-heart text-danger"></i> by Themesdesign.</p>
+                    <p class="mb-0">© 2024 -2025 Jobtiva. Design with <i class="mdi mdi-heart text-danger"></i> by Team Jobtiva.</p>
                 </div>
             </div>
         </div>
