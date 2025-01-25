@@ -10,11 +10,13 @@
 
     <!-- Link to Google Fonts (Nunito) -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="{{ asset('Assets/css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('Assets/css/materialdesignicons.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('Assets/css/fontawesome.css') }}" type="text/css">
+    
     <link rel="stylesheet" href="{{ asset('Assets/css/selectize.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('Assets/css/owl.carousel.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('Assets/css/style.min.css') }}" type="text/css">

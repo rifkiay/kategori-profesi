@@ -88,7 +88,6 @@
                 <!-- Section Title Start -->
                 <div class="section-title text-center">
                     <h1 class="title">Tim Kami</h1>
-                    <p class="sub-title">Tim yang berdedikasi dan berpengalaman</p>
                 </div>
                 <!-- Section Title End -->
             </div>
@@ -106,9 +105,8 @@
 
                         <!-- Team Social Start -->
                         <div class="team-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
                         </div>
                         <!-- Team Social End -->
                     </div>
@@ -117,34 +115,7 @@
                     <!-- Team Content Start -->
                     <div class="team-content">
                         <h6 class="team-member-name">Rifki Ainul Yaqin</h6>
-                        <p>HACKER</p>
-                    </div>
-                    <!-- Team Content End -->
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="single-team-member text-center mb-6">
-                    <!-- Team Thumb Start -->
-                    <div class="team-thumb">
-                        <!-- Team Member Image Start -->
-                        <img class="fit-image" src="{{ asset('assets/images/team/Wilda.png') }}" alt="Team Image" />
-                        <!-- Team Member Image End -->
-
-                        <!-- Team Social Start -->
-                        <div class="team-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                        </div>
-                        <!-- Team Social End -->
-                    </div>
-                    <!-- Team Thumb End -->
-
-                    <!-- Team Content Start -->
-                    <div class="team-content">
-                        <h6 class="team-member-name">Wilda Agustina</h6>
-                        <p>HIPSTER</p>
+                        <p>17221009</p>
                     </div>
                     <!-- Team Content End -->
                 </div>
@@ -161,9 +132,8 @@
 
                         <!-- Team Social Start -->
                         <div class="team-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
                         </div>
                         <!-- Team Social End -->
                     </div>
@@ -172,7 +142,33 @@
                     <!-- Team Content Start -->
                     <div class="team-content">
                         <h6 class="team-member-name">Azilma Nuzul Yasinta</h6>
-                        <p>HACKER</p>
+                        <p>17221028</p>
+                    </div>
+                    <!-- Team Content End -->
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="single-team-member text-center mb-6">
+                    <!-- Team Thumb Start -->
+                    <div class="team-thumb">
+                        <!-- Team Member Image Start -->
+                        <img class="fit-image" src="{{ asset('assets/images/team/Wilda.png') }}" alt="Team Image" />
+                        <!-- Team Member Image End -->
+
+                        <!-- Team Social Start -->
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        <!-- Team Social End -->
+                    </div>
+                    <!-- Team Thumb End -->
+
+                    <!-- Team Content Start -->
+                    <div class="team-content">
+                        <h6 class="team-member-name">Wilda Agustina</h6>
+                        <p>17223005</p>
                     </div>
                     <!-- Team Content End -->
                 </div>
@@ -188,9 +184,8 @@
 
                         <!-- Team Social Start -->
                         <div class="team-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
                         </div>
                         <!-- Team Social End -->
                     </div>
@@ -199,7 +194,7 @@
                     <!-- Team Content Start -->
                     <div class="team-content">
                         <h6 class="team-member-name">Reddis Angel</h6>
-                        <p>HIPSTER</p>
+                        <p>17223016</p>
                     </div>
                     <!-- Team Content End -->
                 </div>
