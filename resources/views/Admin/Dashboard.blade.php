@@ -1,4 +1,4 @@
-@section('title', 'Dashboards')
+@section('title','Jobtiva | Dashboards')
 @include('Layouts.header')
 
 <!-- Begin page -->

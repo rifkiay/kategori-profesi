@@ -1,4 +1,4 @@
-@section('title', 'Perusahaan | Data Pengguna')
+@section('title', 'Jobtiva | Data Pengguna')
 @include('Layouts.header')
 <!-- Begin page -->
 <div class="wrapper">

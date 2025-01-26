@@ -1,4 +1,4 @@
-@section('title', 'Jobnesia | Update Kategori Profesi')
+@section('title', 'Jobtiva | Update Kategori Profesi')
 @include('Layouts.header')
 <!-- Begin page -->
 <div class="wrapper">
