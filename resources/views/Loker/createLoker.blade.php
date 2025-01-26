@@ -1,4 +1,4 @@
-@section('title', 'Jobnesia | Tambah Lowongan Pekerjaan')
+@section('title', 'Jobtiva | Tambah Lowongan Pekerjaan')
 @include('Layouts.header')
 <!-- Begin page -->
 <div class="wrapper">
