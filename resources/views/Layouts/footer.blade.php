@@ -3,9 +3,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script> © Jobnesia by <b>Pemrograman Web II</b>
+                        <p class="mb-0">© 2024 - 2025 Jobtiva. Design with <i class="mdi mdi-heart text-danger"></i> by Team Jobtiva | Developed at <strong>ARS University </strong></p>
+
                     </div>
                 </div>
             </div>
