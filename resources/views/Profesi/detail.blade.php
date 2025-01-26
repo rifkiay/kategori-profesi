@@ -105,7 +105,7 @@
                                                                 </tr>
 
                                                                 <tr>
-                                                                    <th scope="row">Keterampilan</th>
+                                                                    <th scope="row">Gaji</th>
                                                                     <td>
                                                                         Rp. {{$profesi->gaji}}
 

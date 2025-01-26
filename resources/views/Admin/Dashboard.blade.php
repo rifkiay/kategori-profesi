@@ -7,6 +7,7 @@
     @include('Layouts.topBar')
     @include('Layouts.leftSidebar')
 
+
     <!-- ============================================================== -->
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
@@ -22,7 +23,13 @@
                 @section('namaPage2', 'Dashboards')
                 @include('Layouts.breadcrumb')
                 <!-- end page title -->
-
+                @php
+                $totalPerusahaan = DB::table('perusahaan')->count();
+                $totalLowongan = DB::table('loker')->count();
+                $totalProfesi = DB::table('profesi')->count();
+                $totalKategoriProfesi = DB::table('kategori_profesi')->count();
+                $totalPengguna = DB::table('users')->count();
+                @endphp
                 <!-- Start Cards -->
                 <div class="row">
                     <div class="col-xxl-3 col-sm-4">
@@ -32,7 +39,7 @@
                                     <i class="ri-building-2-fill widget-icon"></i>
                                 </div>
                                 <h6 class="text-uppercase mt-0" title="Customers">Total Perusahaan</h6>
-                                <h2 class="my-2">0</h2>
+                                <h2 class="my-2">{{ $totalPerusahaan }}</h2>
                                 <p class="mb-0">
                                     <span class="badge bg-white bg-opacity-10 me-1">Terdaftar</span>
                                 </p>
@@ -47,7 +54,7 @@
                                     <i class="ri-flower-fill widget-icon"></i>
                                 </div>
                                 <h6 class="text-uppercase mt-0" title="Customers">Total Lowongan Pekerjaan</h6>
-                                <h2 class="my-2">0</h2>
+                                <h2 class="my-2">{{ $totalLowongan }}</h2>
                                 <p class="mb-0">
                                     <span class="badge bg-white bg-opacity-10 me-1">Terdaftar</span>
 
@@ -63,7 +70,7 @@
                                     <i class="ri-briefcase-line widget-icon"></i>
                                 </div>
                                 <h6 class="text-uppercase mt-0" title="Customers">Total Profesi</h6>
-                                <h2 class="my-2">0</h2>
+                                <h2 class="my-2">{{ $totalProfesi }}</h2>
                                 <p class="mb-0">
                                     <span class="badge bg-white bg-opacity-25 me-1">Terdaftar</span>
                                 </p>
@@ -78,7 +85,7 @@
                                     <i class="ri-book-read-fill widget-icon"></i>
                                 </div>
                                 <h6 class="text-uppercase mt-0" title="Customers">Total Kategori Profesi</h6>
-                                <h2 class="my-2">0</h2>
+                                <h2 class="my-2">{{ $totalKategoriProfesi }}</h2>
                                 <p class="mb-0">
                                     <span class="badge bg-white bg-opacity-25 me-1">Terdaftar</span>
                                 </p>
@@ -93,7 +100,7 @@
                                     <i class="ri-user-line widget-icon"></i>
                                 </div>
                                 <h6 class="text-uppercase mt-0" title="Customers">Total Pengguna</h6>
-                                <h2 class="my-2">0</h2>
+                                <h2 class="my-2">{{ $totalPengguna }}</h2>
                                 <p class="mb-0">
                                     <span class="badge bg-white bg-opacity-10 me-1">Terdaftar</span>
                                 </p>
