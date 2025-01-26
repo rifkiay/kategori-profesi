@@ -1,4 +1,4 @@
-@section('title', 'Jobnesia | Data Pengguna')
+@section('title', 'Jobtiva | Data Pengguna')
 @include('Layouts.header')
 <!-- Begin page -->
 <div class="wrapper">
@@ -58,7 +58,7 @@
                                                 <td class="text-center align-middle">
                                                     <div class="d-flex justify-content-center align-items-center gap-1" style="min-height: auto;">
                                                         <a href="#" class="btn btn-primary btn-sm"><i class="ri-eye-fill"></i></a>
-                                                        <a href="#" class="btn btn-warning btn-sm"><i class="ri-spam-3-fill"></i></a>
+                                                        <!-- <a href="#" class="btn btn-warning btn-sm"><i class="ri-spam-3-fill"></i></a> -->
                                                         <form action="#" method="POST" style="display:inline;">
                                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
                                                                 <i class="ri-delete-bin-fill"></i>
