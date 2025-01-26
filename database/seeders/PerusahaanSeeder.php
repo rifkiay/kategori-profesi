@@ -16,19 +16,19 @@ class PerusahaanSeeder extends Seeder
         Perusahaan::create([
             'id' => 1,
             'nama_perusahaan' => 'PT Maju Jaya',
-            'logo_perusahaan' => 'maju_jaya_logo.png',
+            'logo_perusahaan' => 'gambar/perusahaan/PT Maju Jaya/1.png',
         ]);
 
         Perusahaan::create([
             'id' => 2,
             'nama_perusahaan' => 'PT Sukses Selalu',
-            'logo_perusahaan' => 'sukses_selalu_logo.png',
+            'logo_perusahaan' => 'gambar/perusahaan/PT Sukses Selalu/2.png',
         ]);
 
         Perusahaan::create([
             'id' => 3,
             'nama_perusahaan' => 'PT Makmur Sejahtera',
-            'logo_perusahaan' => 'makmur_sejahtera_logo.png',
+            'logo_perusahaan' => 'gambar/perusahaan/PT Makmur Sejahtera/3.png',
         ]);
     }
 }
