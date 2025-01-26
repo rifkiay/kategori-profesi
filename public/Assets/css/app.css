@@ -7,7 +7,7 @@ File: Main Css File
 */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 :root {
-  --tz-logo-lg-height: 18px;
+  --tz-logo-lg-height: 37px;
   --tz-logo-sm-height: 22px;
   --tz-leftbar-width: 240px;
   --tz-leftbar-width-md: 160px;
@@ -34,7 +34,7 @@ html[data-menu-color=light] {
 
 html[data-menu-color=dark] {
   --tz-menu-bg: #1a2942;
-  --tz-menu-item-color: #70809a;
+  --tz-menu-item-color: #ffffff;
   --tz-menu-item-hover-color: #3bc0c3;
   --tz-menu-item-active-color: #3bc0c3;
   --tz-menu-item-active-bg: rgba(255, 255, 255, 0.07);
@@ -14612,6 +14612,7 @@ html[data-bs-theme=dark] .logo.logo-dark {
 .side-nav {
   padding-left: 0;
   list-style-type: none;
+  position: fixed;
 }
 .side-nav ul {
   list-style-type: none;
@@ -14645,7 +14646,7 @@ html[data-bs-theme=dark] .logo.logo-dark {
   text-rendering: auto;
   position: absolute;
   top: 50%;
-  right: calc(var(--tz-menu-item-padding-x) * 1.5);
+  right: calc(var(--tz-menu-item-padding-x) * -2.2);
   -webkit-transition: -webkit-transform 0.15s;
   transition: -webkit-transform 0.15s;
   transition: transform 0.15s;
