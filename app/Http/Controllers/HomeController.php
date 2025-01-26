@@ -34,10 +34,10 @@ class HomeController extends Controller
         return view('pages.loker');
     }
 
-        public function lokerDetail($id)
+    public function lokerDetail(Request $request)
     {
         try {
-            $lokerItem = Loker::findOrFail($id); 
+            $lokerItem = Loker::with('perusahaan')->findOrFail($request->id); 
             return view('pages.detail-loker', compact('lokerItem')); // Adjusted to the new file name
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());

@@ -106,7 +106,11 @@ Route::prefix('')->group(function () {
     Route::get('/about', [HomeController::class, 'about'])->name('home.about');
     Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
     Route::get('/loker', [HomeController::class, 'loker'])->name('loker.index');
-    Route::get('/loker/{id}', [HomeController::class, 'lokerDetail'])->name('loker.detail');
+});
+
+// Detail loker
+Route::prefix('loker')->middleware(CheckIfAuthenticated::class)->group(function () {
+    Route::get( '/{id}', [HomeController::class, 'lokerDetail'])->name('loker.detail');
 });
 
 Route::prefix('profesi')->group(function () {
@@ -118,11 +122,6 @@ Route::prefix('kategori')->group(function () {
     Route::get('/', [KategoriProfesiController::class, 'index'])->name('kategori.index');
 });
 
-// Route Loker
-// // Route Loker
-// Route::prefix('')->group(function () {
-//     Route::get('/', [LokerController::class, 'index'])->name('loker.index');
-// });
 
 // ===============================================================Route Admin Dari Frontend=====================================================================
 
@@ -132,94 +131,42 @@ Route::prefix('kategori')->group(function () {
 Route::get('/profile', function () {
     return view('Admin.profile');
 });
-Route::get('/user', function () {
-    return view('User.showUser');
-});
-
-Route::prefix('Perusahaan')->group(function () {
-    Route::get('/show', function () {
-        return view('Perusahaan.showPerusahaan');
-    });
-    Route::get('/create', function () {
-        return view('Perusahaan.createPerusahaan');
-    });
-    Route::get('/update', function () {
-        return view('Perusahaan.updatePerusahaan');
-    });
-});
-
-Route::prefix('profesi')->group(function () {
-    Route::get('/show', function () {
-        return view('Profesi.showProfesi');
-    });
-    Route::get('/create', function () {
-        return view('Profesi.createProfesi');
-    });
-    Route::get('/update', function () {
-        return view('Profesi.updateProfesi');
-    });
-});
-
-Route::prefix('loker')->group(function () {
-    Route::get('/show', function () {
-        return view('Loker.showLoker');
-    });
-    Route::get('/create', function () {
-        return view('Loker.createLoker');
-    });
-    Route::get('/update', function () {
-        return view('Loker.updateLoker');
-    });
-});
-
-// ===============================================================Route User Dari Frontend=====================================================================
-
-// Route::get('/login', function () {
-//     return view('Auth.login');
+// Route::get('/user', function () {
+//     return view('User.showUser');
 // });
 
-// Route::get('/sign-up', function () {
-//     return view('Auth.Sign-up');
+// Route::prefix('Perusahaan')->group(function () {
+//     Route::get('/show', function () {
+//         return view('Perusahaan.showPerusahaan');
+//     });
+//     Route::get('/create', function () {
+//         return view('Perusahaan.createPerusahaan');
+//     });
+//     Route::get('/update', function () {
+//         return view('Perusahaan.updatePerusahaan');
+//     });
 // });
 
-    // Route::post('/login-submit', function () {
-    //     session(['is_logged_in' => true]);
-    //     return redirect('/');
-    // });
+// Route::prefix('profesi')->group(function () {
+//     Route::get('/show', function () {
+//         return view('Profesi.showProfesi');
+//     });
+//     Route::get('/create', function () {
+//         return view('Profesi.createProfesi');
+//     });
+//     Route::get('/update', function () {
+//         return view('Profesi.updateProfesi');
+//     });
+// });
 
-    // Route::get('/logout', function () {
-    //     session()->forget('is_logged_in');
-    //     return redirect('/');
-    // });
-
-// Route::get('/about', function () {
-//     return view('Pages.about');
-// })->name('about');
-
-// Route::get('/contact', function () {
-//     return view('Pages.contact');
-// })->name('contact');
-
-// Route::get('/', function () {
-//     return view('Pages.home');
-// })->name('home');
-
-// Route::get('/profile-user', function () {
-//     return view('Pages.profile-user'); 
-// })->name('profile-user');
-
-// Route::get('/loker', function () {
-//     return view('Pages.loker');
-// })->name('loker');
-
-// Route::get('/profesi', function () {
-//     return view('Pages.profesi'); 
-// })->name('profesi');
-
-// Route::get('/profesi/kategori/{kategori}', function ($kategori) {
-//     return view('Pages.kategori-profesi', ['kategori' => $kategori]);
-// })->name('kategori-profesi');
-
-// Route::get('/profesi/detail/{id}', function ($id) {
-//     return view('Pages.detail-profesi', ['id' => $id]);
-// })->name('profesi.detail');
+// Route::prefix('loker')->group(function () {
+//     Route::get('/show', function () {
+//         return view('Loker.showLoker');
+//     });
+//     Route::get('/create', function () {
+//         return view('Loker.createLoker');
+//     });
+//     Route::get('/update', function () {
+//         return view('Loker.updateLoker');
+//     });
+// });

@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <!-- Gambar Perusahaan -->
-                        <img src="{{ $lokerItem->logo_perusahaan }}" class="img-fluid rounded-circle border" alt="Company Logo" style="border: 3px solid #e5e5e5;">
+                        <img src="{{ asset('storage/' . $lokerItem->perusahaan->logo_perusahaan) }}" class="img-fluid rounded-circle border" alt="Company Logo" style="border: 3px solid #e5e5e5;">
                     </div>
                     <div class="col-md-8">
                         <!-- Job Title -->
