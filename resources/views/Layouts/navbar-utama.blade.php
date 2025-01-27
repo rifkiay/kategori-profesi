@@ -82,7 +82,7 @@
                 <!-- Profil di Ujung Kanan dengan Dropdown -->
                 <div class="dropdown ms-3">
                     <button class="btn btn-link d-flex align-items-center profile-name" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ asset('Assets/images/profile.png') }}" alt="User Avatar" class="rounded-circle" width="32" height="32">
+                        <img src="{{ asset('Assets/images/profile-default.jpg') }}" alt="User Avatar" class="rounded-circle" width="32" height="32">
                         <span class="ms-2 profile-text">{{ Auth::user()->nama }}</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
