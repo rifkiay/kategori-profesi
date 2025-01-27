@@ -29,13 +29,13 @@
 @endphp
 
 <!-- Hero Section -->
-<div class="hero-section" style="background-image: url('{{ $backgroundImage }}'); background-size: cover; background-position: center;">
-    <div class="overlay" style="background-color: rgba(0, 0, 0, 0.5); padding: 100px 0;">
+<div class="hero-section-kategori" style="background-image: url('{{ $backgroundImage }}');">
+    <div class="hero-overlay">
         <div class="container text-center">
-            <h1 class="display-4 text-white">
+            <h1 class="hero-title-kategori">
                 Profesi Kategori: {{ $selectedCategory->kategori_profesi ?? 'Tidak Diketahui' }}
             </h1>
-            <p class="text-white">
+            <p class="hero-description-kategori">
                 Temukan deskripsi profesi yang tepat, pelajari kualifikasinya, dan rencanakan karier Anda dengan lebih baik.
             </p>
         </div>

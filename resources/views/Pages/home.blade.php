@@ -11,35 +11,7 @@
                         <div class="title-heading text-center text-white">
                             <h6 class="small-title text-uppercase text-light mb-3">Temukan deskripsi profesi yang tepat, pelajari kualifikasinya, dan rencanakan karier Anda dengan lebih baik.</h6>
                             <h1 class="heading fw-bold mb-4">Cara Mudah untuk Memahami Beragam Profesi</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="home-form-position">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10">
-                            <div class="home-registration-form p-4 mb-3">
-                                <form class="registration-form">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="registration-form-box">
-                                                <i class="fa fa-briefcase"></i>
-                                                <input type="text" class="form-control rounded registration-input-box" placeholder="Kata kunci profesi...">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="registration-form-box select-box-icon">
-                                                <i class="fa fa-list-alt"></i>
-                                                <input type="text" class="form-control rounded registration-input-box" placeholder="Kategori...">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="registration-form-box">
-                                                <input type="submit" class="submitBnt btn btn-primary btn-block" value="Cari">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                            <a href="#kategori-profesi" class="btn btn-primary btn-lg mx-2">Lihat Profesi</a>
                         </div>
                     </div>
                 </div>
@@ -49,44 +21,49 @@
 </section>
 <!-- end home -->
 
-        <!-- Kategori Populer -->
-        <section id="kategori-profesi" class="mt-5 pt-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="section-title text-center mb-3 pb-2">
-                        <h4 class="title title-line pb-3">Kategori Profesi</h4>
-                    </div>
+<!-- Kategori Populer -->
+<section id="kategori-profesi" class="mt-5 pt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="section-title text-center mb-3 pb-2">
+                    <h4 class="title title-line pb-3">Kategori Profesi Populer</h4>
                 </div>
             </div>
-            <div class="row">
-                <!-- Loop untuk menampilkan kategori profesi -->
-                @foreach ($kategoriProfesi as $kategori)
-                <a href="{{ route('profesi.index', ['kategori' => strtolower(str_replace(' ', '-', $kategori->kategori_profesi))]) }}" class="col-lg-4 col-md-6 mt-4 pt-2">
-                    <div class="popu-category-box bg-light rounded text-center p-4">
-                        <div class="popu-category-icon mb-3">
-                            <!-- Menampilkan icon dengan class dari database -->
-                            <i class="{{ $kategori->icon }} d-inline-block rounded-pill h3 text-primary"></i>
-                        </div>
-                        <div class="popu-category-content">
-                            <h5 class="mb-2 text-dark title">{{ $kategori->kategori_profesi }}</h5>
-                            <p class="text-success mb-0 rounded">5 Pekerjaan</p>
-                        </div>
-                    </div>
-                </a>
-                @endforeach
-            </div>            
-
-            <!-- Tombol Selengkapnya -->
-            <div class="text-center mt-4">
-                <a href="{{ route('kategori.index') }}" class="btn btn-primary">Selengkapnya</a>
-            </div>
         </div>
-    </section>
-    <!-- Kategori Populer end -->
+        <div class="row">
+        @foreach ($kategoriProfesi->take(5) as $kategori)
+            <a href="{{ route('profesi.index', ['kategori' => strtolower(str_replace(' ', '-', $kategori->kategori_profesi))]) }}" class="col-lg-4 col-md-6 mt-4 pt-2">
+                <div class="popu-category-box bg-light rounded text-center p-4">
+                    <div class="popu-category-icon mb-3">
+                        <i class="{{ $kategori->icon }} d-inline-block rounded-pill h3 text-primary"></i>
+                    </div>
+                    <div class="popu-category-content">
+                        <h5 class="mb-2 text-dark title">{{ $kategori->kategori_profesi }}</h5>
+                        <p class="text-success mb-0 rounded">
+                            {{
+                                $profesi->where('id_kategori_profesi', $kategori->id)->count()
+                            }} Pekerjaan
+                        </p>
+                    </div>
+                </div>
+            </a>
+        @endforeach
+
+        </div>
+    </div>
+</section>
+
+<!-- Tombol Selengkapnya -->
+<div class="text-center mt-4">
+     <a href="{{ route('kategori.index') }}" class="btn btn-primary">Selengkapnya</a>
+        </div>
+    </div>
+</section>
+<!-- Kategori Populer end -->
 
   <!-- counter start -->
-  <section class="section bg-counter position-relative mt-5" style="background: url('/assets/images/bg-counters.jpg') center center; background-size: cover; margin-bottom: 50px;">
+  <section class="section bg-counter position-relative mt-5">
         <div class="bg-overlay bg-overlay-gradient"></div>
          <div class="container mb-5">
             <div class="row" id="counter">
@@ -142,7 +119,7 @@
     </section>
     <!-- counter end -->
 
-    <!-- Daftar Loker Populer -->
+   <!-- Daftar Loker Populer -->
 <section class="container pb-5">
     <div class="section-title text-center mb-4">
         <h4 class="title">Daftar Loker Populer</h4>
@@ -151,7 +128,7 @@
 
     <div class="row">
         @foreach ($loker as $lokerItem)
-            <div class="col-lg-3 col-md-6 mt-4 pt-2">
+            <div class="col-lg-3 col-md-6 mb-4">
                 <a href="{{ route('loker.detail', ['id' => $lokerItem->id]) }}" class="text-decoration-none">
                     <div class="job-card border rounded p-3 bg-white">
                         <!-- Judul Pekerjaan -->
@@ -184,7 +161,5 @@
     </div>
 </section>
 <!-- Daftar Loker Populer end -->
-
-
-    @include('Layouts.footer-utama')
-    @endsection
+@include('Layouts.footer-utama')
+@endsection
