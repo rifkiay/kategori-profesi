@@ -3,7 +3,7 @@
 
 @section('content')
 <!-- Header Section -->
-<section class="bg-half page-next-level"> 
+<section class="bg-half page-next-level">
     <div class="bg-overlay"></div>
     <div class="container">
         <div class="row justify-content-center">
@@ -26,45 +26,46 @@
         <div class="col-lg-8">
             <!-- Job Detail Card -->
             <div class="card shadow-lg border-0 rounded p-4">
-                <div class="row">
-                    <div class="col-md-4">
-                        <!-- Gambar Perusahaan -->
-                        <img src="{{ asset('storage/' . $lokerItem->perusahaan->logo_perusahaan) }}" class="img-fluid rounded-circle border" alt="Company Logo" style="border: 3px solid #e5e5e5;">
-                    </div>
-                    <div class="col-md-8">
-                        <!-- Job Title -->
-                        <h3 class="job-title text-dark mb-3" style="font-size: 1.8rem; font-weight: bold; border-bottom: 2px solid #ccc; padding-bottom: 5px;">{{ $lokerItem->judul }}</h3>
-                        <p class="company-name text-muted mb-2" style="font-size: 1.1rem;"><strong>{{ $lokerItem->nama_perusahaan }}</strong></p>
-                        <p class="text-muted mb-3"><i class="mdi mdi-map-marker"></i> {{ $lokerItem->lokasi ?? 'Lokasi tidak tersedia' }}</p>
-                        <!-- Status -->
-                        <span class="badge {{ $lokerItem->status == 'available' ? 'bg-success' : 'bg-danger' }} p-2 text-white" style="font-size: 1rem;">
-                            {{ $lokerItem->status == 'available' ? 'Aktif Merekrut' : 'Tutup' }}
-                        </span>
+                <div class="text-center">
+                    <!-- Gambar Perusahaan -->
+                    <img src="{{ asset('storage/' . $lokerItem->perusahaan->logo_perusahaan) }}" class="img-fluid rounded-circle company-logo" alt="Company Logo">
+                </div>
+                <div class="text-center">
+                    <!-- Job Title -->
+                    <h3 class="job-title text-dark mb-3">{{ $lokerItem->judul }}</h3>
+                    <p class="company-name text-muted mb-2"><strong>{{ $lokerItem->nama_perusahaan }}</strong></p>
+                    <p class="text-muted mb-3"><i class="mdi mdi-map-marker"></i> {{ $lokerItem->lokasi ?? 'Lokasi tidak tersedia' }}</p>
 
-                        <hr class="my-4" style="border-top: 2px solid #e5e5e5;">
+                    <!-- Status -->
+                    <span class="badge {{ $lokerItem->status == 'available' ? 'bg-success' : 'bg-danger' }} p-2 text-white">
+                        {{ $lokerItem->status == 'available' ? 'Aktif Merekrut' : 'Tutup' }}
+                    </span>
+                </div>
 
-                        <!-- Deskripsi Pekerjaan -->
-                        <h5 class="mt-4" style="font-size: 1.4rem; font-weight: bold;">Deskripsi Pekerjaan:</h5>
-                        <p>{{ $lokerItem->deskripsi_loker }}</p>
+                <hr class="my-4">
 
-                        <hr class="my-4" style="border-top: 2px solid #e5e5e5;">
+                <!-- Deskripsi Pekerjaan -->
+                <div class="mb-4">
+                    <h5>Deskripsi Pekerjaan:</h5>
+                    <p>{{ $lokerItem->deskripsi_loker }}</p>
+                </div>
 
-                        <!-- Kualifikasi -->
-                        <h5 class="mt-4" style="font-size: 1.4rem; font-weight: bold;">Kualifikasi:</h5>
-                        <p>{{ $lokerItem->kualifikasi }}</p>
+                <!-- Kualifikasi -->
+                <div class="mb-4">
+                    <h5>Kualifikasi:</h5>
+                    <p>{{ $lokerItem->kualifikasi }}</p>
+                </div>
 
-                        <hr class="my-4" style="border-top: 2px solid #e5e5e5;">
+                <!-- Gaji -->
+                <div class="mb-4">
+                    <h5>Gaji:</h5>
+                    <p class="text-success font-weight-bold">{{ $lokerItem->gaji }}</p>
+                </div>
 
-                        <!-- Gaji -->
-                        <h5 class="mt-4" style="font-size: 1.4rem; font-weight: bold;">Gaji:</h5>
-                        <p class="text-success" style="font-size: 1.2rem; font-weight: bold;">{{ $lokerItem->gaji }}</p>
-
-                        <hr class="my-4" style="border-top: 2px solid #e5e5e5;">
-
-                        <!-- Tanggal Posting dan Pendaftaran -->
-                        <p><strong>Tanggal Posting:</strong> {{ \Carbon\Carbon::parse($lokerItem->tanggal_posting)->format('d M Y') }}</p>
-                        <p><strong>Akhir Pendaftaran:</strong> {{ \Carbon\Carbon::parse($lokerItem->akhir_pendaftaran)->format('d M Y') }}</p>
-                    </div>
+                <!-- Tanggal Posting dan Pendaftaran -->
+                <div class="mb-4">
+                    <p><strong>Tanggal Posting:</strong> {{ \Carbon\Carbon::parse($lokerItem->tanggal_posting)->format('d M Y') }}</p>
+                    <p><strong>Akhir Pendaftaran:</strong> {{ \Carbon\Carbon::parse($lokerItem->akhir_pendaftaran)->format('d M Y') }}</p>
                 </div>
             </div>
         </div>
