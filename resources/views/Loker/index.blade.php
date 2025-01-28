@@ -38,8 +38,7 @@
                                         <thead class="text-center text-nowrap">
                                             <tr>
                                                 <th class="text-center align-middle">No</th>
-                                                <th class="text-center align-middle">ID Kategori Profesi</th>
-                                                <th class="text-center align-middle">ID Perusahaan</th>
+                                                <th class="text-center align-middle">Kategori Profesi</th>
                                                 <th class="text-center align-middle">Nama Pekerjaan</th>
                                                 <th class="text-center align-middle">Nama Perusahaan</th>
                                                 <th style="text-align: center; width: 40%;">Deskripsi Pekerjaan</th>
@@ -51,15 +50,14 @@
                                                 <th class="text-center align-middle">Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody style="font-size: 0.7rem;">
+                                        <tbody style="font-size: 0.8rem;">
                                             @foreach ($loker as $item)
                                             <tr>
                                                 <td class="text-center align-middle">{{ $loop->iteration }}</td>
-                                                <td class="text-center align-middle">{{ $item->id_kategori_profesi }}</td>
-                                                <td class="text-center align-middle">{{ $item->id_perusahaan }}</td>
+                                                <td class="text-center align-middle">{{ $item->KategoriPerusahaan->kategori_profesi }}</td>
                                                 <td class="text-center align-middle"> {{ $item->judul }}</td>
                                                 <td class="text-center align-middle">{{ $item->nama_perusahaan }}</td>
-                                                <td class="text-center align-middle text-wrap" style="max-width: 200px;">{{ $item->deskripsi_loker }}</td>
+                                                <td class="text-center align-middle text-wrap" style="max-width: 200px;">{{ Str::limit ($item->deskripsi_loker, 80) }}</td>
                                                 <td class="text-center text-nowrap align-middle">
                                                     <span class="badge bg-info bg-opacity-15 p-1">
                                                         Rp {{ $item->gaji }}
@@ -85,7 +83,7 @@
                                                 </td>
                                                 <td class="text-center align-middle">
                                                     <div class="d-flex justify-content-center align-items-center gap-1" style="min-height: auto;">
-                                                        <a href="#" class="btn btn-warning btn-sm"><i class="ri-eye-fill"></i></a>
+                                                        <a href="{{ route('loker.show', $item->id) }}" class="btn btn-warning btn-sm"><i class="ri-eye-fill"></i></a>
                                                         <a href="{{ route('loker.edit', $item->id) }}" class="btn btn-info btn-sm">
                                                             <i class="ri-pencil-fill"></i>
                                                         </a>
