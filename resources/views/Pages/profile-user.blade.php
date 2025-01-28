@@ -54,8 +54,8 @@
                     @php
                         use App\Models\KategoriProfesi;
 
-                        $kategori_profesi = KategoriProfesi::all(); // Ambil semua data kategori profesi
-                        $kategoriNama = 'Belum diatur'; // Default jika kategori tidak ditemukan
+                        $kategori_profesi = KategoriProfesi::all(); 
+                        $kategoriNama = 'Belum diatur'; 
 
                         foreach ($kategori_profesi as $kategori) {
                             if ($kategori->id == Auth::user()->id_kategori_profesi) {
@@ -65,7 +65,7 @@
                         }
                     @endphp
                     <div class="form-group mb-3">
-                        <label class="font-weight-bold">Kategori Profesi</label>
+                        <label class="font-weight-bold">Kategori profesi yang di minati</label>
                         <input type="text" class="form-control" value="{{ $kategoriNama }}" readonly>
                     </div>
                     

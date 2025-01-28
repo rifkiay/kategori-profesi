@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\KategoriProfesi;
+use App\Models\Profesi;
 use App\Http\Requests\StoreKategoriProfesiRequest;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class KategoriProfesiController extends Controller
         try {
             $kategoriprofesi = KategoriProfesi::all();
 
-            return view('pages.kategori-profesi', compact('kategoriprofesi'));
+            $profesi = Profesi::all();
+
+            return view('pages.kategori-profesi', compact('kategoriprofesi', 'profesi'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to retrieve data: ' . $e->getMessage());
         }

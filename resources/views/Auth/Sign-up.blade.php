@@ -39,7 +39,7 @@
                                 @csrf
                                 <!-- Kategori Profesi -->
                                 <div class="form-group mb-2">
-                                    <label>Kategori Profesi <span class="text-danger">*</span></label>
+                                    <label>Kategori profesi yang di minati <span class="text-danger">*</span></label>
                                     <select name="id_kategori_profesi" class="form-control" required>
                                 <option value="">Pilih Kategori</option>
                                 @foreach ($kategori_profesi as $kategori)
