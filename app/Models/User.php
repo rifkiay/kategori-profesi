@@ -28,9 +28,9 @@ class User extends Authenticatable
     protected $hidden = [
        'password',
        'remember_token',
-   ];
+    ];
 
-   public function kategoriPerusahaan()
+    public function kategoriPerusahaan()
     {
         return $this->belongsTo(KategoriProfesi::class, 'id_kategori_profesi');
     }
