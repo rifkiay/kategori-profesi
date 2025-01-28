@@ -41,7 +41,7 @@ Route::prefix('admin/loker')->group(function () {
     Route::get('/', [LokerController::class, 'index'])->name('lokeradmin.index');
     Route::get('/create', [LokerController::class, 'create'])->name('loker.create');
     Route::post('/', [LokerController::class, 'store'])->name('loker.store');
-    // Route::get('/{loker}', [LokerController::class, 'show'])->name('loker.show');
+    Route::get('/{loker}', [LokerController::class, 'show'])->name('loker.show');
     Route::get('edit/{loker}', [LokerController::class, 'edit'])->name('loker.edit');
     Route::put('/{loker}', [LokerController::class, 'update'])->name('loker.update');
     Route::delete('/{loker}', [LokerController::class, 'destroy'])->name('loker.destroy');
@@ -123,50 +123,3 @@ Route::prefix('kategori')->group(function () {
 });
 
 
-// ===============================================================Route Admin Dari Frontend=====================================================================
-
-// Route::get('/dashboard', function () {
-//     return view('Admin.Dashboard');
-// });
-Route::get('/profile', function () {
-    return view('Admin.profile');
-});
-// Route::get('/user', function () {
-//     return view('User.showUser');
-// });
-
-// Route::prefix('Perusahaan')->group(function () {
-//     Route::get('/show', function () {
-//         return view('Perusahaan.showPerusahaan');
-//     });
-//     Route::get('/create', function () {
-//         return view('Perusahaan.createPerusahaan');
-//     });
-//     Route::get('/update', function () {
-//         return view('Perusahaan.updatePerusahaan');
-//     });
-// });
-
-// Route::prefix('profesi')->group(function () {
-//     Route::get('/show', function () {
-//         return view('Profesi.showProfesi');
-//     });
-//     Route::get('/create', function () {
-//         return view('Profesi.createProfesi');
-//     });
-//     Route::get('/update', function () {
-//         return view('Profesi.updateProfesi');
-//     });
-// });
-
-// Route::prefix('loker')->group(function () {
-//     Route::get('/show', function () {
-//         return view('Loker.showLoker');
-//     });
-//     Route::get('/create', function () {
-//         return view('Loker.createLoker');
-//     });
-//     Route::get('/update', function () {
-//         return view('Loker.updateLoker');
-//     });
-// });
