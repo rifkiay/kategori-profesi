@@ -31,7 +31,6 @@
                                 </a>
                             </div>
                             <div class="card-body">
-
                                 <table id="scroll-horizontal-datatable" class="table table-striped w-100 nowrap">
                                     <thead>
                                         <tr>
@@ -39,7 +38,6 @@
                                             <th class="text-center align-middle">Nama Perusahaan</th>
                                             <th class="text-center align-middle">Logo Perusahaan</th>
                                             <th class="text-center align-middle">Aksi</th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -49,7 +47,9 @@
                                             <td class="text-center align-middle">{{ $item->nama_perusahaan }}</td>
                                             <td class="text-center align-middle">
                                                 @if($item->logo_perusahaan)
-                                                <img src="{{ asset('storage/' . $item->logo_perusahaan) }}" alt="Logo Perusahaan" width="100">
+                                                <div style="border: 2px solid #dddd; padding: 5px; border-radius: 8px; display: inline-block;">
+                                                    <img src="{{ asset('storage/' . $item->logo_perusahaan) }}" alt="Logo Perusahaan" width="100">
+                                                </div>
                                                 @else
                                                 <span>Gambar tidak tersedia</span>
                                                 @endif
@@ -60,8 +60,8 @@
                                                         <i class="ri-pencil-fill"></i>
                                                     </a>
                                                     <form action="{{ route('perusahaan.destroy', $item->id) }}" method="POST" style="display:inline;">
-                                                    @csrf
-                                                    @method('DELETE')
+                                                        @csrf
+                                                        @method('DELETE')
 
                                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
                                                             <i class="ri-delete-bin-fill"></i>
@@ -73,12 +73,10 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-
                             </div> <!-- end card body-->
                         </div> <!-- end card -->
                     </div><!-- end col-->
                 </div>
-
                 <!-- End Table -->
             </div>
             <!-- container -->
