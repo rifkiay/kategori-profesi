@@ -41,7 +41,7 @@
                                                 <th class="text-center align-middle">Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody style="font-size: 0.7rem;">
+                                        <tbody style="font-size: 0.8rem;">
                                             @foreach ($users as $item)
                                             <tr>
                                                 <td class="text-center align-middle">{{$loop->iteration}}</td>
@@ -53,9 +53,7 @@
                                                 <td class="text-center align-middle">{{$item->foto_profile}}</td>
                                                 <td class="text-center align-middle">
                                                     <div class="d-flex justify-content-center align-items-center gap-1" style="min-height: auto;">
-                                                        <!-- <a href="#" class="btn btn-primary btn-sm"><i class="ri-eye-fill"></i></a> -->
-                                                        <!-- <a href="#" class="btn btn-warning btn-sm"><i class="ri-spam-3-fill"></i></a> -->
-                                                        <form action="#" method="POST" style="display:inline;">
+                                                        <form action="{{ route('user.destroy', $item->id) }}" method="POST" style="display:inline;">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
@@ -65,7 +63,6 @@
                                                     </div>
                                                 </td>
                                             </tr>
-
                                             @endforeach
                                         </tbody>
                                     </table>
