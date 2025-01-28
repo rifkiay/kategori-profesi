@@ -11,12 +11,17 @@ class Profesi extends Model
 
     protected $table = 'profesi';
 
-     protected $fillable = [
-         'id_kategori_profesi',
-         'nama_profesi',
-         'deskripsi_profesi',
-         'keterampilan',
-         'gaji',
-         'gambar_profesi',
-     ];
+    protected $fillable = [
+        'id_kategori_profesi',
+        'nama_profesi',
+        'deskripsi_profesi',
+        'keterampilan',
+        'gaji',
+        'gambar_profesi',
+    ];
+
+    public function kategoriPerusahaan()
+    {
+        return $this->belongsTo(KategoriProfesi::class, 'id_kategori_profesi');
+    }
 }

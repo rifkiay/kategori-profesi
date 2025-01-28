@@ -24,9 +24,13 @@ class Loker extends Model
         'status',
     ];
 
-    //  Relasi model loker dan perusahaan -> Kolom 'id_perusahaan' pada tabel 'loker' menghubungkan Loker dengan Perusahaan
     public function perusahaan()
     {
         return $this->belongsTo(Perusahaan::class, 'id_perusahaan');
+    }
+
+    public function kategoriPerusahaan()
+    {
+        return $this->belongsTo(KategoriProfesi::class, 'id_kategori_profesi');
     }
 }
