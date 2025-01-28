@@ -32,7 +32,7 @@ class UserController extends Controller
     {
         try {
             $data = $request->validated();
-    
+
             // Update password if provided
             if ($request->filled('password')) {
                 $data['password'] = bcrypt($request->password);
@@ -40,21 +40,21 @@ class UserController extends Controller
                 unset($data['password']);
             }
 
-    
+
             if ($request->hasFile('foto_profile')) {
                 if ($user->foto_profile) {
                     Storage::disk('public')->delete($user->foto_profile);
                 }
                 $userName = Str::slug($data['username']);
-                $timestamp = time(); 
+                $timestamp = time();
                 $extension = $request->file('foto_profile')->getClientOriginalExtension();
                 $fileName = "{$userName}_{$timestamp}.{$extension}";
-    
+
                 $data['foto_profile'] = $request->file('foto_profile')->storeAs("gambar/user/{$data['username']}", $fileName, 'public');
             }
 
             $user->update($data);
-    
+
             return redirect()->route('users.edit')->with('success', 'User berhasil diperbarui!');
         } catch (\Exception $e) {
             return back()->with('error', 'Gagal memperbarui user: ' . $e->getMessage());
@@ -67,7 +67,7 @@ class UserController extends Controller
         try {
             $users = User::all();
 
-            return view('User.users', compact('users')); 
+            return view('User.users', compact('users'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Failed to load data: ' . $e->getMessage());
         }
@@ -77,10 +77,10 @@ class UserController extends Controller
     // {
     //     try {
     //         $data = $request->validated();
-    
+
     //         // Enkripsi password
     //         $data['password'] = bcrypt($request->password);
-    
+
     //         if ($request->hasFile('foto_profile')) {
     //             $userName =  Str::slug($data['nama']);
     //             $timestamp = time(); 
@@ -89,7 +89,7 @@ class UserController extends Controller
 
     //             $data['foto_profile'] = $request->file('foto_profile')->storeAs("gambar/user/{$data['nama']}", $fileName, 'public');
     //         }
-    
+
     //         User::create($data);
 
     //         return redirect()->route('admin.users')->with('success', 'User berhasil ditambahkan!');
@@ -107,7 +107,7 @@ class UserController extends Controller
     {
         try {
             $data = $request->validated();
-    
+
             // Update password if provided
             if ($request->filled('password')) {
                 $data['password'] = bcrypt($request->password);
@@ -115,21 +115,21 @@ class UserController extends Controller
                 unset($data['password']);
             }
 
-    
+
             if ($request->hasFile('foto_profile')) {
                 if ($user->foto_profile) {
                     Storage::disk('public')->delete($user->foto_profile);
                 }
                 $Name = Str::slug($data['nama']);
-                $timestamp = time(); 
+                $timestamp = time();
                 $extension = $request->file('foto_profile')->getClientOriginalExtension();
                 $fileName = "{$Name}_{$timestamp}.{$extension}";
-    
+
                 $data['foto_profile'] = $request->file('foto_profile')->storeAs("gambar/user/{$data['nama']}", $fileName, 'public');
             }
 
             $user->update($data);
-    
+
             return redirect()->route('admin.users')->with('success', 'User berhasil diperbarui!');
         } catch (\Exception $e) {
             return back()->with('error', 'Gagal memperbarui user: ' . $e->getMessage());
@@ -139,12 +139,14 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         try {
-            Storage::disk('public')->delete($user->foto_profile);
-            
+            if (!empty($user->foto_profile) && Storage::disk('public')->exists($user->foto_profile)) {
+                Storage::disk('public')->delete($user->foto_profile);
+            }
+
             // Delete the user
             $user->delete();
-    
-            return redirect()->route('admin.users')->with('success', 'User berhasil dihapus!');
+
+            return redirect()->route('user.view')->with('success', 'User berhasil dihapus!');
         } catch (\Exception $e) {
             return back()->with('error', 'Gagal menghapus user: ' . $e->getMessage());
         }

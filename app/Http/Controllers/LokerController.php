@@ -32,7 +32,7 @@ class LokerController extends Controller
 
     public function show(Loker $loker)
     {
-        return view('loker.index', compact('loker'));
+        return view('Loker.detail', compact('loker'));
     }
 
     public function edit(Loker $loker)
