@@ -54,7 +54,7 @@
                                             @foreach ($loker as $item)
                                             <tr>
                                                 <td class="text-center align-middle">{{ $loop->iteration }}</td>
-                                                <td class="text-center align-middle">{{ $item->KategoriPerusahaan->kategori_profesi }}</td>
+                                                <td class="text-center align-middle">{{ $item->KategoriProfesi->kategori_profesi }}</td>
                                                 <td class="text-center align-middle"> {{ $item->judul }}</td>
                                                 <td class="text-center align-middle">{{ $item->nama_perusahaan }}</td>
                                                 <td class="text-center align-middle text-wrap" style="max-width: 200px;">{{ Str::limit ($item->deskripsi_loker, 80) }}</td>

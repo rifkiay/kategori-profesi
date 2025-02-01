@@ -51,7 +51,7 @@
                                             @foreach ($profesi as $item)
                                             <tr>
                                                 <td class="text-center align-middle">{{ $profesi->firstItem() + $loop->index }}</td>
-                                                <td class="text-center align-middle">{{ $item->kategoriPerusahaan->kategori_profesi }}</td>
+                                                <td class="text-center align-middle">{{ $item->kategoriProfesi->kategori_profesi }}</td>
                                                 <td class="text-center align-middle">{{ $item->nama_profesi }}</td>
                                                 <td class="align-middle text-wrap" style="text-align: justify; max-width: 200px;">{{ Str::limit($item->deskripsi_profesi, 80) }}</td>
                                                 <td class="align-middle">
