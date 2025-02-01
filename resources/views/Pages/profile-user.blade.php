@@ -51,23 +51,11 @@
                     <div class="form-group mb-3">
 
                     <!-- Kategori Profesi -->
-                    @php
-                        use App\Models\KategoriProfesi;
-
-                        $kategori_profesi = KategoriProfesi::all(); 
-                        $kategoriNama = 'Belum diatur'; 
-
-                        foreach ($kategori_profesi as $kategori) {
-                            if ($kategori->id == Auth::user()->id_kategori_profesi) {
-                                $kategoriNama = $kategori->kategori_profesi;
-                                break;
-                            }
-                        }
-                    @endphp
                     <div class="form-group mb-3">
-                        <label class="font-weight-bold">Kategori profesi yang di minati</label>
-                        <input type="text" class="form-control" value="{{ $kategoriNama }}" readonly>
+                        <label class="font-weight-bold">Kategori profesi yang diminati</label>
+                        <input type="text" class="form-control" value="{{ Auth::user()->kategoriProfesi->kategori_profesi ?? 'Belum diatur' }}" readonly>
                     </div>
+                    
                     
                     <!-- Minat -->
                     <div class="form-group mb-3">

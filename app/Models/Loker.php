@@ -29,7 +29,7 @@ class Loker extends Model
         return $this->belongsTo(Perusahaan::class, 'id_perusahaan');
     }
 
-    public function kategoriPerusahaan()
+    public function kategoriProfesi()
     {
         return $this->belongsTo(KategoriProfesi::class, 'id_kategori_profesi');
     }

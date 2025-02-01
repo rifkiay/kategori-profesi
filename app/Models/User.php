@@ -30,7 +30,7 @@ class User extends Authenticatable
        'remember_token',
     ];
 
-    public function kategoriPerusahaan()
+    public function kategoriProfesi()
     {
         return $this->belongsTo(KategoriProfesi::class, 'id_kategori_profesi');
     }

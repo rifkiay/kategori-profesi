@@ -20,7 +20,7 @@ class Profesi extends Model
         'gambar_profesi',
     ];
 
-    public function kategoriPerusahaan()
+    public function kategoriProfesi()
     {
         return $this->belongsTo(KategoriProfesi::class, 'id_kategori_profesi');
     }
