@@ -50,7 +50,7 @@ class ProfesiController extends Controller
     public function view()
     {
         try {
-            $profesi = Profesi::all();
+            $profesi = Profesi::paginate(10);
 
             return view('profesi.show', compact('profesi'));
         } catch (\Exception $e) {
