@@ -33,12 +33,18 @@
                                         <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan"
                                             placeholder="Ajinomoto">
                                     </div>
+                                    @error('nama_perusahaan')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="row mb-3">
                                     <label for="logo_perusahaan" class="col-3 col-form-label">Logo Perusahaan</label>
                                     <div class="col-9">
                                         <input type="file" class="form-control" name="logo_perusahaan" id="logo_perusahaan">
                                     </div>
+                                    @error('logo_perusahaan')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
                         </div>
                         <div class="row justify-content-end">

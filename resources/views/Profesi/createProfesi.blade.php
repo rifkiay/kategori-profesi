@@ -47,10 +47,10 @@
                                     <label for="nama_profesi" class="col-3 col-form-label">Nama Profesi</label>
                                     <div class="col-9">
                                         <input type="text" class="form-control" id="nama_profesi" name="nama_profesi"
-                                            placeholder="Software Developer" required>
+                                            placeholder="Software Developer">
                                     </div>
                                     @error('nama_profesi')
-                                    <div class="text-danger">* {{ $message }}</div>
+                                    <div class="alert alert-danger">* {{ $message }}</div>
                                     @enderror
                                 </div>
 
@@ -61,7 +61,7 @@
                                             rows="5"></textarea>
                                     </div>
                                     @error('deskripsi_profesi')
-                                    <div class="text-danger">* {{ $message }}</div>
+                                    <div class="alert alert-danger">* {{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="row mb-3">
@@ -71,7 +71,7 @@
                                             rows="5"></textarea>
                                     </div>
                                     @error('keterampilan')
-                                    <div class="text-danger">* {{ $message }}</div>
+                                    <div class="alert alert-danger">* {{ $message }}</div>
                                     @enderror
                                 </div>
 
@@ -82,7 +82,7 @@
                                             placeholder="10.000.000">
                                     </div>
                                     @error('gaji')
-                                    <div class="text-danger">* {{ $message }}</div>
+                                    <div class="alert alert-danger">* {{ $message }}</div>
                                     @enderror
                                 </div>
 
@@ -92,7 +92,7 @@
                                         <input type="file" class="form-control" name="gambar_profesi" id="gambar_profesi">
                                     </div>
                                     @error('gambar_profesi')
-                                    <div class="text-danger">* {{ $message }}</div>
+                                    <div class="alert alert-danger">* {{ $message }}</div>
                                     @enderror
                                 </div>
                         </div>

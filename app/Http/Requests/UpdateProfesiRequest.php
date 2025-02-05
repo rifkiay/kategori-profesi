@@ -23,10 +23,10 @@ class UpdateProfesiRequest extends FormRequest
     {
         return [
             'id_kategori_profesi' => 'sometimes|nullable|exists:kategori_profesi,id',
-            'nama_profesi' => 'sometimes|nullable|string|max:255',
-            'deskripsi_profesi' => 'sometimes|nullable|string',
-            'keterampilan' => 'sometimes|nullable|string',
-            'gaji' => 'sometimes|nullable|string',
+            'nama_profesi' => 'required|string|max:255',
+            'deskripsi_profesi' => 'required|string',
+            'keterampilan' => 'required|string',
+            'gaji' => 'required|nullable|string',
             'gambar_profesi' => 'sometimes|nullable|image|mimes:jpg,jpeg,png|max:2048',
         ];
     }

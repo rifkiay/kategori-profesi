@@ -144,6 +144,9 @@
                                             <option value="available" {{ old('status', $loker->status) == 'available' ? 'selected' : '' }}>Available</option>
                                             <option value="closed" {{ old('status', $loker->status) == 'closed' ? 'selected' : '' }}>Closed</option>
                                         </select>
+                                        @error('status')
+                                        <div class="alert alert-danger">* {{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                         </div>
@@ -177,10 +180,21 @@
         });
     });
 
-    // Buat field tanggal
-    document.querySelectorAll('input[type="date"]').forEach(function(input) {
-        input.addEventListener('click', function() {
-            this.showPicker();
+    document.addEventListener('DOMContentLoaded', function() {
+        var today = new Date();
+        var day = today.getDate().toString().padStart(2, '0');
+        var month = (today.getMonth() + 1).toString().padStart(2, '0');
+        var year = today.getFullYear();
+
+        var minDate = year + '-' + month + '-' + day;
+
+        document.getElementById('tanggal_posting').setAttribute('min', minDate);
+        document.getElementById('akhir_pendaftaran').setAttribute('min', minDate);
+
+        document.querySelectorAll('input[type="date"]').forEach(function(input) {
+            input.addEventListener('click', function() {
+                this.showPicker();
+            });
         });
     });
 </script>

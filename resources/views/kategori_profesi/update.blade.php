@@ -34,12 +34,18 @@
                                         <input type="text" class="form-control" id="kategori_profesi" name="kategori_profesi"
                                             placeholder="Teknologi" value="{{$kategoriProfesi->kategori_profesi}}">
                                     </div>
+                                    @error('kategori_profesi')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="row mb-3">
                                     <label for="icon" class="col-3 col-form-label">Icon Profesi</label>
                                     <div class="col-9">
                                         <input type="text" class="form-control" name="icon" id="icon" placeholder="mdi mdi-heart-pulse" value="{{$kategoriProfesi->icon}}">
                                     </div>
+                                    @error('icon')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
                         </div>
                         <div class="row justify-content-end">

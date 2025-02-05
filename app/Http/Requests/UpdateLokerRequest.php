@@ -22,16 +22,16 @@ class UpdateLokerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id_kategori_profesi' => 'nullable|exists:kategori_profesi,id',
-            'id_perusahaan' => 'nullable|exists:perusahaan,id',
-            'judul' => 'nullable|string|max:255',
+            'id_kategori_profesi' => 'required|exists:kategori_profesi,id',
+            'id_perusahaan' => 'required|nullable|exists:perusahaan,id',
+            'judul' => 'required|string|max:255',
             'nama_perusahaan' => 'nullable|string|max:255',
-            'deskripsi_loker' => 'nullable|string',
-            'gaji' => 'nullable|string|max:255',
-            'kualifikasi' => 'nullable|string',
+            'deskripsi_loker' => 'required|nullable|string',
+            'gaji' => 'required|nullable|string|max:255',
+            'kualifikasi' => 'required|nullable|string',
             'tanggal_posting' => 'nullable|date',
             'akhir_pendaftaran' => 'nullable|date|after_or_equal:tanggal_posting',
-            'status' => 'nullable|in:available,closed',
+            'status' => 'required|nullable|in:available,closed',
         ];
     }
 

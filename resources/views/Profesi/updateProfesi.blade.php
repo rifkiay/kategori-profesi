@@ -44,6 +44,9 @@
                                             <option value="9" {{ $profesi->id_kategori_profesi == 9 ? 'selected' : '' }}>9 Influencer</option>
                                             <option value="10" {{ $profesi->id_kategori_profesi == 10 ? 'selected' : '' }}>10 Olahraga</option>
                                         </select>
+                                        @error('id_kategori_profesi')
+                                        <div class="alert alert-danger">* {{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -53,6 +56,9 @@
                                         <input type="text" class="form-control" id="nama_profesi" name="nama_profesi"
                                             placeholder="Software Developer" value="{{ $profesi->nama_profesi }}">
                                     </div>
+                                    @error('nama_profesi')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -61,6 +67,9 @@
                                         <textarea class="form-control" id="deskripsi_profesi" name="deskripsi_profesi"
                                             rows="5">{{ $profesi->deskripsi_profesi }}</textarea>
                                     </div>
+                                    @error('deskripsi_profesi')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="row mb-3">
                                     <label for="keterampilan" class="col-3 col-form-label">Keterampilan</label>
@@ -68,6 +77,9 @@
                                         <textarea class="form-control" id="keterampilan" name="keterampilan"
                                             rows="5">{{ $profesi->keterampilan }}</textarea>
                                     </div>
+                                    @error('keterampilan')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -76,6 +88,9 @@
                                         <input type="text" class="form-control" id="gaji" name="gaji" value="{{ $profesi->gaji }}"
                                             placeholder="10.000.000">
                                     </div>
+                                    @error('gaji')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="row mb-3">
@@ -86,6 +101,9 @@
                                         <img src="{{ asset('storage/' . $profesi->gambar_profesi) }}" alt="Gambar Profesi" width="100" class="mt-2">
                                         @endif
                                     </div>
+                                    @error('gambar_profesi')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
                         </div>
                         <div class="row justify-content-end">

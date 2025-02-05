@@ -34,6 +34,9 @@
                                         <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan"
                                             placeholder="Ajinomoto" value="{{ $perusahaan->nama_perusahaan }}">
                                     </div>
+                                    @error('nama_perusahaan')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="row mb-3">
                                     <label for="logo_perusahaan" class="col-3 col-form-label">Logo Perusahaan</label>
@@ -43,6 +46,9 @@
                                         <img src="{{ asset('storage/' . $perusahaan->  logo_perusahaan) }}" alt="Logo Perusahaan" width="100" class="mt-2">
                                         @endif
                                     </div>
+                                    @error('logo_perusahaan')
+                                    <div class="alert alert-danger">* {{ $message }}</div>
+                                    @enderror
                                 </div>
                         </div>
                         <div class="row justify-content-end">

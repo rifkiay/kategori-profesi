@@ -180,10 +180,21 @@
         });
     });
 
-    // Buat field tanggal
-    document.querySelectorAll('input[type="date"]').forEach(function(input) {
-        input.addEventListener('click', function() {
-            this.showPicker();
+    document.addEventListener('DOMContentLoaded', function() {
+        var today = new Date();
+        var day = today.getDate().toString().padStart(2, '0');
+        var month = (today.getMonth() + 1).toString().padStart(2, '0');
+        var year = today.getFullYear();
+
+        var minDate = year + '-' + month + '-' + day;
+
+        document.getElementById('tanggal_posting').setAttribute('min', minDate);
+        document.getElementById('akhir_pendaftaran').setAttribute('min', minDate);
+
+        document.querySelectorAll('input[type="date"]').forEach(function(input) {
+            input.addEventListener('click', function() {
+                this.showPicker();
+            });
         });
     });
 </script>
