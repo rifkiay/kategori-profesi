@@ -54,7 +54,6 @@
     </div>
 </footer>
 
-
 <hr>
 
 <footer class="footer footer-bar">

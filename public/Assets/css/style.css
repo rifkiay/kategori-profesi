@@ -2457,13 +2457,11 @@ h5 {
   margin-bottom: 20px;
 }
 
-/* Styling untuk Garis Pemisah */
 hr {
-  border-top: 2px solid #e5e5e5;
-  margin: 20px 0;
+  border-top: 0.5px solid #e5e5e5; 
+  margin: 0.5px auto;
 }
 
-/* Styling untuk Info Perusahaan */
 .company-name {
   font-size: 1.1rem;
   font-weight: 600;

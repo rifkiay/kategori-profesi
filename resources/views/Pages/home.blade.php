@@ -1,7 +1,8 @@
 @extends('Layouts.navbar-utama')
+
 @section('content')
 <!-- Start Home -->
-<section class="bg-home" style="background: url('{{ asset("assets/images/bg-home.jpg") }}') center center; background-size: cover;">
+<section class="bg-home" style="background: url('{{ asset('assets/images/bg-home.jpg') }}') center center; background-size: cover;">
     <div class="bg-overlay"></div>
     <div class="home-center">
         <div class="home-desc-center">
@@ -9,9 +10,9 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="title-heading text-center text-white">
-                            <h6 class="small-title text-uppercase text-light mb-3">Temukan deskripsi profesi yang tepat, pelajari kualifikasinya, dan rencanakan karier Anda dengan lebih baik.</h6>
-                            <h1 class="heading fw-bold mb-4">Cara Mudah untuk Memahami Beragam Profesi</h1>
-                            <a href="#kategori-profesi" class="btn btn-primary btn-lg mx-2">Lihat Profesi</a>
+                        <h4 class="main-title mb-3">Temukan informasi profesi yang tepat dan rencanakan karier Anda dengan lebih baik.</h4>
+                        <h4 class="sub-title mb-3">Pahami cara mudah memilih profesi yang sesuai dengan Anda Disini.</h4>
+                            <a href="#kategori-profesi" class="btn btn-primary btn-lg mx-2 mt-5">Lihat Profesi</a>
                         </div>
                     </div>
                 </div>
@@ -19,7 +20,7 @@
         </div>
     </div>
 </section>
-<!-- end home -->
+<!-- End Home -->
 
 <!-- Kategori Populer -->
 <section id="kategori-profesi" class="mt-5 pt-5">
@@ -49,7 +50,6 @@
                 </div>
             </a>
         @endforeach
-
         </div>
     </div>
 </section>
@@ -57,69 +57,78 @@
 <!-- Tombol Selengkapnya -->
 <div class="text-center mt-4">
      <a href="{{ route('kategori.index') }}" class="btn btn-primary">Selengkapnya</a>
-        </div>
-    </div>
-</section>
+</div>
 <!-- Kategori Populer end -->
 
-  <!-- counter start -->
-  <section class="section bg-counter position-relative mt-5">
-        <div class="bg-overlay bg-overlay-gradient"></div>
-         <div class="container mb-5">
-            <div class="row" id="counter">
-                <div class="col-md-3 col-6">
-                    <div class="home-counter pt-4 pb-4">
-                        <div class="float-start counter-icon me-3">
-                            <i class="mdi mdi-bank h1 text-white"></i>
-                        </div>
-                        <div class="counter-content overflow-hidden">
-                            <h1 class="counter-value text-white mb-1" data-count="120">10</h1>
-                            <p class="counter-name text-white text-uppercase mb-0">Companies</p>
-                        </div>
-                    </div>
-                </div>
+@php
+    $totalPerusahaan = DB::table('perusahaan')->count();
+    $totalLowongan = DB::table('loker')->count();
+    $totalProfesi = DB::table('profesi')->count();
+    $totalPengguna = DB::table('users')->count();
+@endphp    
 
-                <div class="col-md-3 col-6">
-                    <div class="home-counter pt-4 pb-4">
-                        <div class="float-start counter-icon me-3">
-                            <i class="mdi mdi-file-document-box h1 text-white"></i>
-                        </div>
-                        <div class="counter-content overflow-hidden">
-                            <h1 class="counter-value text-white mb-1" data-count="480">80</h1>
-                            <p class="counter-name text-white text-uppercase mb-0">Applications</p>
-                        </div>
+<!-- Counter Start -->
+<section class="section bg-counter position-relative mt-5">
+    <div class="bg-overlay bg-overlay-gradient"></div>
+    <div class="container mb-5">
+        <div class="row" id="counter">
+            <!-- Total Perusahaan -->
+            <div class="col-md-3 col-6">
+                <div class="home-counter pt-4 pb-4">
+                    <div class="float-start counter-icon me-3">
+                        <i class="mdi mdi-bank h1 text-white"></i>
                     </div>
-                </div>
-
-                <div class="col-md-3 col-6">
-                    <div class="home-counter pt-4 pb-4">
-                        <div class="float-start counter-icon me-3">
-                            <i class="mdi mdi-calendar-multiple-check h1 text-white"></i>
-                        </div>
-                        <div class="counter-content overflow-hidden">
-                            <h1 class="counter-value text-white mb-1" data-count="120">10</h1>
-                            <p class="counter-name text-white text-uppercase mb-0">Job Posted</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="home-counter pt-4 pb-4">
-                        <div class="float-start counter-icon me-3">
-                            <i class="mdi mdi-account-multiple-plus h1 text-white"></i>
-                        </div>
-                        <div class="counter-content overflow-hidden">
-                            <h1 class="counter-value text-white mb-1" data-count="200">10</h1>
-                            <p class="counter-name text-white text-uppercase mb-0">Member</p>
-                        </div>
+                    <div class="counter-content overflow-hidden">
+                        <h1 class="counter-value text-white mb-1" data-count="{{ $totalPerusahaan }}">{{ $totalPerusahaan }}</h1>
+                        <p class="counter-name text-white text-uppercase mb-0">Total Perusahaan</p>
                     </div>
                 </div>
             </div>
 
-        </div>
-    </section>
-    <!-- counter end -->
+            <!-- Total Lowongan -->
+            <div class="col-md-3 col-6">
+                <div class="home-counter pt-4 pb-4">
+                    <div class="float-start counter-icon me-3">
+                        <i class="mdi mdi-file-document-box h1 text-white"></i>
+                    </div>
+                    <div class="counter-content overflow-hidden">
+                        <h1 class="counter-value text-white mb-1" data-count="{{ $totalLowongan }}">{{ $totalLowongan }}</h1>
+                        <p class="counter-name text-white text-uppercase mb-0">Total Loker</p>
+                    </div>
+                </div>
+            </div>
 
-   <!-- Daftar Loker Populer -->
+            <!-- Total Profesi -->
+            <div class="col-md-3 col-6">
+                <div class="home-counter pt-4 pb-4">
+                    <div class="float-start counter-icon me-3">
+                        <i class="mdi mdi-briefcase h1 text-white"></i>
+                    </div>
+                    <div class="counter-content overflow-hidden">
+                        <h1 class="counter-value text-white mb-1" data-count="{{ $totalProfesi }}">{{ $totalProfesi }}</h1>
+                        <p class="counter-name text-white text-uppercase mb-0">Total Profesi</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total Pengguna -->
+            <div class="col-md-3 col-6">
+                <div class="home-counter pt-4 pb-4">
+                    <div class="float-start counter-icon me-3">
+                        <i class="mdi mdi-account-multiple-plus h1 text-white"></i>
+                    </div>
+                    <div class="counter-content overflow-hidden">
+                        <h1 class="counter-value text-white mb-1" data-count="{{ $totalPengguna }}">{{ $totalPengguna }}</h1>
+                        <p class="counter-name text-white text-uppercase mb-0">Pengguna</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Counter End -->
+
+<!-- Daftar Loker Populer -->
 <section class="container pb-5">
     <div class="section-title text-center mb-4">
         <h4 class="title">Daftar Loker Populer</h4>
@@ -161,5 +170,6 @@
     </div>
 </section>
 <!-- Daftar Loker Populer end -->
+
 @include('Layouts.footer-utama')
 @endsection
